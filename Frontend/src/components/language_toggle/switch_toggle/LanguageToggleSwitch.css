@@ -1,0 +1,80 @@
+.language-switch-wrapper {
+  position: relative;
+  width: 80px;
+  user-select: none;
+  
+}
+
+.language-switch-checkbox {
+  display: none;
+}
+
+.language-switch-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border-radius: 20px;
+  height: 38px;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+/* Left label (AR) */
+.language-switch-label-left {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  pointer-events: none;
+  user-select: none;
+  
+}
+
+/* Right label (EN) */
+.language-switch-label-right {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 14px;
+  color: #913a57;
+  pointer-events: none;
+  user-select: none;
+  
+}
+
+/* The round toggle knob */
+.language-switch-switch {
+  display: block;
+  width: 31px;
+  height: 31px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transition: all 0.3s ease;
+  left: 3px;
+}
+
+.language-switch-checkbox:checked + .language-switch-label {
+  background-color: #913a57;
+}
+
+.language-switch-checkbox:checked + .language-switch-label .language-switch-switch {
+  left: 44px;
+}
+
+.language-switch-checkbox:not(:checked) + .language-switch-label .language-switch-label-left {
+  color: white;
+}
+
+.language-switch-checkbox:checked + .language-switch-label .language-switch-label-right {
+  color: white;
+}

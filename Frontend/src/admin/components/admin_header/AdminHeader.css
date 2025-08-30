@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&family=Playwrite+HU:wght@100..400&display=swap');
+.admin-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    padding-inline-start: 30px;
+    /* font-family: "Bangers", system-ui; */
+    font-family: 'Playwrite HU', 'Noto Sans Arabic', cursive, sans-serif;
+    /* font-family: 'Dancing Script', cursive; */
+}
+
+.admin-header-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #204e51;
+    margin-bottom: 4px;
+    text-align: start;
+}
+
+.admin-header-subtitle {
+    color: #6b7280;
+    font-size: 1.1rem;
+    text-align: start;
+}

@@ -1,0 +1,13 @@
+.admin-home-container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.admin-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

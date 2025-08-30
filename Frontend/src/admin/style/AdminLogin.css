@@ -1,0 +1,29 @@
+.full-screen-wrapper {
+    background: url('../assets/AdminLoginBackground.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    padding-top: 0px;
+    z-index: 0;
+}
+
+.full-screen-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.721);
+    z-index: 1;
+}
+
+.full-screen-wrapper > * {
+    position: relative;
+    z-index: 2;
+}

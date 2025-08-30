@@ -1,0 +1,401 @@
+/* ================================
+General Form Card Container
+=================================== */
+.general-form-card {
+  width: 1000px;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ================================
+Section Header & Titles
+=================================== */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  padding-inline-start: 20px;
+  border-bottom: 1px solid #4b556338;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #023438;
+  padding-inline-start: 8px;
+  width: 100%;
+  text-align: start;
+}
+
+.section-title-icon {
+  font-size: 1.8rem;
+  color: #023438;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #204e51;
+}
+
+/* ================================
+Form Fields
+=================================== */
+.fields-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+  padding-inline-start: 5px;
+  text-align: start;
+}
+
+/* Text Input */
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #dec9d042;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #b6c3c3;
+  outline: none;
+}
+
+/* Textarea Input */
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #dec9d042;
+  box-sizing: border-box;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+.form-group textarea:focus {
+  border-color: #b6c3c3;
+  outline: none;
+}
+
+/* Required Star */
+.required-star {
+  color: rgb(105, 0, 0);
+  margin-left: 4px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+/* ================================
+Upload Section
+=================================== */
+.upload-box {
+  border: 2px dashed #817f7f;
+  background-color: #dec9d042;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-box:hover {
+  background-color: #eaeaea;
+}
+
+.custom-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 48px;
+  color: #666;
+  margin-bottom: 12px;
+  transition: transform 0.2s;
+}
+
+.upload-text {
+  background-color: #204e51;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.custom-upload:hover .upload-icon {
+  transform: scale(1.1);
+}
+
+.custom-upload:hover .upload-text {
+  background-color: rgb(109, 109, 109);
+}
+.preview-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.preview-image {
+  height: 100%;
+  border-radius: 12px;
+}
+
+.preview-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.uploaded-images-preview {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.preview-four-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex-shrink: 0;
+  margin: 15px 8px 0px 0px;
+}
+
+
+.delete-image-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ================================
+Points Section
+=================================== */
+.points-section {
+  margin-top: 40px;
+}
+
+.add-point-btn {
+  background-color: #204e51;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  margin-bottom: 10px;
+  width: 15%;
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.add-point-btn:hover {
+background-color: #2f7479e7;
+
+}
+.point-card {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  border: 1px solid #cccccc60;
+}
+
+.image-previews {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.upload-mode-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.upload-mode-label {
+  font-weight: 600;
+  color: #444;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  padding-inline-start: 15px;
+}
+
+.upload-mode-toggle {
+  display: flex;
+  gap: 12px;
+}
+
+.upload-mode-toggle button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.upload-mode-toggle button.active {
+  border: 3px solid #204e51;
+  background-color: #02697269;
+  color: #fefcfc;
+}
+
+@media (max-width: 1300px) {
+  .general-form-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .fields-container {
+    grid-template-columns: 1fr;
+  }
+
+  .add-point-btn {
+    width: 40%;
+  }
+  
+  .preview-image {
+    width: 100%; 
+  }
+}
+@media (max-width: 1024px) {
+  .general-form-card {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .fields-container {
+    grid-template-columns: 1fr;
+  }
+
+  .add-point-btn {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title,
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .upload-box {
+    height: auto;
+    padding: 16px;
+  }
+
+  .upload-text {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .add-point-btn {
+    width: 60%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .upload-mode-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .upload-mode-toggle button {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .general-form-card {
+    padding: 16px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .upload-text {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .add-point-btn {
+    width: 100%;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&family=Playwrite+HU:wght@100..400&display=swap');
+
+.admin-profile-container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.role-select-wrapper .custom-select__control {
+    text-align: start;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-height: 40px;
+    padding: 2px 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    background-color: #dec9d042;
+}
+
+.role-select-wrapper .custom-select__placeholder {
+    color: #204e517f;
+}
+
+.role-select-wrapper .custom-select__menu {
+    z-index: 10;
+}
+
+.role-select-wrapper .custom-select__control--is-focused {
+    border-color: #ccc !important;
+    box-shadow: none !important;
+}
+
+
+.role-select-wrapper .custom-select__option {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.role-select-wrapper .custom-select__option--is-focused {
+    background-color: transparent !important;
+    color: #000000 !important;
+    font-size: 1.2rem;
+}
+
+.role-select-wrapper .custom-select__option--is-selected {
+    background-color: #d1e7e760 !important;
+    color: #204e51;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(32, 78, 81, 0.3);
+    transform: translateY(-3px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 10;
+    position: relative;
+}
