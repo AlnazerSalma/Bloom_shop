@@ -4,7 +4,7 @@ import AdminLayout from "../admin/layouts/AdminLayout.jsx";
 import AdminLoginLayout from "../admin/layouts/AdminLoginLayout";
 import AdminRedirect from "../admin/layouts/AdminRedirect";
 import ProtectedRoute from './ProtectedRoute.tsx'; 
-import Home from "../pages/HomePage.jsx";
+import Home from "../pages/HomePage.js";
 
 // Public Pages
 const Cart = lazy(() => import("../pages/CartPage.jsx"));

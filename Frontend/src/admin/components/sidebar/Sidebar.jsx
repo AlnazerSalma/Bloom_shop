@@ -16,7 +16,7 @@ import { IoSettingsOutline, IoHomeOutline } from "react-icons/io5";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import "./Sidebar.css";
-import logo from "../../../assets/image/brand.png";
+import logo from "../../../assets/image/bag.png";
 import useIsArabic from "../../../hook/useIsArabic";
 import { logout } from "../../utils/authUtils";
 

@@ -21,12 +21,15 @@
   "contactSupport": "Contact Support",
   "returns": "Returns",
   "shippingInfo": "Shipping Info",
-   "discoverHome": "Discover Home",
+  "discoverHome": "Discover Home",
   "exploreShop": "Explore Shop",
   "favoriteWishlist": "Your Favorites",
   "yourCart": "Your Cart",
   "getInTouch": "Get in Touch",
   "companyDescription": "Bloom brings you the latest trends and timeless styles. Shop effortlessly, look amazing, and let your clothes reflect your personality.",
+  "homePage": {
+    "shopNow": "Shop Now"
+  },
   "admin": {
     "title": "Al-hasad",
     "subtitle": "Admin Panel",
