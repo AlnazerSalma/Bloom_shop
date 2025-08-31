@@ -118,8 +118,10 @@
 
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
-
   }
+  .top-category {
+  margin-bottom: 0px;
+}
 }
 
 @media (max-width: 640px) {
