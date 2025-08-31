@@ -5,13 +5,14 @@ interface ShopButtonProps {
   label: string;
   onClick?: () => void;
   width?: string | number;
+  margin?: string;
 }
 
-const ShopButton: React.FC<ShopButtonProps> = ({ label, onClick, width }) => {
+const ShopButton: React.FC<ShopButtonProps> = ({ label, onClick, width, margin }) => {
   return (
     <button
       className="shop-button"
-      style={{ width: width || "fit-content" }}
+      style={{ width: width || "fit-content", margin }}
       onClick={onClick}
     >
       {label}
@@ -20,4 +21,3 @@ const ShopButton: React.FC<ShopButtonProps> = ({ label, onClick, width }) => {
 };
 
 export default ShopButton;
-

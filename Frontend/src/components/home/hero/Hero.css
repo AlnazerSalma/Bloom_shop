@@ -18,7 +18,6 @@
     position: absolute;
     top: -50%;
     right: 0;
-    /* Always on the right */
     border-radius: 30px;
     transform: rotate(45deg);
     z-index: 0;
@@ -38,7 +37,6 @@
     width: 100%;
 }
 
-/* Columns stay fixed: text left, image right */
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

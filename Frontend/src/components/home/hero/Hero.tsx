@@ -10,22 +10,22 @@ import ShopButton from "../../buttons/shop_button/ShopButton";
 import "./Hero.css";
 
 const Hero: React.FC = () => {
-    const { t } = useTranslation();
-    const isArabic = useIsArabic();
+  const { t } = useTranslation();
+  const isArabic = useIsArabic();
 
-    const settings = {
-        dots: false,
-        arrows: false,
-        infinite: true,
-        speed: 800,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        cssEase: "ease-in-out",
-        pauseOnHover: false,
-        pauseOnFocus: true,
-        rtl: isArabic,
-    };
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 800,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    cssEase: "ease-in-out",
+    pauseOnHover: false,
+    pauseOnFocus: true,
+    rtl: isArabic,
+  };
 
   return (
     <div className={`hero ${isArabic ? "rtl" : ""}`}>
@@ -43,7 +43,11 @@ const Hero: React.FC = () => {
                   <p className="hero-desc">
                     {isArabic ? data.description.ar : data.description.en}
                   </p>
-                 <ShopButton label={t("homePage.shopNow")} />
+                  <ShopButton
+                    label={t("homePage.shopNow")}
+                    margin="20px 0 0 30px"
+                    onClick={() => console.log("Clicked")}
+                  />
                 </div>
 
                 <div className="hero-img-wrapper">
