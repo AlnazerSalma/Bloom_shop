@@ -1,0 +1,17 @@
+.star-rating {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.star-rating.rtl {
+    flex-direction: row-reverse;
+}
+
+.star-active {
+    color: #D3B50CFF;
+}
+
+.star-inactive {
+    color: #e5e7eb;
+}

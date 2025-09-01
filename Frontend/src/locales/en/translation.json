@@ -34,6 +34,11 @@
     "description": "Explore our wide range of categories designed to fit everyone’s lifestyle.",
     "buttonText": "Explore"
   },
+  "customerFeedback": {
+    "subtitle": "What our customers are saying",
+    "title": "Customer Feedback",
+    "description": "Real stories from our happy customers about their shopping experience."
+  },
   "admin": {
     "title": "Al-hasad",
     "subtitle": "Admin Panel",

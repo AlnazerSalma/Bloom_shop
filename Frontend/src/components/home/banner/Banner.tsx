@@ -1,14 +1,12 @@
 import React from "react";
 import BannerImg from "../../../assets/image/home/banner/shopping.avif";
 import { bannerData } from "../../../assets/data/bannerData";
-import "./Banner.css";
 import useIsArabic from "../../../hook/useIsArabic";
-import useLanguageDirection from "../../../hook/useLanguageDirection";
+import "./Banner.css";
+
 
 const Banner: React.FC = () => {
   const isArabic = useIsArabic();
-  useLanguageDirection();
-
   const lang = isArabic ? "ar" : "en";
 
   return (

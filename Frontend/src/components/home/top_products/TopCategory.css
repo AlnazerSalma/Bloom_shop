@@ -3,30 +3,6 @@
   margin-bottom: 50px;
 }
 
-.header {
-  text-align: start;
-  margin-bottom: 120px;
-}
-
-.header h2 {
-  font-size: 1.4rem;
-  color: #913a57;
-  margin: 0;
-  font-weight: bold;
-}
-
-.header h1 {
-  font-size: 3.5rem;
-  color: black;
-  font-weight: bold;
-  margin: 0.5rem 0;
-}
-
-.header p {
-  font-size: 1.2rem;
-  color: #36454F;
-  margin-top: 0.5rem;
-}
 
 .category-grid {
   display: grid;
@@ -104,11 +80,6 @@
   display: flex;
   justify-content: center;
   margin: 10px 0;
-}
-
-.product-stars svg {
-  margin: 0 2px;
-  font-size: 1rem;
 }
 
 @media (max-width: 1024px) {

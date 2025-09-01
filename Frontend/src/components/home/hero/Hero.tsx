@@ -12,12 +12,14 @@ import "./Hero.css";
 const Hero: React.FC = () => {
   const { t } = useTranslation();
   const isArabic = useIsArabic();
+  const lang = isArabic ? "ar" : "en";
 
-  const settings = {
+  const HeroSettings = {
     dots: false,
     arrows: false,
     infinite: true,
     speed: 800,
+    slidesToShow: 1, 
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
@@ -32,16 +34,16 @@ const Hero: React.FC = () => {
       <div className="hero-bg"></div>
 
       <div className="hero-container">
-        <Slider {...settings}>
+        <Slider {...HeroSettings}>
           {ImageList.map((data: Slide) => (
             <div key={data.id} className="hero-slide">
               <div className="hero-grid">
                 <div className="hero-text">
                   <h1 className="hero-title">
-                    {isArabic ? data.title.ar : data.title.en}
+                    {data.title[lang]}
                   </h1>
                   <p className="hero-desc">
-                    {isArabic ? data.description.ar : data.description.en}
+                    {data.description[lang]}
                   </p>
                   <ShopButton
                     label={t("homePage.shopNow")}
