@@ -9,13 +9,13 @@ import {
   FaMobileAlt,
 } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import FooterImage from "../assets/image/bag.png";
-import Image1 from "../assets/image/footer/mastercard.jpg";
-import Image2 from "../assets/image/footer/paypal.png";
-import Image3 from "../assets/image/footer/stripe.png";
-import Image4 from "../assets/image/footer/Visa.png";
-import "../style/components/Footer.css";
-import { useLanguageDirection } from "../hook/useLanguageDirection";
+import FooterImage from "../../assets/image/bag.png";
+import Image1 from "../../assets/image/footer/mastercard.jpg";
+import Image2 from "../../assets/image/footer/paypal.png";
+import Image3 from "../../assets/image/footer/stripe.png";
+import Image4 from "../../assets/image/footer/Visa.png";
+import "../../style/components/Footer.css";
+import { useLanguageDirection } from "../../hook/useLanguageDirection";
 
 function Footer() {
   const { t, i18n } = useTranslation();

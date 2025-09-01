@@ -89,6 +89,34 @@
     font-size: 1.1rem;
   }
 }
+.reveal {
+  opacity: 0;
+  transform: translateY(0) scale(0.8);
+  transition: opacity 5s ease, transform 5s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.show.up {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal.up {
+  transform: translateY(-100px) scale(0.8);
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.reveal.show.down {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal.down {
+  transform: translateY(100px) scale(0.8);
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
 @media screen and (max-width: 768px) {
   .header {
     text-align: center;

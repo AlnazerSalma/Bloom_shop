@@ -7,6 +7,8 @@ import type { Slide } from "../../../assets/data/heroData";
 import { useTranslation } from "react-i18next";
 import useIsArabic from "../../../hook/useIsArabic";
 import ShopButton from "../../buttons/shop_button/ShopButton";
+import ScrollReveal from "../../reveal_animation/ScrollReveal";
+import RevealGroup from "../../reveal_animation/RevealGroup";
 import "./Hero.css";
 
 const Hero: React.FC = () => {
@@ -19,7 +21,7 @@ const Hero: React.FC = () => {
     arrows: false,
     infinite: true,
     speed: 800,
-    slidesToShow: 1, 
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
@@ -35,30 +37,52 @@ const Hero: React.FC = () => {
 
       <div className="hero-container">
         <Slider {...HeroSettings}>
-          {ImageList.map((data: Slide) => (
+          {ImageList.map((data: Slide, index: number) => (
             <div key={data.id} className="hero-slide">
               <div className="hero-grid">
                 <div className="hero-text">
-                  <h1 className="hero-title">
-                    {data.title[lang]}
-                  </h1>
-                  <p className="hero-desc">
-                    {data.description[lang]}
-                  </p>
-                  <ShopButton
-                    label={t("homePage.shopNow")}
-                    margin="20px 0 0 30px"
-                    onClick={() => console.log("Clicked")}
-                  />
+                  {index === 0 ? (
+                    <RevealGroup type="down" stagger={200}>
+                      <h1 className="hero-title">{data.title[lang]}</h1>
+                      <p className="hero-desc">{data.description[lang]}</p>
+                      <ShopButton
+                        label={t("homePage.shopNow")}
+                        margin="20px 0 0 30px"
+                        onClick={() => console.log("Clicked")}
+                      />
+                    </RevealGroup>
+                  ) : (
+                    <>
+                      <h1 className="hero-title">{data.title[lang]}</h1>
+                      <p className="hero-desc">{data.description[lang]}</p>
+                      <ShopButton
+                        label={t("homePage.shopNow")}
+                        margin="20px 0 0 30px"
+                        onClick={() => console.log("Clicked")}
+                      />
+                    </>
+                  )}
                 </div>
 
-                <div className="hero-img-wrapper">
-                  <img
-                    src={data.img}
-                    alt={isArabic ? data.title.ar : data.title.en}
-                    className="hero-img"
-                  />
-                </div>
+                {index === 0 ? (
+                  <ScrollReveal type="up">
+                    <div className="hero-img-wrapper">
+                      <img
+                        src={data.img}
+                        alt={isArabic ? data.title.ar : data.title.en}
+                        className="hero-img"
+                      />
+                    </div>
+                  </ScrollReveal>
+                ) : (
+                  <div className="hero-img-wrapper">
+                    <img
+                      src={data.img}
+                      alt={isArabic ? data.title.ar : data.title.en}
+                      className="hero-img"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

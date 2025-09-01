@@ -4,6 +4,8 @@ import StarRating from "../../star_rating/StarRating";
 import { feedbackData } from "../../../assets/data/feedbackData";
 import type { Feedback } from "../../../assets/data/feedbackData";
 import useIsArabic from "../../../hook/useIsArabic";
+import ScrollReveal from "../../reveal_animation/ScrollReveal";
+import RevealGroup from "../../reveal_animation/RevealGroup";
 import { useTranslation } from "react-i18next";
 import "./CustomerFeedback.css";
 
@@ -31,12 +33,15 @@ const CustomerFeedback: React.FC = () => {
       <div className="container">
         {/* Header */}
         <div className="header text-left mb-12">
+          <RevealGroup type="down" stagger={200}>
           <h2>{t("customerFeedback.subtitle")}</h2>
           <h1>{t("customerFeedback.title")}</h1>
           <p>{t("customerFeedback.description")} </p>
+          </RevealGroup>
         </div>
 
         {/* Slider */}
+        <ScrollReveal type="up">
         <div data-aos="zoom-in">
           <Slider {...settings}>
             {feedbackData.map((item: Feedback) => (
@@ -72,6 +77,7 @@ const CustomerFeedback: React.FC = () => {
             ))}
           </Slider>
         </div>
+        </ScrollReveal>
       </div>
     </div>
   );

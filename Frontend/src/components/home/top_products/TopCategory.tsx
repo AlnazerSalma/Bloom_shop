@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import useIsArabic from "../../../hook/useIsArabic";
 import ShopButton from "../../buttons/shop_button/ShopButton";
 import StarRating from "../../star_rating/StarRating";
+import ScrollReveal from "../../reveal_animation/ScrollReveal";
+import RevealGroup from "../../reveal_animation/RevealGroup";
 import "./TopCategory.css";
 
 const TopCategory: React.FC = () => {
@@ -17,12 +19,15 @@ const TopCategory: React.FC = () => {
       <div className="container">
         {/* Header */}
         <div className="header" style={{ marginBottom: "120px" }}>
+          <RevealGroup type="down" stagger={200}>
           <h2>{t("homePage.headerSmall")}</h2>
           <h1>{t("homePage.headerBig")}</h1>
           <p>{t("homePage.description")}</p>
+          </RevealGroup>
         </div>
 
         {/* Categories Grid */}
+        <ScrollReveal type="up">
         <div className="category-grid">
           {categories.map((cat: Category) => (
             <div key={cat.id} className="product-card group">
@@ -51,6 +56,7 @@ const TopCategory: React.FC = () => {
             </div>
           ))}
         </div>
+        </ScrollReveal>
       </div>
     </div>
   );
