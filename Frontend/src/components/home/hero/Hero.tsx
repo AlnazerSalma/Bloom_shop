@@ -7,7 +7,6 @@ import type { Slide } from "../../../assets/data/heroData";
 import { useTranslation } from "react-i18next";
 import useIsArabic from "../../../hook/useIsArabic";
 import ShopButton from "../../buttons/shop_button/ShopButton";
-import ScrollReveal from "../../reveal_animation/ScrollReveal";
 import RevealGroup from "../../reveal_animation/RevealGroup";
 import "./Hero.css";
 
@@ -65,7 +64,6 @@ const Hero: React.FC = () => {
                 </div>
 
                 {index === 0 ? (
-                  <ScrollReveal type="up">
                     <div className="hero-img-wrapper">
                       <img
                         src={data.img}
@@ -73,7 +71,6 @@ const Hero: React.FC = () => {
                         className="hero-img"
                       />
                     </div>
-                  </ScrollReveal>
                 ) : (
                   <div className="hero-img-wrapper">
                     <img

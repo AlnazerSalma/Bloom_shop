@@ -1,0 +1,42 @@
+.best-sellers-container {
+  padding: 50px 100px;
+}
+
+.best-sellers-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.best-sellers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .best-sellers-container {
+    padding: 50px 50px;
+  }
+
+  .best-sellers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 790px) {
+  .best-sellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 468px) {
+  .best-sellers-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center; 
+  }
+
+  .best-sellers-container {
+    padding: 30px 20px;
+  }
+}

@@ -16,6 +16,7 @@ import Image3 from "../../assets/image/footer/stripe.png";
 import Image4 from "../../assets/image/footer/Visa.png";
 import "../../style/components/Footer.css";
 import { useLanguageDirection } from "../../hook/useLanguageDirection";
+import ScrollReveal from "../reveal_animation/ScrollReveal";
 
 function Footer() {
   const { t, i18n } = useTranslation();
@@ -42,6 +43,7 @@ function Footer() {
     <>
       <footer className="footer">
         <Container>
+          <ScrollReveal type="up">
           <Row className="footer-top">
             <Col md={3} className="footer-col">
               <h5 className="footer-logo">
@@ -102,6 +104,7 @@ function Footer() {
               </div>
             </Col>
           </Row>
+          </ScrollReveal>
         </Container>
       </footer>
 

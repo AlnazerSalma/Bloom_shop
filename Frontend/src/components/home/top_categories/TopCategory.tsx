@@ -18,7 +18,7 @@ const TopCategory: React.FC = () => {
     <div className={`top-category ${isArabic ? "rtl" : ""}`}>
       <div className="container">
         {/* Header */}
-        <div className="header" style={{ marginBottom: "120px" }}>
+        <div className="header">
           <RevealGroup type="down" stagger={200}>
           <h2>{t("homePage.headerSmall")}</h2>
           <h1>{t("homePage.headerBig")}</h1>
@@ -30,16 +30,16 @@ const TopCategory: React.FC = () => {
         <ScrollReveal type="up">
         <div className="category-grid">
           {categories.map((cat: Category) => (
-            <div key={cat.id} className="product-card group">
+            <div key={cat.id} className="category-card group">
               <div className="image-section">
                 <img
                   src={cat.img}
                   alt={cat.title[lang]}
-                  className="product-img"
+                  className="category-img"
                 />
               </div>
               <div className="card-content">
-                <div className="product-stars">
+                <div className="category-stars">
                   <StarRating
                     rating={cat.rating}
                     size={16}
@@ -47,11 +47,11 @@ const TopCategory: React.FC = () => {
                   />
                 </div>
 
-                <h1 className="product-title">{cat.title[lang]}</h1>
+                <h1 className="category-title">{cat.title[lang]}</h1>
 
-                <p className="product-description">{cat.description[lang]}</p>
+                <p className="category-description">{cat.description[lang]}</p>
 
-                <ShopButton label={t("homePage.buttonText")} />
+                <ShopButton label={t("homePage.buttonText")} padding="9px 25px"/>
               </div>
             </div>
           ))}
