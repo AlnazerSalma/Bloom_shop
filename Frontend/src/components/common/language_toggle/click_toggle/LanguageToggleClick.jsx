@@ -1,8 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { FaGlobe } from "react-icons/fa";
-import useIsArabic from "../../../hook/useIsArabic";
-import { useLanguageDirection } from "../../../hook/useLanguageDirection";
+import useIsArabic from "../../../../hook/useIsArabic";
+import { useLanguageDirection } from "../../../../hook/useLanguageDirection";
 import "./LanguageToggleClick.css";
 
 const AdminLanguageToggle = () => {

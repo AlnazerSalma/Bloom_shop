@@ -1,9 +1,9 @@
 import React from "react";
-import ProductCard from "../../card/product_card/ProductCard";
+import ProductCard from "../../common/card/product_card/ProductCard";
 import { mockProducts } from "../../../assets/data/mock_data/mockProducts";
 import type { Product } from "../../../assets/data/mock_data/mockProducts";
-import RevealGroup from "../../reveal_animation/RevealGroup";
-import ScrollReveal from "../../reveal_animation/ScrollReveal";
+import RevealGroup from "../../common/reveal_animation/RevealGroup";
+import ScrollReveal from "../../common/reveal_animation/ScrollReveal";
 import { useTranslation } from "react-i18next";
 import "./BestSellers.css";
 const getRandomProducts = (products: Product[], count: number) => {

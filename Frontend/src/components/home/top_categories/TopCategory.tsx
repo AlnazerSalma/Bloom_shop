@@ -3,10 +3,10 @@ import { categories } from "../../../assets/data/categoryData";
 import type { Category } from "../../../assets/data/categoryData";
 import { useTranslation } from "react-i18next";
 import useIsArabic from "../../../hook/useIsArabic";
-import ShopButton from "../../buttons/shop_button/ShopButton";
-import StarRating from "../../star_rating/StarRating";
-import ScrollReveal from "../../reveal_animation/ScrollReveal";
-import RevealGroup from "../../reveal_animation/RevealGroup";
+import ShopButton from "../../common/buttons/shop_button/ShopButton";
+import StarRating from "../../common/star_rating/StarRating";
+import ScrollReveal from "../../common/reveal_animation/ScrollReveal";
+import RevealGroup from "../../common/reveal_animation/RevealGroup";
 import "./TopCategory.css";
 
 const TopCategory: React.FC = () => {

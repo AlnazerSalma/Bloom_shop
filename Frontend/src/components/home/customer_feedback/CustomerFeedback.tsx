@@ -1,11 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
-import StarRating from "../../star_rating/StarRating";
+import StarRating from "../../common/star_rating/StarRating";
 import { feedbackData } from "../../../assets/data/feedbackData";
 import type { Feedback } from "../../../assets/data/feedbackData";
 import useIsArabic from "../../../hook/useIsArabic";
-import ScrollReveal from "../../reveal_animation/ScrollReveal";
-import RevealGroup from "../../reveal_animation/RevealGroup";
+import ScrollReveal from "../../common/reveal_animation/ScrollReveal";
+import RevealGroup from "../../common/reveal_animation/RevealGroup";
 import { useTranslation } from "react-i18next";
 import "./CustomerFeedback.css";
 

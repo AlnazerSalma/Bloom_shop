@@ -6,8 +6,8 @@ import { ImageList } from "../../../assets/data/heroData";
 import type { Slide } from "../../../assets/data/heroData";
 import { useTranslation } from "react-i18next";
 import useIsArabic from "../../../hook/useIsArabic";
-import ShopButton from "../../buttons/shop_button/ShopButton";
-import RevealGroup from "../../reveal_animation/RevealGroup";
+import ShopButton from "../../common/buttons/shop_button/ShopButton";
+import RevealGroup from "../../common/reveal_animation/RevealGroup";
 import "./Hero.css";
 
 const Hero: React.FC = () => {

@@ -16,7 +16,7 @@ import Image3 from "../../assets/image/footer/stripe.png";
 import Image4 from "../../assets/image/footer/Visa.png";
 import "../../style/components/Footer.css";
 import { useLanguageDirection } from "../../hook/useLanguageDirection";
-import ScrollReveal from "../reveal_animation/ScrollReveal";
+import ScrollReveal from "./reveal_animation/ScrollReveal";
 
 function Footer() {
   const { t, i18n } = useTranslation();

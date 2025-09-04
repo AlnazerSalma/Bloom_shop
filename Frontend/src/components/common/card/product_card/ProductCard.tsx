@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import useIsArabic from "../../../hook/useIsArabic";
+import useIsArabic from "../../../../hook/useIsArabic";
 import StarRating from "../../star_rating/StarRating";
 import ShopButton from "../../buttons/shop_button/ShopButton";
 import "./ProductCard.css";

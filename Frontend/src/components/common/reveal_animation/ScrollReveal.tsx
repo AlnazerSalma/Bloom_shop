@@ -1,5 +1,5 @@
 import React from "react";
-import useScrollReveal from "../../hook/useScrollReveal";
+import useScrollReveal from "../../../hook/useScrollReveal";
 
 interface Props {
   type?: "up" | "down";
