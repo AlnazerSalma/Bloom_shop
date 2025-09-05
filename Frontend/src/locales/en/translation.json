@@ -45,6 +45,22 @@
     "bestSellers": "Best Sellers",
     "description":"Discover our most popular products that customers love and trust."
   },
+  "productPage": {
+    "size": "Size",
+    "productDetails": "Product Details",
+    "category": "Category",
+    "brand": "Brand",
+    "material": "Material",
+    "more": "▼ More",
+    "less": "▲ Less",
+    "buyNow": "Buy Now",
+    "addToCart": "Add to Cart",
+    "relatedProducts": {
+      "subtitle": "Recommended for you",
+      "title": "Related Products",
+      "description": "Discover our products that you may like, carefully selected based on your interests and preferences."
+    }
+  },
   "admin": {
     "title": "Al-hasad",
     "subtitle": "Admin Panel",

@@ -11,7 +11,7 @@ const Cart = lazy(() => import("../pages/CartPage.jsx"));
 const Wishlist = lazy(() => import("../pages/WishlistPage.jsx"));
 const Shop = lazy(() => import("../pages/ShopePage.jsx"));
 const ContactUs = lazy(() => import("../pages/ContactUsPage.jsx"));
-const Products = lazy(() => import("../pages/ProductsPage.jsx"));
+const Product = lazy(() => import("../pages/ProductsPage.js"));
 const AboutUs = lazy(() => import("../pages/AboutUsPage.jsx"));
 const Blog = lazy(() => import("../pages/BlogPage.jsx"));
 // Admin Pages
@@ -35,7 +35,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contactUs" element={<ContactUs />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
 
