@@ -15,6 +15,11 @@ import heels1 from "../../image/products/heels.png";
 import heels2 from "../../image/products/heels1.png";
 import heels3 from "../../image/products/heels2.png";
 import heels4 from "../../image/products/heels3.png";
+import BabyGirls from "../../image/products/BabyGirls.png";
+import BabyGirls1 from "../../image/products/BabyGirls1.png";
+import BabyGirls2 from "../../image/products/BabyGirls2.png";
+import BabyGirls3 from "../../image/products/BabyGirls3.png";
+import BabyGirls4 from "../../image/products/BabyGirls4.png";
 export interface Product {
   id: string;
   name: {
@@ -112,28 +117,33 @@ export const mockProducts: Product[] = [
   },
   {
     id: "5",
-    name: { en: "Men's Sneakers", ar: "حذاء رياضي رجالي" },
+    name: { en: "Men's Fashion Auto-Lock Black Belt", ar: "حزام رجالي أسود" },
     desc: {
-      en: "Comfortable sneakers for everyday wear.",
-      ar: "أحذية رياضية مريحة للاستخدام اليومي.",
+      en: "A premium auto-lock belt designed for modern men, combining style and durability.",
+      ar: "حزام فاخر أوتوماتيك مصمم للرجل العصري يجمع بين الأناقة والمتانة.",
     },
-    price: 70,
-    rate: 4.7,
+    price: 45,
+    rate: 4.6,
     images: [
-      "https://i.pinimg.com/736x/88/bc/07/88bc07c469064b061e0c1beaf42cfe5f.jpg",
+      "https://aicdn.speedsize.com/0968b74d-3121-4862-ada1-18c855e99f74/storage.yandexcloud.net/cdn-prod.viled.kz/v3/original/257504zKCQc.jpg?speedsize=w_782",
+      "https://aicdn.speedsize.com/0968b74d-3121-4862-ada1-18c855e99f74/storage.yandexcloud.net/cdn-prod.viled.kz/v3/original/257504j9RpR.jpeg?speedsize=w_782",
     ],
     category: "men",
-    size: ["40", "41", "42", "43", "44", "45"],
-    brand: { en: "Nike", ar: "نايك" },
-    material: { en: "Mesh & Rubber", ar: "شبك ومطاط" },
+    size: ["One Size"],
+    brand: { en: "Gucci", ar: "غوتشي" },
+    material: {
+      en: "Genuine Leather & Metal Buckle",
+      ar: "جلد أصلي ومشبك معدني",
+    },
   },
+
   // ---- Women ----
   {
     id: "6",
     name: { en: "Summer Mini Dress", ar: "فستان صيفي قصير" },
     desc: {
       en: "Embrace the essence of summer with the Elenzga Women's Backless Bowknot Mini Dress. Crafted from lightweight, breathable fabric, this dress ensures comfort during warm days. Its intricate floral embroidery adds a touch of femininity, while the open back with a bowknot detail offers a playful and elegant flair. Perfect for beach outings, garden parties, or casual gatherings, this dress combines style and comfort effortlessly.",
-      ar: "احتضني روح الصيف مع فستان إلينزغا القصير النسائي المكشوف الظهر مع عقدة. مصنوع من قماش خفيف الوزن وقابل للتهوية، يضمن هذا الفستان الراحة خلال الأيام الحارة. تضيف التطريزات الزهرية الدقيقة لمسة من الأنوثة، بينما يوفر الجزء المكشوف من الظهر مع عقدة لمسة مرحة وأنيقة. مثالي للنزهات على الشاطئ، حفلات الحدائق، أو التجمعات غير الرسمية، يجمع هذا الفستان بين الأناقة والراحة بسهولة."
+      ar: "احتضني روح الصيف مع فستان إلينزغا القصير النسائي المكشوف الظهر مع عقدة. مصنوع من قماش خفيف الوزن وقابل للتهوية، يضمن هذا الفستان الراحة خلال الأيام الحارة. تضيف التطريزات الزهرية الدقيقة لمسة من الأنوثة، بينما يوفر الجزء المكشوف من الظهر مع عقدة لمسة مرحة وأنيقة. مثالي للنزهات على الشاطئ، حفلات الحدائق، أو التجمعات غير الرسمية، يجمع هذا الفستان بين الأناقة والراحة بسهولة.",
     },
     price: 300,
     discount: 10,
@@ -162,20 +172,26 @@ export const mockProducts: Product[] = [
   },
   {
     id: "8",
-    name: { en: "Women's Sandals", ar: "صندل نسائي" },
-    desc: {
-      en: "Comfortable sandals for summer days.",
-      ar: "صنادل مريحة لأيام الصيف.",
+    name: {
+      en: "Prada sunglasses with the iconic metal plaque",
+      ar: "نظارات شمسية نسائية برادا مع اللوحة المعدنية الأيقونية",
     },
-    price: 35,
-    rate: 3.5,
+    desc: {
+      en: "Elegant Prada oversized sunglasses with full UV protection, crafted for luxury and daily elegance.",
+      ar: "نظارات شمسية برادا أنيقة كبيرة الحجم مع حماية كاملة من الأشعة فوق البنفسجية، مصممة للفخامة والأناقة اليومية.",
+    },
+    price: 280,
+    rate: 4.9,
     images: [
-      "https://i.etsystatic.com/7931677/r/il/e7ce9d/4823922393/il_570xN.4823922393_gn7h.jpg",
+      "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRB15/E16KFE731/SPRB15_E16K_FE731_C_051_SLF.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRB15/E16KFE731/SPRB15_E16K_FE731_C_051_MDL.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRB15/E16KFE731/SPRB15_E16K_FE731_C_051_SLR.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
+      "https://www.prada.com/content/dam/pradabkg_products/S/SPR/SPRB15/E16KFE731/SPRB15_E16K_FE731_C_051_SLS.jpg/_jcr_content/renditions/cq5dam.web.hebebed.2000.2000.jpg",
     ],
     category: "women",
-    size: ["36", "37", "38", "39"],
-    brand: { en: "Aldo", ar: "الدو" },
-    material: { en: "Synthetic Leather", ar: "جلد صناعي" },
+    size: ["One Size"],
+    brand: { en: "Prada", ar: "برادا" },
+    material: { en: "Acetate & Metal", ar: "أسيتات ومعدن" },
   },
   {
     id: "9",
@@ -196,22 +212,24 @@ export const mockProducts: Product[] = [
   },
   {
     id: "10",
-    name: { en: "Women's Sneakers", ar: "حذاء رياضي نسائي" },
+    name: { en: "Women's Short Jeans", ar: "جينز نسائي قصير" },
     desc: {
-      en: "Trendy sneakers for everyday wear.",
-      ar: "أحذية رياضية عصرية للاستخدام اليومي.",
+      en: "Trendy and comfortable short jeans perfect for casual summer outings.",
+      ar: "جينز نسائي قصير عصري ومريح مثالي للخروج الصيفي اليومي.",
     },
-    price: 65,
-    rate: 4,
+    price: 55,
+    rate: 4.5,
     images: [
-      "https://cdn.doduae.com/image/cache/catalog/products/168323/168323_5285116041338_0-800x800.webp",
+      "https://static.zara.net/assets/public/e2b4/196f/a08544e8affb/e0a6df1305dc/08727002400-p/08727002400-p.jpg?ts=1753372458769&w=1024",
+      "https://static.zara.net/assets/public/77c9/f6b4/649c4a6f87e6/b71fc1a2066e/08727002400-a1/08727002400-a1.jpg?ts=1753372459158&w=1125",
+      "https://static.zara.net/assets/public/f740/5894/463b436f99f3/b986e6a32530/08727002400-a2/08727002400-a2.jpg?ts=1753372458830&w=750",
+      "https://static.zara.net/assets/public/afb2/1524/196c4d93ac62/4e0a0a19517d/08727002400-e1/08727002400-e1.jpg?ts=1743697691516&w=750",
     ],
     category: "women",
-    size: ["36", "37", "38", "39", "40"],
-    brand: { en: "Adidas", ar: "أديداس" },
-    material: { en: "Mesh & Rubber", ar: "شبك ومطاط" },
+    size: ["XS", "S", "M", "L", "XL"],
+    brand: { en: "Zara", ar: "زارا" },
+    material: { en: "Denim (100% Cotton)", ar: "دينيم (قطن ١٠٠٪)" },
   },
-
   // ---- Kids ----
   {
     id: "11",
@@ -263,20 +281,21 @@ export const mockProducts: Product[] = [
   },
   {
     id: "14",
-    name: { en: "Kids Sneakers", ar: "حذاء رياضي للأطفال" },
+    name: {
+      en: "Baby Girls' 2-in-1 Floral Jumpsuit with Headband",
+      ar: "بدلة أطفال للبنات مزخرفة 2 في 1 مع رباط رأس",
+    },
     desc: {
-      en: "Durable sneakers for playtime.",
-      ar: "أحذية رياضية متينة للعب.",
+      en: "Adorable 2-in-1 jumpsuit featuring ribbed and solid patchwork, bow embellishment, and delicate floral prints. Comes with a matching headband, ideal for spring and autumn.",
+      ar: "بدلة أطفال للبنات 2 في 1 رائعة تحتوي على باتشوورك مضلع وصلب، وزينة على شكل قوس، ونقشات زهرية دقيقة. تأتي مع رباط رأس مطابق، مثالية للربيع والخريف.",
     },
     price: 30,
-    rate: 4.8,
-    images: [
-      "https://assets.myntassets.com/f_auto,q_auto:eco,dpr_1.3,w_158,c_limit,fl_progressive/v1/assets/images/30806367/2025/4/2/69aa7243-bea4-4fc1-a3ff-4f14e74365f61743591431129-MiArcus-Unisex-Kids-Striped-PU-Sneakers-6001743591430663-1.jpg",
-    ],
+    rate: 4.6,
+    images: [BabyGirls, BabyGirls1, BabyGirls2, BabyGirls3, BabyGirls4],
     category: "kids",
-    size: ["28", "29", "30", "31"],
-    brand: { en: "Puma", ar: "بوما" },
-    material: { en: "Synthetic & Rubber", ar: "مواد صناعية ومطاط" },
+    size: ["0-3M", "3-6M", "6-12M", "12-18M"],
+    brand: { en: "Little Me", ar: "ليتل مي" },
+    material: { en: "Cotton & Polyester", ar: "قطن وبوليستر" },
   },
   {
     id: "15",
@@ -329,16 +348,25 @@ export const mockProducts: Product[] = [
   },
   {
     id: "18",
-    name: { en: "Flip Flops", ar: "شبشب" },
-    desc: { en: "Comfortable flip flops for summer.", ar: "شبشب مريح للصيف." },
+    name: {
+      en: "Women's Slim Point Flip Flops",
+      ar: "شبشب نسائي نحيف",
+    },
+    desc: {
+      en: "Elegant and lightweight slim point flip flops, perfect for casual summer outings. Durable sole and comfortable fit.",
+      ar: "شبشب نسائي نحيف أنيق وخفيف الوزن، مثالي للنزهات الصيفية اليومية. نعل متين وراحة في الارتداء.",
+    },
     price: 15,
     rate: 3.5,
     images: [
-      "https://yellowboxshoes.com/cdn/shop/products/Shopify_ProductPhoto_nolina.jpg?v=1704736248&width=1200",
+      "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-0.png?crop=center&height=450&v=1725759146&width=450",
+      "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-1.png?crop=center&height=450&v=1725759147&width=450",
+      "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-2.png?crop=center&height=450&v=1725759147&width=450",
+      "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-3.png?crop=center&height=450&v=1725759147&width=450"
     ],
     category: "footwear",
     size: ["36", "37", "38", "39", "40"],
-    brand: { en: "Crocs", ar: "كروكس" },
+    brand: { en: "Havaianas", ar: "هافاياناس" },
     material: { en: "Rubber & EVA", ar: "مطاط و EVA" },
   },
   {
@@ -351,7 +379,11 @@ export const mockProducts: Product[] = [
     price: 120,
     rate: 4.8,
     images: [
-      "https://cdn.runrepeat.com/storage/gallery/buying_guide_primary/43/best-lightweight-hiking-boots-20020534-960.jpg",
+      "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462322/TB0A6BNNEO8-HERO/Mens-Mt-Maddsen-Hiking-Boot.png",
+      "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462321/TB0A6BNNEO8-ALT2/Mens-Mt-Maddsen-Hiking-Boot.png",
+      "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462320/TB0A6BNNEO8-ALT3/Mens-Mt-Maddsen-Hiking-Boot.png",
+      "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462324/TB0A6BNNEO8-ALT7/Mens-Mt-Maddsen-Hiking-Boot.png",
+      "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462321/TB0A6BNNEO8-ALT5/Mens-Mt-Maddsen-Hiking-Boot.png"
     ],
     category: "footwear",
     size: ["40", "41", "42", "43", "44"],
@@ -374,5 +406,56 @@ export const mockProducts: Product[] = [
     size: ["40", "41", "42", "43"],
     brand: { en: "Gucci", ar: "غوتشي" },
     material: { en: "Suede Leather", ar: "جلد شامواه" },
+  },
+  {
+    id: "21",
+    name: { en: "Women's Sandals", ar: "صندل نسائي" },
+    desc: {
+      en: "Comfortable sandals for summer days.",
+      ar: "صنادل مريحة لأيام الصيف.",
+    },
+    price: 35,
+    rate: 3.5,
+    images: [
+      "https://i.etsystatic.com/7931677/r/il/e7ce9d/4823922393/il_570xN.4823922393_gn7h.jpg",
+    ],
+    category: "footwear",
+    size: ["36", "37", "38", "39"],
+    brand: { en: "Aldo", ar: "الدو" },
+    material: { en: "Synthetic Leather", ar: "جلد صناعي" },
+  },
+  {
+    id: "22",
+    name: { en: "Women's Sneakers", ar: "حذاء رياضي نسائي" },
+    desc: {
+      en: "Trendy sneakers for everyday wear.",
+      ar: "أحذية رياضية عصرية للاستخدام اليومي.",
+    },
+    price: 65,
+    rate: 4,
+    images: [
+      "https://cdn.doduae.com/image/cache/catalog/products/168323/168323_5285116041338_0-800x800.webp",
+    ],
+    category: "footwear",
+    size: ["36", "37", "38", "39", "40"],
+    brand: { en: "Adidas", ar: "أديداس" },
+    material: { en: "Mesh & Rubber", ar: "شبك ومطاط" },
+  },
+  {
+    id: "22",
+    name: { en: "Kids Sneakers", ar: "حذاء رياضي للأطفال" },
+    desc: {
+      en: "Durable sneakers for playtime.",
+      ar: "أحذية رياضية متينة للعب.",
+    },
+    price: 30,
+    rate: 4.8,
+    images: [
+      "https://assets.myntassets.com/f_auto,q_auto:eco,dpr_1.3,w_158,c_limit,fl_progressive/v1/assets/images/30806367/2025/4/2/69aa7243-bea4-4fc1-a3ff-4f14e74365f61743591431129-MiArcus-Unisex-Kids-Striped-PU-Sneakers-6001743591430663-1.jpg",
+    ],
+    category: "footwear",
+    size: ["28", "29", "30", "31"],
+    brand: { en: "Puma", ar: "بوما" },
+    material: { en: "Synthetic & Rubber", ar: "مواد صناعية ومطاط" },
   },
 ];

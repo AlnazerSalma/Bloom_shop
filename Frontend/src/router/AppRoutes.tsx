@@ -4,16 +4,17 @@ import AdminLayout from "../admin/layouts/AdminLayout.jsx";
 import AdminLoginLayout from "../admin/layouts/AdminLoginLayout";
 import AdminRedirect from "../admin/layouts/AdminRedirect";
 import ProtectedRoute from './ProtectedRoute.tsx'; 
-import Home from "../pages/HomePage.js";
+import Home from "../pages/HomePage.tsx";
 
 // Public Pages
 const Cart = lazy(() => import("../pages/CartPage.jsx"));
 const Wishlist = lazy(() => import("../pages/WishlistPage.jsx"));
 const Shop = lazy(() => import("../pages/ShopePage.jsx"));
 const ContactUs = lazy(() => import("../pages/ContactUsPage.jsx"));
-const Product = lazy(() => import("../pages/ProductsPage.js"));
+const Product = lazy(() => import("../pages/ProductsPage.tsx"));
 const AboutUs = lazy(() => import("../pages/AboutUsPage.jsx"));
 const Blog = lazy(() => import("../pages/BlogPage.jsx"));
+const CategoryProducts= lazy(() => import("../pages/CategoriesPage.tsx"));
 // Admin Pages
 const AdminLogin = lazy(() => import("../admin/pages/AdminLogin.jsx"));
 const Dashboard = lazy(() => import("../admin/pages/Dashboard.jsx"));
@@ -38,6 +39,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/product/:id" element={<Product />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/category/:category" element={<CategoryProducts />} />
 
       <Route path="/admin">
       <Route index element={<AdminRedirect />} />

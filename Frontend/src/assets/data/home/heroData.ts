@@ -1,6 +1,6 @@
-import men from "../image/home/hero/men.png";
-import women from "../image/home/hero/women.png";
-import sale from "../image/home/hero/sale.png";
+import men from "../../image/home/hero/men.png";
+import women from "../../image/home/hero/women.png";
+import sale from "../../image/home/hero/sale.png";
 
 export interface Slide {
   id: number;

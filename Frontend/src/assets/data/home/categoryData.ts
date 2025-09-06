@@ -1,7 +1,7 @@
-import Men from "../image/home/category/men.png";
-import Women from "../image/home/category/women.png";
-import Kids from "../image/home/category/Kids.png";
-import Footwear from "../image/home/category/footwear.png";
+import Men from "../../image/home/category/men.png";
+import Women from "../../image/home/category/women.png";
+import Kids from "../../image/home/category/Kids.png";
+import Footwear from "../../image/home/category/footwear.png";
 
 export interface Category {
   id: number;
