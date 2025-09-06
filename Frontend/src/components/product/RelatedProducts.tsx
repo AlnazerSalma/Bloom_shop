@@ -1,13 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import ProductCard from "../common/card/product_card/ProductCard";
-import type { Product } from "../../assets/data/mock_data/mockProducts";
+import type { Product } from "../../types/productType";
 import { mockProducts } from "../../assets/data/mock_data/mockProducts";
 import "./product.css";
 
 interface RelatedProductsProps {
   products: Product[];
-  maxProducts?: number; // allow controlling how many products to show
+  maxProducts?: number;
 }
 
 const RelatedProducts: React.FC<RelatedProductsProps> = ({

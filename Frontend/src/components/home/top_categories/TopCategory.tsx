@@ -1,6 +1,6 @@
 import React from "react";
 import { categories } from "../../../assets/data/home/categoryData";
-import type { Category } from "../../../assets/data/home/categoryData";
+import type { Category } from "../../../types/CategoryType";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import useIsArabic from "../../../hook/useIsArabic";

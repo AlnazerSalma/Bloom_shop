@@ -11,6 +11,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavBehavior } from "../../hook/useNavBehavior";
 import { useLanguageDirection } from "../../hook/useLanguageDirection";
 import { useClickOutside } from "../../hook/useClickOutside";
+import IconWithBadges from "./IconWithBadges";
 import "../../style/components/Navbar.css";
 
 function NavBar() {
@@ -64,15 +65,16 @@ function NavBar() {
                 <IoIosSearch size={25} />
               </button>
 
-              {/* Wishlist / Love Icon */}
-              <button onClick={() => navigate("/wishlist")}>
-                <IoIosHeartEmpty size={25} />
-              </button>
-
-              {/* Cart Icon */}
-              <button>
-                <IoBagHandleOutline size={25} />
-              </button>
+              <IconWithBadges
+                icon={<IoIosHeartEmpty size={25} />}
+                route="/wishlist"
+                storageKey="wishlist"
+              />
+              <IconWithBadges
+                icon={<IoBagHandleOutline size={25} />}
+                route="/cart"
+                storageKey="cart"
+              />
 
               <LanguageToggleClick />
               {/* Login Button */}

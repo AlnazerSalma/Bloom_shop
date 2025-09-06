@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import useIsArabic from "../../../../hook/useIsArabic";
 import { useImageCarousel } from "../../../../hook/product_card/useImageCarousel";
-import { useWishlist } from "../../../../hook/product_card/useWishlist";
-import type { Product } from "../../../../types/product";
+import { useLocalStorageList } from "../../../../hook/local_storage/useLocalStorageList";
+import type { Product } from "../../../../types/productType";
 import StarRating from "../../star_rating/StarRating";
 import ShopButton from "../../buttons/shop_button/ShopButton";
 import "./ProductCard.css";
@@ -19,20 +19,26 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onFavorite }) => {
   const { t } = useTranslation();
   const isArabic = useIsArabic();
   const lang = isArabic ? "ar" : "en";
+  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   const imageIndex = useImageCarousel(product.images, isHovered);
-  const { isFavorite, toggleFavorite } = useWishlist(product);
-  const navigate = useNavigate();
+  const { exists: isFavorite, toggleItem: toggleFavorite } =
+    useLocalStorageList<Product>(
+      "wishlist",
+      product
+    );
+
 
   const hasDiscount = !!product.discount;
   const discountedPrice = hasDiscount
     ? product.price * (1 - product.discount! / 100)
     : product.price;
 
-    const handleToggleFavorite = () => {
+  const handleToggleFavorite = () => {
     toggleFavorite();
     if (onFavorite) onFavorite(product);
   };
+  
   return (
     <div
       className="product-card"

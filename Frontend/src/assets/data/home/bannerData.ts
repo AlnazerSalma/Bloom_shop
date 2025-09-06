@@ -2,26 +2,27 @@ import { FaMedal, FaShippingFast, FaTags } from "react-icons/fa";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import type { IconType } from "react-icons";
 
-export interface BannerFeature {
+export type BannerFeature = {
   icon: IconType;
   title: {
     en: string;
     ar: string;
   };
   colorClass: "violet" | "orange" | "green" | "yellow";
-}
+};
 
-export interface BannerData {
+export type BannerData = {
   title: {
     en: string;
     ar: string;
   };
+
   description: {
     en: string;
     ar: string;
   };
   features: BannerFeature[];
-}
+};
 
 export const bannerData: BannerData = {
   title: {

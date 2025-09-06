@@ -20,31 +20,7 @@ import BabyGirls1 from "../../image/products/BabyGirls1.png";
 import BabyGirls2 from "../../image/products/BabyGirls2.png";
 import BabyGirls3 from "../../image/products/BabyGirls3.png";
 import BabyGirls4 from "../../image/products/BabyGirls4.png";
-export interface Product {
-  id: string;
-  name: {
-    en: string;
-    ar: string;
-  };
-  desc: {
-    en: string;
-    ar: string;
-  };
-  price: number;
-  discount?: number;
-  rate: number;
-  images: string[];
-  category: "kids" | "men" | "women" | "footwear";
-  size?: string[];
-  brand?: {
-    en: string;
-    ar: string;
-  };
-  material?: {
-    en: string;
-    ar: string;
-  };
-}
+import type { Product } from "../../../types/productType";
 
 export const mockProducts: Product[] = [
   // ---- Men ----
