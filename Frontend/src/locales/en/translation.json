@@ -1,7 +1,13 @@
 {
   "home": "Home",
   "shop": "Shop",
-  "wishlist": "My Wishlist",
+  "wishlist": {
+    "wishlist": "My Wishlist",
+    "headerLine1": "Keep Track of Your Favorite Finds",
+    "headerLine2": "Your Wishlist",
+    "emptyMessage": "Your wishlist is currently empty🥺",
+    "browseMessage": "Check out the items you've saved here"
+  },
   "cart": "My Cart",
   "contactUs": "Contact Us",
   "bloom": "Bloom",
@@ -23,7 +29,6 @@
   "shippingInfo": "Shipping Info",
   "discoverHome": "Discover Home",
   "exploreShop": "Explore Shop",
-  "favoriteWishlist": "Your Favorites",
   "yourCart": "Your Cart",
   "getInTouch": "Get in Touch",
   "noProducts":"No products found",

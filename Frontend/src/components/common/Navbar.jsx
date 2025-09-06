@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import brand from "../../assets/image/bag.png";
 import { IoIosSearch, IoIosHeartEmpty } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageToggleSwitch from "./language_toggle/switch_toggle/LanguageToggleSwitch";
 import LanguageToggleClick from "./language_toggle/click_toggle/LanguageToggleClick";
@@ -17,6 +17,7 @@ function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
   useLanguageDirection(i18n);
   const navColor = useNavBehavior(mobileMenuOpen, setMobileMenuOpen);
   const mobileNavRef = useRef();
@@ -64,7 +65,7 @@ function NavBar() {
               </button>
 
               {/* Wishlist / Love Icon */}
-              <button>
+              <button onClick={() => navigate("/wishlist")}>
                 <IoIosHeartEmpty size={25} />
               </button>
 

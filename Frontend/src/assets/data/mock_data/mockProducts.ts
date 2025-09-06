@@ -164,7 +164,10 @@ export const mockProducts: Product[] = [
     price: 80,
     rate: 5,
     images: [
-      "https://img.kwcdn.com/product/fancy/008e97bb-d2be-4ff3-9598-06d9966d0afe.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-01_1.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-02.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-03_1.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-06_1.jpg"
     ],
     category: "women",
     brand: { en: "Michael Kors", ar: "مايكل كورس" },
