@@ -62,6 +62,7 @@
     "less": "▲ أقل",
     "buyNow": "اشترِ الآن",
     "addToCart": "أضف إلى السلة",
+    "productNotFound": "المنتج غير موجود",
     "relatedProducts": {
       "subtitle": "موصى به لك",
       "title": "المنتجات المتعلقة",

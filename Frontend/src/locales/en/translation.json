@@ -61,6 +61,7 @@
     "less": "▲ Less",
     "buyNow": "Buy Now",
     "addToCart": "Add to Cart",
+    "productNotFound": "Product not found",
     "relatedProducts": {
       "subtitle": "Recommended for you",
       "title": "Related Products",

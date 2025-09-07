@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import brand from "../../assets/image/bag.png";
 import { IoIosSearch, IoIosHeartEmpty } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageToggleSwitch from "./language_toggle/switch_toggle/LanguageToggleSwitch";
 import LanguageToggleClick from "./language_toggle/click_toggle/LanguageToggleClick";
@@ -12,18 +12,38 @@ import { useNavBehavior } from "../../hook/useNavBehavior";
 import { useLanguageDirection } from "../../hook/useLanguageDirection";
 import { useClickOutside } from "../../hook/useClickOutside";
 import IconWithBadges from "./IconWithBadges";
+import MiniCart from "../cart/MiniCart";
+import type { Product } from "../../types/productType";
 import "../../style/components/Navbar.css";
 
-function NavBar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const NavBar: React.FC = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState<Product[]>([]);
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const navigate = useNavigate();
   useLanguageDirection(i18n);
   const navColor = useNavBehavior(mobileMenuOpen, setMobileMenuOpen);
-  const mobileNavRef = useRef();
+  const mobileNavRef = useRef<HTMLDivElement>(null);
   useClickOutside(mobileNavRef, mobileMenuOpen, () => setMobileMenuOpen(false));
   const navItems = ["/", "/shop", "/aboutUs", "/blog", "/contactUs"];
+
+  useEffect(() => {
+    const loadCart = () => {
+      const stored = localStorage.getItem("cart");
+      try {
+        const parsed: Product[] = stored ? JSON.parse(stored) : [];
+        setCartItems(parsed);
+      } catch {
+        setCartItems([]);
+      }
+    };
+
+    loadCart();
+    window.addEventListener("localStorageUpdated", loadCart);
+    return () => window.removeEventListener("localStorageUpdated", loadCart);
+  }, []);
+
   return (
     <div>
       <Navbar
@@ -72,9 +92,16 @@ function NavBar() {
               />
               <IconWithBadges
                 icon={<IoBagHandleOutline size={25} />}
-                route="/cart"
                 storageKey="cart"
-              />
+                onClick={() => setCartOpen(!cartOpen)}
+              >
+                {cartOpen && (
+                  <MiniCart
+                    items={cartItems}
+                    onClose={() => setCartOpen(false)}
+                  />
+                )}
+              </IconWithBadges>
 
               <LanguageToggleClick />
               {/* Login Button */}
@@ -111,7 +138,13 @@ function NavBar() {
             <LanguageToggleSwitch i18n={i18n} />
           </div>
           {navItems.map((path, index) => (
-            <div className="nav-item" key={index} style={{ "--i": index }}>
+            <div
+              className="nav-item"
+              key={index}
+              style={
+                { "--i": index } as React.CSSProperties & { "--i": number }
+              }
+            >
               <Link
                 to={path}
                 className={location.pathname === path ? "active" : ""}
@@ -125,6 +158,6 @@ function NavBar() {
       </Navbar>
     </div>
   );
-}
+};
 
 export default NavBar;

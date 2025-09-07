@@ -1,0 +1,41 @@
+.cart-wrapper {
+    position: relative;
+}
+
+.mini-cart {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.mini-cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mini-cart-item {
+    margin-bottom: 10px;
+}
+
+.mini-cart-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.view-cart-btn {
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}

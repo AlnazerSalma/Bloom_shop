@@ -1,21 +1,24 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React, { useMemo } from "react";
+import type { i18n as I18nType } from "i18next";
 import useIsArabic from "../../../../hook/useIsArabic";
 import { useLanguageDirection } from "../../../../hook/useLanguageDirection";
 import "./LanguageToggleSwitch.css";
 
-function LanguageToggleSwitch(){
-  const { i18n } = useTranslation();
+interface LanguageToggleSwitchProps {
+  i18n: I18nType;
+}
+
+const LanguageToggleSwitch: React.FC<LanguageToggleSwitchProps> = ({ i18n }) => {
   const isArabic = useIsArabic();
   useLanguageDirection(i18n);
 
- const switchId = React.useMemo(
+  const switchId = useMemo(
     () => `languageSwitch-${Math.random().toString(36).substr(2, 9)}`,
     []
   );
 
-  const handleChange = () => {
-    const nextLang = isArabic ? "en" : "ar";
+  const handleChange = (): void => {
+    const nextLang: string = isArabic ? "en" : "ar";
     i18n.changeLanguage(nextLang);
   };
 
@@ -35,6 +38,6 @@ function LanguageToggleSwitch(){
       </label>
     </div>
   );
-}
+};
 
 export default LanguageToggleSwitch;
