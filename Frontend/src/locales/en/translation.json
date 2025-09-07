@@ -68,6 +68,10 @@
       "description": "Discover our products that you may like, carefully selected based on your interests and preferences."
     }
   },
+  "cartPage":{
+    "itemsInCart": "You have {{count}} items in your cart"
+
+  },
   "admin": {
     "title": "Al-hasad",
     "subtitle": "Admin Panel",

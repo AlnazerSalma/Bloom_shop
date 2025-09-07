@@ -10,9 +10,11 @@ import ProductSizes from "../components/product/ProductSizes";
 import ProductInfo from "../components/product/ProductInfo";
 import RelatedProducts from "../components/product/RelatedProducts";
 import RectangularButton from "../components/common/buttons/rectangular_button/RectangularButton";
+import MiniCart from "../components/cart/MiniCart";
 import { useLocalStorageList } from "../hook/local_storage/useLocalStorageList";
 import { useProductPage } from "../hook/useProductPage";
 import type { Product } from "../types/productType";
+import type { CartItem } from "../types/CartItem";
 import "../style/pages/ProductPage.css";
 
 function ProductPage() {
@@ -21,39 +23,86 @@ function ProductPage() {
   const lang = isArabic ? "ar" : "en";
   const { id } = useParams<{ id: string }>();
   const product = mockProducts.find((p) => p.id === id);
-
   const productFallback = product ?? mockProducts[0];
 
-  // Cart hook
-  const { toggleItem: toggleCart } = useLocalStorageList<Product>(
-    "cart",
-    productFallback
-  );
+  const {
+    items: cartItems,
+    // toggleItem: toggleCartItem,
+    removeItem: removeCartItem,
+  } = useLocalStorageList<CartItem>("cart");
 
-  // Wishlist hook
-  const { exists: inWishlist, toggleItem: toggleWishlist } =
-    useLocalStorageList<Product>("wishlist", productFallback);
+  const { items: wishlistItems, toggleItem: toggleWishlist } =
+    useLocalStorageList<Product>("wishlist");
+
+  const inWishlist = wishlistItems.some(
+    (item) => item.id === productFallback.id
+  );
 
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(inWishlist);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [cartOpen, setCartOpen] = useState(false);
 
-  // Sync heart with localStorage
   useEffect(() => {
     setIsFavorite(inWishlist);
   }, [inWishlist]);
 
   const handleToggleFavorite = () => {
-    toggleWishlist();
-    setIsFavorite((prev) => !prev);
+    toggleWishlist(productFallback);
   };
+
+const handleAddToCart = () => {
+  if (productFallback.size && productFallback.size.length > 0 && !selectedSize) {
+    alert(t("productPage.selectSize"));
+    return;
+  }
+
+  const cartItem: CartItem = {
+    ...productFallback,
+    selectedSize: selectedSize ?? undefined,
+    quantity,
+  };
+
+  // Make a copy of current cart
+  const updatedCartItems = [...cartItems];
+
+  // Check if item already exists in cart (same id and size)
+  const existingIndex = updatedCartItems.findIndex(
+    (item) =>
+      item.id === cartItem.id &&
+      (item.selectedSize ?? undefined) === (cartItem.selectedSize ?? undefined)
+  );
+
+  if (existingIndex !== -1) {
+    // Item exists → increase quantity
+    updatedCartItems[existingIndex].quantity += quantity;
+  } else {
+    // Item does not exist → add new
+    updatedCartItems.push(cartItem);
+  }
+
+  // Save updated cart to localStorage and notify NavBar
+  localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+  window.dispatchEvent(new Event("localStorageUpdated"));
+
+  setCartOpen(true);
+
+  console.log(
+    "Added to cart:",
+    cartItem.name[lang],
+    "x",
+    quantity,
+    "Size:",
+    selectedSize
+  );
+};
+
 
   const {
     mainImage,
     setMainImage,
     isLightboxOpen,
     setIsLightboxOpen,
-    selectedSize,
-    setSelectedSize,
     showAllSizes,
     toggleShowAllSizes,
     openLightbox,
@@ -63,7 +112,8 @@ function ProductPage() {
   } = useProductPage(productFallback);
 
   const relatedProducts = mockProducts.filter(
-    (p) => p.category === productFallback.category && p.id !== productFallback.id
+    (p) =>
+      p.category === productFallback.category && p.id !== productFallback.id
   );
 
   if (!product)
@@ -108,7 +158,7 @@ function ProductPage() {
           {product.size && product.size.length > 0 && (
             <ProductSizes
               sizes={product.size}
-              selectedSize={selectedSize!}
+              selectedSize={selectedSize}
               setSelectedSize={setSelectedSize}
               showAllSizes={showAllSizes}
               toggleShowAllSizes={toggleShowAllSizes}
@@ -117,8 +167,8 @@ function ProductPage() {
           )}
 
           <ProductInfo product={product} t={t} lang={lang} />
+
           <div className="product-actions">
-            {/* Quantity Counter */}
             <div className="quantity-counter">
               <button onClick={() => setQuantity((q) => Math.max(1, q - 1))}>
                 -
@@ -127,17 +177,12 @@ function ProductPage() {
               <button onClick={() => setQuantity((q) => q + 1)}>+</button>
             </div>
 
-            {/* Add to Cart */}
             <RectangularButton
               text={t("productPage.addToCart")}
-              className="add-to-cart"
-              onClick={() => {
-                toggleCart();
-                console.log("Added to cart:", product.name, "x", quantity);
-              }}
+              className="default"
+              onClick={handleAddToCart}
             />
 
-            {/* Wishlist Heart */}
             <div
               className={`heart-rect ${isFavorite ? "favorite" : ""}`}
               onClick={handleToggleFavorite}
@@ -151,7 +196,17 @@ function ProductPage() {
           </div>
         </div>
       </div>
+
       <RelatedProducts products={relatedProducts} />
+
+      {cartOpen && (
+        <MiniCart
+          items={cartItems}
+          onClose={() => setCartOpen(false)}
+          onRemove={(id, size) => removeCartItem(id, size)}
+        />
+      )}
+
       {isLightboxOpen && (
         <div className="lightbox" onClick={() => setIsLightboxOpen(false)}>
           {product.images.length > 1 && (

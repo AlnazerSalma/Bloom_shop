@@ -13,13 +13,14 @@ import { useLanguageDirection } from "../../hook/useLanguageDirection";
 import { useClickOutside } from "../../hook/useClickOutside";
 import IconWithBadges from "./IconWithBadges";
 import MiniCart from "../cart/MiniCart";
+import type { CartItem } from "../../types/CartItem";
 import type { Product } from "../../types/productType";
 import "../../style/components/Navbar.css";
 
 const NavBar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const { t, i18n } = useTranslation();
   const location = useLocation();
   useLanguageDirection(i18n);
@@ -32,8 +33,21 @@ const NavBar: React.FC = () => {
     const loadCart = () => {
       const stored = localStorage.getItem("cart");
       try {
-        const parsed: Product[] = stored ? JSON.parse(stored) : [];
-        setCartItems(parsed);
+        const parsed: unknown = stored ? JSON.parse(stored) : [];
+
+        // Map parsed data to CartItem safely
+        const cartItemsWithQuantity: CartItem[] = Array.isArray(parsed)
+          ? parsed.map((p) => {
+              const product = p as Product & Partial<CartItem>;
+              return {
+                ...product,
+                quantity: product.quantity ?? 1,
+                selectedSize: product.selectedSize ?? undefined,
+              };
+            })
+          : [];
+
+        setCartItems(cartItemsWithQuantity);
       } catch {
         setCartItems([]);
       }
@@ -41,9 +55,9 @@ const NavBar: React.FC = () => {
 
     loadCart();
     window.addEventListener("localStorageUpdated", loadCart);
+    
     return () => window.removeEventListener("localStorageUpdated", loadCart);
   }, []);
-
   return (
     <div>
       <Navbar
@@ -99,6 +113,14 @@ const NavBar: React.FC = () => {
                   <MiniCart
                     items={cartItems}
                     onClose={() => setCartOpen(false)}
+                    onRemove={(id) => {
+                      const updated = cartItems.filter(
+                        (item) => item.id !== id
+                      );
+                      setCartItems(updated);
+                      localStorage.setItem("cart", JSON.stringify(updated));
+                      window.dispatchEvent(new Event("localStorageUpdated"));
+                    }}
                   />
                 )}
               </IconWithBadges>

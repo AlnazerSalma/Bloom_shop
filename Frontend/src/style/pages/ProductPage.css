@@ -420,32 +420,6 @@ Lightbox
     width: 100%;
 }
 
-.product-actions .add-to-cart {
-    background-color: #ddd;
-    color: #333;
-    flex: 1;
-    font-size: 1.2rem;
-    font-weight: bold;
-    max-width: 300px;
-}
-
-.product-actions .add-to-cart:hover {
-    background-color: #c5c0c0;
-}
-
-.product-actions .buy-now {
-    background-color: #913a57;
-    color: white;
-    flex: 1;
-    font-size: 1.2rem;
-    font-weight: bold;
-    max-width: 300px;
-}
-
-.product-actions .buy-now:hover {
-    background-color: #b1335f;
-}
-
 @media (max-width: 1300px) {
     .product-container {
         gap: 50px;

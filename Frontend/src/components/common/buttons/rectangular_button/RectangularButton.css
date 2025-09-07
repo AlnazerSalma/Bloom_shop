@@ -6,3 +6,32 @@
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
 }
+
+.btn-rectangular.default {
+    background-color: #ddd;
+    color: #333;
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    max-width: 300px;
+}
+
+.btn-rectangular.default:hover {
+  background: linear-gradient(to right, #660101ce, #b4b4b4);
+  color: white;
+}
+
+
+.btn-rectangular.primary {
+    background-color: #913a57;
+    color: white;
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    max-width: 300px;
+}
+
+.btn-rectangular.primary:hover {
+  background: linear-gradient(to right, #913a57, #c94f7c);
+  color: white;
+}
