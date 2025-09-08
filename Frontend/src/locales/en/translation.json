@@ -69,7 +69,10 @@
     }
   },
   "cartPage":{
-    "itemsInCart": "You have {{count}} items in your cart"
+    "itemsInCart": "You have {{count}} items in your cart",
+    "viewCart" : "View Cart",
+    "subtotal": "Subtotal",
+    "empty": "Your cart is empty"
 
   },
   "admin": {

@@ -70,7 +70,10 @@
     }
   },
   "cartPage":{
-    "itemsInCart": "لديك {{count}}  منتج في سلة التسوق"
+    "itemsInCart": "لديك {{count}}  منتج في سلة التسوق",
+    "viewCart" :"عرض السلة",
+    "subtotal": "المجموع",
+    "empty": "سلتك فارغة"
   },
   "admin": {
     "title": " شركة الحصاد",

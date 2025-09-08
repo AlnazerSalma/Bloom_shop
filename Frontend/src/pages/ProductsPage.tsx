@@ -51,52 +51,56 @@ function ProductPage() {
     toggleWishlist(productFallback);
   };
 
-const handleAddToCart = () => {
-  if (productFallback.size && productFallback.size.length > 0 && !selectedSize) {
-    alert(t("productPage.selectSize"));
-    return;
-  }
+  const handleAddToCart = () => {
+    if (
+      productFallback.size &&
+      productFallback.size.length > 0 &&
+      !selectedSize
+    ) {
+      alert(t("productPage.selectSize"));
+      return;
+    }
 
-  const cartItem: CartItem = {
-    ...productFallback,
-    selectedSize: selectedSize ?? undefined,
-    quantity,
+    const cartItem: CartItem = {
+      ...productFallback,
+      selectedSize: selectedSize ?? undefined,
+      quantity,
+    };
+
+    // Make a copy of current cart
+    const updatedCartItems = [...cartItems];
+
+    // Check if item already exists in cart (same id and size)
+    const existingIndex = updatedCartItems.findIndex(
+      (item) =>
+        item.id === cartItem.id &&
+        (item.selectedSize ?? undefined) ===
+          (cartItem.selectedSize ?? undefined)
+    );
+
+    if (existingIndex !== -1) {
+      // Item exists → increase quantity
+      updatedCartItems[existingIndex].quantity += quantity;
+    } else {
+      // Item does not exist → add new
+      updatedCartItems.push(cartItem);
+    }
+
+    // Save updated cart to localStorage and notify NavBar
+    localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    window.dispatchEvent(new Event("localStorageUpdated"));
+
+    setCartOpen(true);
+
+    console.log(
+      "Added to cart:",
+      cartItem.name[lang],
+      "x",
+      quantity,
+      "Size:",
+      selectedSize
+    );
   };
-
-  // Make a copy of current cart
-  const updatedCartItems = [...cartItems];
-
-  // Check if item already exists in cart (same id and size)
-  const existingIndex = updatedCartItems.findIndex(
-    (item) =>
-      item.id === cartItem.id &&
-      (item.selectedSize ?? undefined) === (cartItem.selectedSize ?? undefined)
-  );
-
-  if (existingIndex !== -1) {
-    // Item exists → increase quantity
-    updatedCartItems[existingIndex].quantity += quantity;
-  } else {
-    // Item does not exist → add new
-    updatedCartItems.push(cartItem);
-  }
-
-  // Save updated cart to localStorage and notify NavBar
-  localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-  window.dispatchEvent(new Event("localStorageUpdated"));
-
-  setCartOpen(true);
-
-  console.log(
-    "Added to cart:",
-    cartItem.name[lang],
-    "x",
-    quantity,
-    "Size:",
-    selectedSize
-  );
-};
-
 
   const {
     mainImage,
@@ -203,7 +207,7 @@ const handleAddToCart = () => {
         <MiniCart
           items={cartItems}
           onClose={() => setCartOpen(false)}
-          onRemove={(id, size) => removeCartItem(id, size)}
+          onRemove={(id) => removeCartItem(id)}
         />
       )}
 
