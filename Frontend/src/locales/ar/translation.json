@@ -72,8 +72,20 @@
   "cartPage":{
     "itemsInCart": "لديك {{count}}  منتج في سلة التسوق",
     "viewCart" :"عرض السلة",
-    "subtotal": "المجموع",
-    "empty": "سلتك فارغة"
+    "subtotal": "المجموع الجزئي",
+    "empty": "سلتك فارغة",
+    "cart": "السلة ",
+    "your": "الخاصة بك",
+    "proceedToCheckout": "إتمام عملية الشراء",
+    "shippingFee": "رسوم الشحن",
+    "tax": "الضريبة (2%)",
+    "total": "المجموع النهائي",
+    "price": "السعر",
+    "quantity": "الكمية",
+    "product": "المنتج",
+    "orderSummary": "ملخص الطلب",
+    "items": "العناصر",
+    "freeShipping": "مجاني"
   },
   "admin": {
     "title": " شركة الحصاد",

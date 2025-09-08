@@ -158,6 +158,7 @@ export const mockProducts: Product[] = [
       "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-06_1.jpg",
     ],
     category: "women",
+    size: ["One Size"],
     brand: { en: "Michael Kors", ar: "مايكل كورس" },
     material: { en: "Leather", ar: "جلد" },
   },

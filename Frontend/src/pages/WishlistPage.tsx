@@ -5,7 +5,7 @@ import type { Product } from "../types/productType";
 import {
   useLocalStorageCount,
 } from "../hook/local_storage/useLocalStorageCount";
-import "../style/pages/wishlist.css";
+import "../style/pages/wishlistPage.css";
 
 const WISHLIST_KEY = "wishlist";
 

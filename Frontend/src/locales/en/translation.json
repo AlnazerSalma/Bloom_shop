@@ -72,7 +72,20 @@
     "itemsInCart": "You have {{count}} items in your cart",
     "viewCart" : "View Cart",
     "subtotal": "Subtotal",
-    "empty": "Your cart is empty"
+    "empty": "Your cart is empty",
+    "cart": "Cart ",
+    "your": "Your",
+    "yourCart": "Your Cart",
+    "proceedToCheckout": "Proceed to Checkout",
+    "shippingFee": "Shipping Fee",
+    "tax": "Tax (2%)",
+    "total": "Total",
+    "price": "Price",
+    "quantity": "Quantity",
+    "product": "Product",
+    "orderSummary": "Order Summary",
+    "items": "Items",
+    "freeShipping": "Free"
 
   },
   "admin": {

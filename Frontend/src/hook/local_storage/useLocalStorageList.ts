@@ -36,10 +36,13 @@
 //   return { exists, toggleItem };
 // };
 // hook/local_storage/useLocalStorageList.ts
-
 import { useState, useEffect } from "react";
 
-export const useLocalStorageList = <T extends { id: string }>(storageKey: string) => {
+export const useLocalStorageList = <
+  T extends { id: string; selectedSize?: string }
+>(
+  storageKey: string
+) => {
   const [items, setItems] = useState<T[]>([]);
 
   useEffect(() => {
@@ -48,22 +51,39 @@ export const useLocalStorageList = <T extends { id: string }>(storageKey: string
   }, [storageKey]);
 
   const toggleItem = (item: T) => {
-    const exists = items.find((i) => i.id === item.id);
-    let newItems;
-    if (exists) {
-      newItems = items.filter((i) => i.id !== item.id);
-    } else {
-      newItems = [...items, item];
-    }
+    const exists = items.find(
+      (i) => i.id === item.id && i.selectedSize === item.selectedSize
+    );
+    const newItems = exists
+      ? items.filter(
+          (i) => !(i.id === item.id && i.selectedSize === item.selectedSize)
+        )
+      : [...items, item];
     setItems(newItems);
     localStorage.setItem(storageKey, JSON.stringify(newItems));
   };
 
-  const removeItem = (id: string) => {
-    const newItems = items.filter((i) => i.id !== id);
+  const removeItem = (id: string, selectedSize?: string) => {
+    const newItems = items.filter(
+      (i) => !(i.id === id && i.selectedSize === selectedSize)
+    );
     setItems(newItems);
     localStorage.setItem(storageKey, JSON.stringify(newItems));
   };
 
-  return { items, toggleItem, removeItem };
+  const updateItem = (
+    id: string,
+    updatedFields: Partial<T>,
+    selectedSize?: string
+  ) => {
+    const newItems = items.map((item) =>
+      item.id === id && item.selectedSize === selectedSize
+        ? { ...item, ...updatedFields }
+        : item
+    );
+    setItems(newItems);
+    localStorage.setItem(storageKey, JSON.stringify(newItems));
+  };
+
+  return { items, toggleItem, removeItem, updateItem };
 };
