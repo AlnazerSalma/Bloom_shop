@@ -5,7 +5,7 @@ import {
   FaLongArrowAltRight,
 } from "react-icons/fa";
 import "./CheckoutSteps.css";
-import useIsArabic from "../../hook/useIsArabic";
+import useIsArabic from "../../../hook/useIsArabic";
 
 interface CheckoutStepsProps {
   currentStep: "address" | "payment" | "review";

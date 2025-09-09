@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import CheckoutSteps from "../components/checkout_steps/CheckoutSteps";
-import AddressCard from "../components/common/card/address_card/AddressCard";
+import CheckoutSteps from "../components/common/checkout_steps/CheckoutSteps";
+import useIsArabic from "../hook/useIsArabic";
+import CheckoutCard from "../components/common/card/checkout_card/CheckoutCard";
 import RectangularButton from "../components/common/buttons/rectangular_button/RectangularButton";
 import CheckoutForm from "../components/forms/checkout_form/CheckoutForm";
 import RevealGroup from "../components/common/reveal_animation/RevealGroup";
 import ScrollReveal from "../components/common/reveal_animation/ScrollReveal";
 import { useLocalStorageList } from "../hook/local_storage/useLocalStorageList";
+import OrderSummary from "../components/common/order_summary/OrderSummary";
 import type { CartItem } from "../types/CartItem";
 import { mockUserAddresses } from "../assets/data/mock_data/mockAddresses";
 import "../style/pages/CheckoutInfo.css";
 const CheckoutInfo: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const isArabic = useIsArabic();
+  const lang = isArabic ? "ar" : "en";
+
   const [form, setForm] = useState({
     nameEn: "",
     nameAr: "",
@@ -33,24 +38,7 @@ const CheckoutInfo: React.FC = () => {
     null
   );
 
-  const SHIPPING_FEE = 17;
-  const TAX_RATE = 0.02;
   const { items: cartItems } = useLocalStorageList<CartItem>("cart");
-
-  const [subtotal, setSubtotal] = useState(0);
-
-  // Load subtotal from localStorage if exists
-  useEffect(() => {
-    const total = cartItems.reduce(
-      (acc, item) => acc + item.price * item.quantity,
-
-      0
-    );
-
-    setSubtotal(total);
-
-    localStorage.setItem("cartSubtotal", total.toString());
-  }, [cartItems]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -74,12 +62,14 @@ const CheckoutInfo: React.FC = () => {
   };
 
   const handleSelect = (id: string) => {
-    setAddresses((prev) =>
-      prev.map((addr) => ({ ...addr, selected: addr.id === id }))
-    );
+    const updatedAddresses = addresses.map((addr) => ({
+      ...addr,
+      selected: addr.id === id,
+    }));
+    setAddresses(updatedAddresses);
     setSelectedAddressId(id);
 
-    const selectedAddr = addresses.find((addr) => addr.id === id);
+    const selectedAddr = updatedAddresses.find((addr) => addr.id === id);
     if (selectedAddr) {
       setForm({
         nameEn: selectedAddr.name.en,
@@ -97,16 +87,12 @@ const CheckoutInfo: React.FC = () => {
     }
   };
 
-  const tax = subtotal * TAX_RATE;
-  const total = subtotal + SHIPPING_FEE + tax;
-
   return (
     <div className="checkout-info-page">
       <ScrollReveal type="down">
         <h2 className="checkout-title">{t("checkout.shippingAddress")}</h2>
       </ScrollReveal>
       <div className="checkout-grid">
-
         {/* left Column: Checkout Info */}
         <div className="checkout-left">
           <RevealGroup type="down" stagger={200}>
@@ -120,16 +106,24 @@ const CheckoutInfo: React.FC = () => {
 
             {/* Address Cards Row */}
             <div className="address-row">
-              {addresses.map((addr) => (
-                <AddressCard
-                  key={addr.id}
-                  address={addr}
-                  isSelected={addr.selected}
-                  onSelect={handleSelect}
-                  onEdit={() => console.log("Edit", addr.id)}
-                  onDelete={() => console.log("Delete", addr.id)}
-                />
-              ))}
+              {addresses.map((addr) => {
+                const fullAddress = `${addr.country[lang]}, ${addr.city[lang]}, ${addr.streetName[lang]}, ${addr.buildingNumber}`;
+
+                return (
+                  <CheckoutCard
+                    key={addr.id}
+                    id={addr.id}
+                    title={addr.name[lang]}
+                    content={fullAddress}
+                    isSelected={addr.selected}
+                    onSelect={handleSelect}
+                    onEdit={() => console.log("Edit", addr.id)}
+                    onDelete={() => console.log("Delete", addr.id)}
+                    editLabel={t("edit")}
+                    deleteLabel={t("delete")}
+                  />
+                );
+              })}
             </div>
           </RevealGroup>
 
@@ -140,6 +134,7 @@ const CheckoutInfo: React.FC = () => {
               onClick={handleSubmit}
             />
           )}
+
           <hr className="form-separator" />
 
           <CheckoutForm
@@ -148,29 +143,14 @@ const CheckoutInfo: React.FC = () => {
             onSubmit={handleSubmit}
           />
         </div>
-        {/* right Column: Order summary */}
+        {/* right Column: order summary */}
         <div className="checkout-right">
-          <div className="order-summary">
-            <h3>{t("cartPage.orderSummary")}</h3>
-            <hr />
-            <div className="summary-row">
-              <span>{t("cartPage.subtotal")}</span>
-              <span>${subtotal.toFixed(2)}</span>
-            </div>
-            <div className="summary-row">
-              <span>{t("cartPage.shippingFee")}</span>
-              <span>${SHIPPING_FEE.toFixed(2)}</span>
-            </div>
-            <div className="summary-row">
-              <span>{t("cartPage.tax")}</span>
-              <span>${tax.toFixed(2)}</span>
-            </div>
-            <hr />
-            <div className="summary-row total-row">
-              <span>{t("cartPage.total")}</span>
-              <span>${total.toFixed(2)}</span>
-            </div>
-          </div>
+          <OrderSummary
+            cartItems={cartItems}
+            shippingFee={17}
+            taxRate={0.02}
+            showProceedButton={true}
+          />
         </div>
       </div>
     </div>

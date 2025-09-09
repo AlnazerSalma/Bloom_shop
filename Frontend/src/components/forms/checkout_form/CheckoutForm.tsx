@@ -201,7 +201,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
           {/* Submit button */}
           <RectangularButton
-            text={t("checkout.checkoutForm.continue")}
+            text={t("checkout.checkoutForm.addNewAddress")}
             className="primary submit-btn"
             onClick={onSubmit}
           />

@@ -105,6 +105,24 @@
       "street": "Street",
       "building": "Building Number",
       "continue": "Continue to Payment"
+    },
+    "paymentMethod": {
+      "title": "Payment Method",
+      "selectPaymentMethod": "Select a payment method",
+      "paymentInstructions": "Is the card you'd like to use displayed below? If so, click the corresponding selection checkbox.",
+      "enterNewCardInfo": "Or you can enter a new card below.",
+      "enterCardDetails": "Add your new card below",
+      "cardInstructions": "Please fill out your debit or credit card information.",
+      "cardNumber": "Card Number",
+      "cardName": "Cardholder Name",
+      "expiryDate": "Expiry Date",
+      "cvv": "CVV",
+      "addCard": "Add Card",
+      "useThisCard": "Use this card"
+    },
+    "review": {
+      "title": "Review your order",
+      "placeOrder": "Place Order"
     }
   },
   "admin": {

@@ -5,10 +5,8 @@
     position: relative;
     padding-inline-start: 10px;
     padding-inline-end: 50px;
-    direction: ltr;
-}
+    direction: rtl; 
 
-/* Step container */
 .step {
     display: flex;
     flex-direction: column;
@@ -17,7 +15,6 @@
     z-index: 1;
 }
 
-/* Icon box */
 .icon-box {
     width: 40px;
     height: 40px;
@@ -50,20 +47,26 @@
     color: #913a57;
 }
 
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .step-arrow {
     color: #ccc;
     font-size: 3rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     margin: 50px;
     margin-top: -10px;
 }
-
 
 .step.active~.arrow-container .step-arrow,
 .step-arrow.active {
     color: #913a57;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     .step p {
         font-size: 0.9rem;
@@ -84,6 +87,7 @@
 
     .step-arrow {
         font-size: 20px;
-        margin-bottom: 25px
+        margin-bottom: 25px;
     }
+}
 }
