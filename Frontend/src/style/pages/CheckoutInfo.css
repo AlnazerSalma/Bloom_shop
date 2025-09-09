@@ -7,7 +7,6 @@
     gap: 40px;
     align-items: flex-start;
     flex-wrap: wrap;
-    /* allows wrapping on smaller screens */
 }
 
 .checkout-left {
@@ -21,34 +20,9 @@
     min-width: 280px;
 }
 
-/* Make the order summary sticky on larger screens */
 .order-summary {
     margin-top: 40px;
-    background-color: #f9dee74c;
-    padding: 1.25rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.419);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: auto;
-    max-height: 80vh;
-    /* prevents overflow on tall content */
-    position: sticky;
-    top: 20px;
-}
-
-.order-summary h3 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #36454F;
-    text-align: start;
-}
-
-.order-summary hr {
-    border: none;
-    border-top: 2px solid #949597;
-    margin: 1rem 0;
 }
 
 .summary-row {
@@ -102,7 +76,12 @@
     font-size: 1rem;
     font-weight: 500;
     width: 200px;
-    height: 60px;
+    height: 65px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.deliver-btn:hover {
+    transform: scale(1.05);
 }
 
 .form-separator {

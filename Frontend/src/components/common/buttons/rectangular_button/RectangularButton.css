@@ -47,15 +47,11 @@
 /* Small screens (mobile) */
 @media (max-width: 768px) {
   .btn-rectangular {
-    padding: 10px 12px;
+    padding: 2px 12px;
     font-size: 0.8rem;
     max-width: 100%;
     width: 100%;
     text-align: center;
   }
 
-  .btn-rectangular.default,
-  .btn-rectangular.primary {
-    flex: none;
-  }
 }

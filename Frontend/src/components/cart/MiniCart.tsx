@@ -21,10 +21,16 @@ const MiniCart: React.FC<MiniCartProps> = ({ items, onClose, onRemove }) => {
 
   const cartRef = useRef<HTMLDivElement>(null);
 
+  const getDiscountedPrice = (item: CartItem) => {
+    const discount = item.discount ?? 0;
+    return item.price - (item.price * discount) / 100;
+  };
+
   const subtotal = items.reduce(
-    (total, item) => total + item.price * item.quantity,
+    (total, item) => total + getDiscountedPrice(item) * item.quantity,
     0
   );
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
@@ -75,7 +81,21 @@ const MiniCart: React.FC<MiniCartProps> = ({ items, onClose, onRemove }) => {
                 <div className="mini-cart-info">
                   <p className="mini-cart-title">{item.name[lang]}</p>
                   <span className="mini-cart-price">
-                    {item.quantity} * ${item.price}
+                    {(item.discount ?? 0) > 0 ? (
+                      <>
+                        <div className="cart-item-row">
+                          <span className="discounted-price">
+                            {item.quantity} * $
+                            {getDiscountedPrice(item).toFixed(2)}
+                          </span>
+                          <span className="old-price">${item.price}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <span>
+                        {item.quantity} * ${item.price}
+                      </span>
+                    )}
                   </span>
 
                   {item.selectedSize ? (

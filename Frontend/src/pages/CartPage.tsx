@@ -17,14 +17,12 @@ const Cart: React.FC = () => {
   const isArabic = useIsArabic();
   const lang = isArabic ? "ar" : "en";
 
-
   const {
     items: cartItems,
     removeItem,
     updateItem,
   } = useLocalStorageList<CartItem>("cart");
 
-  
   // Handle quantity changes
   const updateQuantity = (
     id: string,
@@ -73,83 +71,104 @@ const Cart: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {cartItems.map((item) => (
-                      <tr
-                        key={`${item.id}-${item.selectedSize ?? "default"}`}
-                        className="cart-row-item"
-                      >
-                        <td className="product-cell">
-                          <img
-                            src={item.images[0]}
-                            alt={item.name[lang]}
-                            className="product-img"
-                          />
-                          <span>{item.name[lang]}</span>
-                        </td>
-                        <td>${item.price.toFixed(2)}</td>
-                        <td>
-                          <div className="quantity-control">
-                            <button
-                              className="decrease"
-                              onClick={() =>
-                                item.quantity > 1 &&
-                                updateQuantity(
-                                  item.id,
-                                  item.quantity - 1,
-                                  item.selectedSize
-                                )
-                              }
-                            >
-                              <IoIosArrowDroprightCircle
-                                className="arrow-icon"
-                                size={24}
-                                style={{
-                                  transform: isArabic
-                                    ? "rotate(0deg)"
-                                    : "rotate(180deg)",
-                                }}
-                              />
-                            </button>
-                            <input
-                              type="number"
-                              value={item.quantity}
-                              readOnly
+                    {cartItems.map((item) => {
+                      const effectivePrice = item.discount
+                        ? item.price * (1 - item.discount / 100)
+                        : item.price;
+
+                      return (
+                        <tr
+                          key={`${item.id}-${item.selectedSize ?? "default"}`}
+                          className="cart-row-item"
+                        >
+                          <td className="product-cell">
+                            <img
+                              src={item.images[0]}
+                              alt={item.name[lang]}
+                              className="product-img"
                             />
-                            <button
-                              className="increase"
-                              onClick={() =>
-                                updateQuantity(
-                                  item.id,
-                                  item.quantity + 1,
-                                  item.selectedSize
-                                )
-                              }
-                            >
-                              <IoIosArrowDroprightCircle
-                                className="arrow-icon"
-                                size={24}
-                                style={{
-                                  transform: isArabic
-                                    ? "rotate(180deg)"
-                                    : "rotate(0deg)",
-                                }}
+                            <span>{item.name[lang]}</span>
+                          </td>
+                          <td>
+                            {item.discount ? (
+                              <>
+                                <span className="original-price">
+                                  ${item.price.toFixed(2)}
+                                </span>{" "}
+                                <span className="discounted-price">
+                                  ${effectivePrice.toFixed(2)}
+                                </span>
+                              </>
+                            ) : (
+                              <>${item.price.toFixed(2)}</>
+                            )}
+                          </td>
+                          <td>
+                            <div className="quantity-control">
+                              <button
+                                className="decrease"
+                                onClick={() =>
+                                  item.quantity > 1 &&
+                                  updateQuantity(
+                                    item.id,
+                                    item.quantity - 1,
+                                    item.selectedSize
+                                  )
+                                }
+                              >
+                                <IoIosArrowDroprightCircle
+                                  className="arrow-icon"
+                                  size={24}
+                                  style={{
+                                    transform: isArabic
+                                      ? "rotate(0deg)"
+                                      : "rotate(180deg)",
+                                  }}
+                                />
+                              </button>
+                              <input
+                                type="number"
+                                value={item.quantity}
+                                readOnly
                               />
+                              <button
+                                className="increase"
+                                onClick={() =>
+                                  updateQuantity(
+                                    item.id,
+                                    item.quantity + 1,
+                                    item.selectedSize
+                                  )
+                                }
+                              >
+                                <IoIosArrowDroprightCircle
+                                  className="arrow-icon"
+                                  size={24}
+                                  style={{
+                                    transform: isArabic
+                                      ? "rotate(180deg)"
+                                      : "rotate(0deg)",
+                                  }}
+                                />
+                              </button>
+                            </div>
+                          </td>
+                          <td>
+                            ${(effectivePrice * item.quantity).toFixed(2)}
+                          </td>
+                          <td>
+                            <button
+                              onClick={() =>
+                                removeItem(item.id, item.selectedSize)
+                              }
+                              className="remove-btn"
+                            >
+                              <RiDeleteBin6Line />
                             </button>
-                          </div>
-                        </td>
-                        <td>${(item.price * item.quantity).toFixed(2)}</td>
-                        <td>
-                          <button
-                            onClick={() =>
-                              removeItem(item.id, item.selectedSize)
-                            }
-                            className="remove-btn"
-                          >
-                            <RiDeleteBin6Line />
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </ScrollReveal>

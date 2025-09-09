@@ -115,15 +115,12 @@ const CheckoutPayment: React.FC = () => {
                 />
               ))}
             </div>
-
-            {/* Show "Use this card" button if a card is selected or new card is filled */}
-            {selectedCardId && (
-              <RectangularButton
-                text={t("checkout.paymentMethod.useThisCard")}
-                className="primary use-card-btn"
-                onClick={handleAddCard}
-              />
-            )}
+            
+            <RectangularButton
+              text={t("checkout.paymentMethod.useThisCard")}
+              className="primary use-card-btn"
+              onClick={handleAddCard}
+            />
 
             <hr className="form-separator" />
 

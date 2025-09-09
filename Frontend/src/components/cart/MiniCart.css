@@ -82,6 +82,26 @@
     font-weight: bold;
 }
 
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.discounted-price {
+    font-weight: 600;
+    color: #222;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 1rem;
+}
+
+
+
 .mini-cart-size-row {
     display: flex;
     justify-content: space-between;
@@ -112,7 +132,7 @@
 }
 
 .mini-cart-subtotal-title {
-font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .mini-cart-bt {

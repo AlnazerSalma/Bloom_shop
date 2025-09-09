@@ -34,9 +34,6 @@ const CheckoutInfo: React.FC = () => {
   });
 
   const [addresses, setAddresses] = useState(mockUserAddresses[0].addresses);
-  const [selectedAddressId, setSelectedAddressId] = useState<string | null>(
-    null
-  );
 
   const { items: cartItems } = useLocalStorageList<CartItem>("cart");
 
@@ -67,7 +64,6 @@ const CheckoutInfo: React.FC = () => {
       selected: addr.id === id,
     }));
     setAddresses(updatedAddresses);
-    setSelectedAddressId(id);
 
     const selectedAddr = updatedAddresses.find((addr) => addr.id === id);
     if (selectedAddr) {
@@ -127,13 +123,11 @@ const CheckoutInfo: React.FC = () => {
             </div>
           </RevealGroup>
 
-          {selectedAddressId && (
-            <RectangularButton
-              text={t("checkout.deliverHere")}
-              className="primary deliver-btn"
-              onClick={handleSubmit}
-            />
-          )}
+          <RectangularButton
+            text={t("checkout.deliverHere")}
+            className="primary deliver-btn"
+            onClick={handleSubmit}
+          />
 
           <hr className="form-separator" />
 
@@ -145,12 +139,14 @@ const CheckoutInfo: React.FC = () => {
         </div>
         {/* right Column: order summary */}
         <div className="checkout-right">
+          <div className="checkout-right">
           <OrderSummary
             cartItems={cartItems}
             shippingFee={17}
             taxRate={0.02}
             showProceedButton={true}
           />
+          </div>
         </div>
       </div>
     </div>
