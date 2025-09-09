@@ -35,6 +35,8 @@
   "noProducts":"لا توجد منتجات",
   "shopNow": "تسوق الآن",
   "buyNow": "اشتري الآن",
+  "delete": "حذف",
+  "edit":"تعديل",
   "companyDescription": "تقدم لك Bloom أحدث صيحات الموضة والأساليب الخالدة. تسوق بسهولة، وابدأ بإظهار شخصيتك من خلال ملابسك.",
   "homePage": {
     "headerSmall": "تصفح أفضل الفئات لدينا",
@@ -86,6 +88,23 @@
     "orderSummary": "ملخص الطلب",
     "items": "العناصر",
     "freeShipping": "مجاني"
+  },
+  "checkout": {
+    "shippingAddress": "عنوان الشحن",
+    "selectDeliveryAddress": "اختر عنوان التسليم",
+    "deliveryInstructions": "هل العنوان الذي تريد استخدامه ظاهر أدناه؟ إذا كان كذلك، انقر على زر \"تسليم إلى هذا العنوان\" المقابل. أو يمكنك إدخال عنوان تسليم جديد.",
+    "deliverHere": "تسليم هنا",
+    "checkoutForm": {
+      "addNewAddress": "إضافة عنوان جديد",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "country": "الدولة",
+      "city": "المدينة",
+      "street": "الشارع",
+      "building": "رقم المبنى",
+      "continue": "متابعة إلى الدفع"
+    }
   },
   "admin": {
     "title": " شركة الحصاد",
@@ -235,6 +254,7 @@
     "logout": "تسجيل الخروج",
     "addPoint": "أضف نقطة",
     "delete": "حذف",
+    "edit":"تعديل",
     "save": "حفظ",
     "uploadImage": "تحميل صورة",
     "chooseUploadMode": "اختر صورة واحدة أو أربع صور",
