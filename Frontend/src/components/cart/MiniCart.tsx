@@ -105,7 +105,10 @@ const MiniCart: React.FC<MiniCartProps> = ({ items, onClose, onRemove }) => {
                       </small>
                       <button
                         className="cart-remove-item"
-                        onClick={() => onRemove(item.id, item.selectedSize)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onRemove(item.id, item.selectedSize);
+                        }}
                         aria-label="Remove item"
                       >
                         <RiDeleteBin6Line />

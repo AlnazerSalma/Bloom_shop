@@ -53,9 +53,9 @@
 .mini-cart-img {
     width: 90px;
     border-radius: 6px;
-    object-fit: cover;
+    object-fit: fill;
     flex-shrink: 0;
-    height: 100%;
+    height: 90px;
 }
 
 .mini-cart-info {

@@ -22,9 +22,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onFavorite }) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   const imageIndex = useImageCarousel(product.images, isHovered);
-  const { items: wishlistItems, toggleItem: toggleWishlist } =
-    useLocalStorageList<Product>("wishlist");
-  const isFavorite = wishlistItems.some((item) => item.id === product.id);
+
+  const { exists: isFavorite, toggleItem: toggleFavorite } =
+    useLocalStorageList<Product>("wishlist", product);
 
   const hasDiscount = !!product.discount;
   const discountedPrice = hasDiscount
@@ -32,10 +32,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onFavorite }) => {
     : product.price;
 
   const handleToggleFavorite = () => {
-    toggleWishlist(product); 
+    toggleFavorite(product);
     if (onFavorite) onFavorite(product);
   };
-
   return (
     <div
       className="product-card"

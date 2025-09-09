@@ -1,54 +1,92 @@
 // import { useState, useEffect } from "react";
 
-// //hook to manage items in a localStorage (add/remove/check)
-// export const useLocalStorageList = <T extends { id: string }>(
-//   storageKey: string,
-//   item: T
+// export const useLocalStorageList = <
+//   T extends { id: string; selectedSize?: string }
+// >(
+//   storageKey: string
 // ) => {
-//   const [exists, setExists] = useState(false);
+//   const [items, setItems] = useState<T[]>([]);
 
-//   // Load state from localStorage on mount
 //   useEffect(() => {
 //     const stored = localStorage.getItem(storageKey);
-//     if (stored) {
-//       const list: T[] = JSON.parse(stored);
-//       setExists(list.some((p) => p.id === item.id));
-//     }
-//   }, [item.id, storageKey]);
+//     if (stored) setItems(JSON.parse(stored));
+//   }, [storageKey]);
 
-//   const toggleItem = () => {
-//     const stored = localStorage.getItem(storageKey);
-//     let list: T[] = stored ? JSON.parse(stored) : [];
-
-//     if (exists) {
-//       list = list.filter((p) => p.id !== item.id);
-//     } else {
-//       if (!list.some((p) => p.id === item.id)) list.push(item);
-//     }
-
-//     localStorage.setItem(storageKey, JSON.stringify(list));
-//     setExists(!exists);
-
-//     // Notify any listeners
-//     window.dispatchEvent(new Event("localStorageUpdated"));
+//   const toggleItem = (item: T) => {
+//     const exists = items.find(
+//       (i) => i.id === item.id && i.selectedSize === item.selectedSize
+//     );
+//     const newItems = exists
+//       ? items.filter(
+//           (i) => !(i.id === item.id && i.selectedSize === item.selectedSize)
+//         )
+//       : [...items, item];
+//     setItems(newItems);
+//     localStorage.setItem(storageKey, JSON.stringify(newItems));
 //   };
 
-//   return { exists, toggleItem };
+//   const removeItem = (id: string, selectedSize?: string) => {
+//     const newItems = items.filter(
+//       (i) => !(i.id === id && i.selectedSize === selectedSize)
+//     );
+//     setItems(newItems);
+//     localStorage.setItem(storageKey, JSON.stringify(newItems));
+//   };
+
+//   const updateItem = (
+//     id: string,
+//     updatedFields: Partial<T>,
+//     selectedSize?: string
+//   ) => {
+//     const newItems = items.map((item) =>
+//       item.id === id && item.selectedSize === selectedSize
+//         ? { ...item, ...updatedFields }
+//         : item
+//     );
+//     setItems(newItems);
+//     localStorage.setItem(storageKey, JSON.stringify(newItems));
+//   };
+
+//   return { items, toggleItem, removeItem, updateItem };
 // };
-// hook/local_storage/useLocalStorageList.ts
 import { useState, useEffect } from "react";
 
-export const useLocalStorageList = <
-  T extends { id: string; selectedSize?: string }
->(
-  storageKey: string
+type BaseItem = { id: string; selectedSize?: string };
+
+export const useLocalStorageList = <T extends BaseItem>(
+  storageKey: string,
+  singleItem?: T // optional, used for "exists" checks like wishlist
 ) => {
   const [items, setItems] = useState<T[]>([]);
+  const [exists, setExists] = useState(false);
 
-  useEffect(() => {
+  const loadItems = () => {
     const stored = localStorage.getItem(storageKey);
-    if (stored) setItems(JSON.parse(stored));
-  }, [storageKey]);
+    const list: T[] = stored ? JSON.parse(stored) : [];
+    setItems(list);
+
+    if (singleItem) {
+      setExists(
+        list.some(
+          (i) =>
+            i.id === singleItem.id && i.selectedSize === singleItem.selectedSize
+        )
+      );
+    }
+  };
+
+  // Load on mount + when singleItem changes
+  useEffect(() => {
+    loadItems();
+  }, [storageKey, singleItem?.id, singleItem?.selectedSize]);
+
+  // 🔥 Listen for cross-component updates
+  useEffect(() => {
+    const handleUpdate = () => loadItems();
+    window.addEventListener("localStorageUpdated", handleUpdate);
+    return () =>
+      window.removeEventListener("localStorageUpdated", handleUpdate);
+  }, [storageKey, singleItem?.id, singleItem?.selectedSize]);
 
   const toggleItem = (item: T) => {
     const exists = items.find(
@@ -59,16 +97,17 @@ export const useLocalStorageList = <
           (i) => !(i.id === item.id && i.selectedSize === item.selectedSize)
         )
       : [...items, item];
-    setItems(newItems);
+
     localStorage.setItem(storageKey, JSON.stringify(newItems));
+    window.dispatchEvent(new Event("localStorageUpdated"));
   };
 
   const removeItem = (id: string, selectedSize?: string) => {
     const newItems = items.filter(
       (i) => !(i.id === id && i.selectedSize === selectedSize)
     );
-    setItems(newItems);
     localStorage.setItem(storageKey, JSON.stringify(newItems));
+    window.dispatchEvent(new Event("localStorageUpdated"));
   };
 
   const updateItem = (
@@ -81,9 +120,9 @@ export const useLocalStorageList = <
         ? { ...item, ...updatedFields }
         : item
     );
-    setItems(newItems);
     localStorage.setItem(storageKey, JSON.stringify(newItems));
+    window.dispatchEvent(new Event("localStorageUpdated"));
   };
 
-  return { items, toggleItem, removeItem, updateItem };
+  return { items, exists, toggleItem, removeItem, updateItem };
 };
