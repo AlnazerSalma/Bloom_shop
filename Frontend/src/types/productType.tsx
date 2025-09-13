@@ -13,6 +13,7 @@ export type Product = {
   rate: number;
   images: string[];
   category: "kids" | "men" | "women" | "footwear";
+  subcategory: "Clothing" | "Accessories" | "Shoes" | "Sandals"; 
   size?: string[];
   brand?: {
     en: string;

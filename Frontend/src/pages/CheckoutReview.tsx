@@ -1,24 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import type { CartItem } from "../types/CartItem";
+import useIsArabic from "../hook/useIsArabic";
+import { IoBagHandleOutline } from "react-icons/io5";
 import CheckoutSteps from "../components/common/checkout_steps/CheckoutSteps";
 import ScrollReveal from "../components/common/reveal_animation/ScrollReveal";
 import RevealGroup from "../components/common/reveal_animation/RevealGroup";
 import CheckoutCard from "../components/common/card/checkout_card/CheckoutCard";
 import OrderSummary from "../components/common/order_summary/OrderSummary";
 import { useLocalStorageList } from "../hook/local_storage/useLocalStorageList";
-import type { CartItem } from "../types/CartItem";
-import useIsArabic from "../hook/useIsArabic";
 import { mockUserAddresses } from "../assets/data/mock_data/mockAddresses";
 import type { Address } from "../assets/data/mock_data/mockAddresses";
 import { mockUserPaymentCards } from "../assets/data/mock_data/mockPaymentCards";
 import type { PaymentCard } from "../assets/data/mock_data/mockPaymentCards";
+import RectangularButton from "../components/common/buttons/rectangular_button/RectangularButton"; 
+import PopupModal from "../components/common/popup_modal/PopupModal";
 import "../style/pages/CheckoutReview.css";
 
 const CheckoutReview: React.FC = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const isArabic = useIsArabic();
   const lang = isArabic ? "ar" : "en";
   const { items: cartItems } = useLocalStorageList<CartItem>("cart");
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const selectedAddress: Address | undefined =
     mockUserAddresses[0].addresses.find((addr) => addr.selected);
@@ -111,11 +118,37 @@ const CheckoutReview: React.FC = () => {
             taxRate={0.02}
             showProceedButton={true}
             proceedText={t("checkout.review.placeOrder")}
-            onProceed={() => {
-              console.log("Proceed button clicked!");
-            }}
+            onProceed={() => setModalOpen(true)}
           />
         </div>
+        <PopupModal
+          isOpen={isModalOpen}
+          onClose={() => setModalOpen(false)}
+          icon={<IoBagHandleOutline />}
+          title={t("checkout.review.orderConfirmedTitle")}
+          description={t("checkout.review.orderConfirmedDesc")}
+          buttons={
+            <>
+              <RectangularButton
+                text={t("checkout.review.viewOrder")}
+                className="default"
+                onClick={() => {
+                  setModalOpen(false);
+                  console.log("Navigate to order page");
+                }}
+              />
+              <RectangularButton
+                text={t("checkout.review.backHome")}
+                className="primary"
+                onClick={() => {
+                  setModalOpen(false);
+                  navigate("/");
+                  console.log("Navigate to home page");
+                }}
+              />
+            </>
+          }
+        />
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.9s ease;
+    padding: 4px 0;
+}
+
+.filter-header:hover {
+    color: #913a57;
+}
+
+.filter-header-icon {
+    display: inline-flex;
+    transition: transform 0.9s ease;
+}
+
+.filter-header-icon.open {
+    transform: rotate(180deg);
+}

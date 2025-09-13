@@ -1,41 +1,50 @@
 .btn-rectangular {
-    padding: 12px 16px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 }
 
 .btn-rectangular.default {
-    background-color: #ddd;
-    color: #333;
-    flex: 1;
-    font-size: 1.2rem;
-    font-weight: bold;
-    max-width: 300px;
+  background-color: #bebdbd;
+  color: #333;
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 300px;
+  background-image: linear-gradient(135deg, #bebdbd, #bebdbd);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  transition: background-position 0.3s ease, color 0.3s ease;
 }
 
 .btn-rectangular.default:hover {
-  background: linear-gradient(to right, #660101ce, #b4b4b4);
+  background-image: linear-gradient(135deg, #bebdbd, #9e9e9e);
+  background-position: 100% 100%;
   color: white;
 }
 
-
 .btn-rectangular.primary {
-    background-color: #913a57;
-    color: white;
-    flex: 1;
-    font-size: 1.2rem;
-    font-weight: bold;
-    width: 60%;
-    max-width: 300px;
+  background-color: #913a57;
+  color: white;
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 60%;
+  max-width: 300px;
+  background-image: linear-gradient(to right, #913a57, #913a57);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  transition: background-position 0.3s ease, color 0.3s ease;
 }
 
 .btn-rectangular.primary:hover {
-  background: linear-gradient(to right, #913a57, #c94f7c);
-  color: white;
+  background-image: linear-gradient(to right, #580822, #c94f7c);
+  background-position: 100% 100%;
 }
+
 @media (max-width: 1024px) {
   .btn-rectangular {
     padding: 10px 14px;
