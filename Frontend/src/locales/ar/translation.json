@@ -35,6 +35,8 @@
   "noProducts":"لا توجد منتجات",
   "shopNow": "تسوق الآن",
   "buyNow": "اشتري الآن",
+  "delete": "حذف",
+  "edit":"تعديل",
   "companyDescription": "تقدم لك Bloom أحدث صيحات الموضة والأساليب الخالدة. تسوق بسهولة، وابدأ بإظهار شخصيتك من خلال ملابسك.",
   "homePage": {
     "headerSmall": "تصفح أفضل الفئات لدينا",
@@ -86,6 +88,41 @@
     "orderSummary": "ملخص الطلب",
     "items": "العناصر",
     "freeShipping": "مجاني"
+  },
+  "checkout": {
+    "shippingAddress": "عنوان الشحن",
+    "selectDeliveryAddress": "اختر عنوان التسليم",
+    "deliveryInstructions": "هل العنوان الذي تريد استخدامه ظاهر أدناه؟ إذا كان كذلك، انقر على زر \"تسليم إلى هذا العنوان\" المقابل. أو يمكنك إدخال عنوان تسليم جديد.",
+    "deliverHere": "تسليم هنا",
+    "checkoutForm": {
+      "addNewAddress": "إضافة عنوان جديد",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "country": "الدولة",
+      "city": "المدينة",
+      "street": "الشارع",
+      "building": "رقم المبنى",
+      "continue": "متابعة إلى الدفع"
+    },
+    "paymentMethod": {
+      "title": "طريقة الدفع",
+      "selectPaymentMethod": "اختر طريقة الدفع",
+      "paymentInstructions": "هل البطاقة التي ترغب باستخدامها معروضة أدناه؟ إذا كان الأمر كذلك، اضغط على مربع الاختيار المقابل.",
+      "enterNewCardInfo": "أو يمكنك إدخال بطاقة جديدة أدناه.",
+      "enterCardDetails": "أضف بطاقتك الجديدة أدناه",
+      "cardInstructions": "يرجى ملء معلومات بطاقة الخصم أو الائتمان الخاصة بك.",
+      "cardNumber": "رقم البطاقة",
+      "cardName": "اسم حامل البطاقة",
+      "expiryDate": "تاريخ الانتهاء",
+      "cvv": "رمز التحقق (CVV)",
+      "addCard": "إضافة البطاقة",
+      "useThisCard": "استخدم هذه البطاقة"
+    },
+    "review": {
+      "title": "مراجعة طلبك",
+      "placeOrder": "إتمام الطلب"
+    }
   },
   "admin": {
     "title": " شركة الحصاد",
@@ -235,6 +272,7 @@
     "logout": "تسجيل الخروج",
     "addPoint": "أضف نقطة",
     "delete": "حذف",
+    "edit":"تعديل",
     "save": "حفظ",
     "uploadImage": "تحميل صورة",
     "chooseUploadMode": "اختر صورة واحدة أو أربع صور",

@@ -1,0 +1,151 @@
+.checkout-card { 
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #f9dee786;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.404);
+    transition: transform 0.2s ease;
+}
+
+.checkout-card:hover {
+    transform: translateY(-2px);
+}
+
+.checkout-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.checkout-card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.checkout-card-checkbox {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.checkout-card-checkbox:checked {
+    width: 15px;
+    height: 15px;
+    border: none;
+    accent-color: #913a57;
+}
+
+.checkout-card-content {
+    color: #252a33;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    text-align: start;
+}
+
+.checkout-card-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.edit-btn,
+.delete-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.edit-btn {
+    background-color: #ccc5c566;
+    color: #000000b0;
+    transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+    background-color: #887b7b80;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+    background-color: #e39696aa;
+    color: #6f0404cb;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c16d6d99;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+    .checkout-card {
+        width: 45%;
+        padding: 14px;
+        margin-bottom: 14px;
+    }
+
+    .checkout-card-title {
+        font-size: 1.3rem;
+    }
+
+    .checkout-card-content {
+        font-size: 1.1rem;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+    .checkout-card {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .checkout-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .checkout-card-title {
+        font-size: 1.2rem;
+    }
+
+    .checkout-card-content {
+        font-size: 0.95rem;
+    }
+
+    .checkout-card-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        width: 100%;
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+}

@@ -3,10 +3,10 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import "./StarRating.css";
 
 interface StarRatingProps {
-  rating: number;       // e.g., 4.5
-  maxStars?: number;    // default 5
-  size?: number;        // icon size
-  className?: string;   // additional classes for alignment
+  rating: number;
+  maxStars?: number;
+  size?: number;
+  className?: string;
 }
 
 const StarRating: React.FC<StarRatingProps> = ({

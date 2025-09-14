@@ -28,10 +28,34 @@
     flex: 1;
     font-size: 1.2rem;
     font-weight: bold;
+    width: 60%;
     max-width: 300px;
 }
 
 .btn-rectangular.primary:hover {
   background: linear-gradient(to right, #913a57, #c94f7c);
   color: white;
+}
+@media (max-width: 1024px) {
+  .btn-rectangular {
+    padding: 10px 14px;
+    font-size: 1.1rem;
+    max-width: 250px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .btn-rectangular {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-rectangular.default,
+  .btn-rectangular.primary {
+    flex: none;
+  }
 }

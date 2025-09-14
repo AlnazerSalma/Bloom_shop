@@ -35,6 +35,8 @@
   "shopNow": "Shop Now",
   "buyNow": "Buy Now",
   "companyDescription": "Bloom brings you the latest trends and timeless styles. Shop effortlessly, look amazing, and let your clothes reflect your personality.",
+  "delete": "Delete",
+  "edit":"edit",
   "homePage": {
     "headerSmall": "Browse Our Top Categories",
     "headerBig": "Best Categories",
@@ -87,6 +89,41 @@
     "items": "Items",
     "freeShipping": "Free"
 
+  },
+  "checkout": {
+    "shippingAddress": "Shipping Address",
+    "selectDeliveryAddress": "Select a delivery address",
+    "deliveryInstructions": "Is the address you'd like to use displayed below? If so, click the corresponding \"Deliver to this address\" button. Or you can enter a new delivery address.",
+    "deliverHere": "Deliver Here",
+    "checkoutForm": {
+      "addNewAddress": "Add a New Address",
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "country": "Country",
+      "city": "City",
+      "street": "Street",
+      "building": "Building Number",
+      "continue": "Continue to Payment"
+    },
+    "paymentMethod": {
+      "title": "Payment Method",
+      "selectPaymentMethod": "Select a payment method",
+      "paymentInstructions": "Is the card you'd like to use displayed below? If so, click the corresponding selection checkbox.",
+      "enterNewCardInfo": "Or you can enter a new card below.",
+      "enterCardDetails": "Add your new card below",
+      "cardInstructions": "Please fill out your debit or credit card information.",
+      "cardNumber": "Card Number",
+      "cardName": "Cardholder Name",
+      "expiryDate": "Expiry Date",
+      "cvv": "CVV",
+      "addCard": "Add Card",
+      "useThisCard": "Use this card"
+    },
+    "review": {
+      "title": "Review your order",
+      "placeOrder": "Place Order"
+    }
   },
   "admin": {
     "title": "Al-hasad",
@@ -229,7 +266,6 @@
     "searchPlaceholder": "Search ...",
     "logout": "Logout",
     "addPoint": "Add Point",
-    "delete": "Delete",
     "save": "Save",
     "uploadImage": "Upload Image",
     "chooseUploadMode": "Choose one picture or four",
