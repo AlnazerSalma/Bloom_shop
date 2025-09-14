@@ -122,8 +122,21 @@
     },
     "review": {
       "title": "Review your order",
-      "placeOrder": "Place Order"
+      "placeOrder": "Place Order",
+      "orderConfirmedTitle": "Your order is confirmed",
+      "orderConfirmedDesc": "Thanks for shopping! your order hasn't shipped yet, but we will send you an email when it’s done.",
+      "viewOrder": "View Order",
+      "backHome": "Back to Home"
     }
+  },
+  "shop_page": {
+    "title": "Products",
+    "search": "Search by name, category, brand, or subcategory",
+    "no_products": "No products found",
+    "filter_category": "Shop by Category",
+    "filter_brand": "Shop by Brand",
+    "filter_price": "Shop by Price",
+    "filter_discount": "Shop by Discount"
   },
   "admin": {
     "title": "Al-hasad",

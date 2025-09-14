@@ -9,7 +9,7 @@ import Home from "../pages/HomePage.tsx";
 // Public Pages
 const Cart = lazy(() => import("../pages/CartPage.js"));
 const Wishlist = lazy(() => import("../pages/WishlistPage.tsx"));
-const Shop = lazy(() => import("../pages/ShopePage.jsx"));
+const Shop = lazy(() => import("../pages/ShopePage.js"));
 const ContactUs = lazy(() => import("../pages/ContactUsPage.jsx"));
 const Product = lazy(() => import("../pages/ProductsPage.tsx"));
 const AboutUs = lazy(() => import("../pages/AboutUsPage.jsx"));
