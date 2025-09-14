@@ -21,12 +21,30 @@
   "contactSupport": "Contact Support",
   "returns": "Returns",
   "shippingInfo": "Shipping Info",
-   "discoverHome": "Discover Home",
+  "discoverHome": "Discover Home",
   "exploreShop": "Explore Shop",
   "favoriteWishlist": "Your Favorites",
   "yourCart": "Your Cart",
   "getInTouch": "Get in Touch",
+  "buyNow": "Buy Now",
   "companyDescription": "Bloom brings you the latest trends and timeless styles. Shop effortlessly, look amazing, and let your clothes reflect your personality.",
+  "homePage": {
+    "shopNow": "Shop Now",
+    "headerSmall": "Browse Our Top Categories",
+    "headerBig": "Best Categories",
+    "description": "Explore our wide range of categories designed to fit everyone’s lifestyle.",
+    "buttonText": "Explore"
+  },
+  "customerFeedback": {
+    "subtitle": "What our customers are saying",
+    "title": "Customer Feedback",
+    "description": "Real stories from our happy customers about their shopping experience."
+  },
+  "topSelling": {
+    "topSelling": "Top Selling Products",
+    "bestSellers": "Best Sellers",
+    "description":"Discover our most popular products that customers love and trust."
+  },
   "admin": {
     "title": "Al-hasad",
     "subtitle": "Admin Panel",

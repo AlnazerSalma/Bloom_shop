@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Preloader from "./components/Pre";
+import Preloader from "./components/common/Pre";
 import AppContent from "./AppContent";
 import "./style.css";
 import "./App.css";

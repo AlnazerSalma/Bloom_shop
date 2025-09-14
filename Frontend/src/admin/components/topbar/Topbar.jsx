@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import LanguageToggleClick from "../../../components/language_toggle/click_toggle/LanguageToggleClick";
+import LanguageToggleClick from "../../../components/common/language_toggle/click_toggle/LanguageToggleClick";
 import { FaBell, FaSearch } from "react-icons/fa";
 import "./Topbar.css";
 

@@ -98,7 +98,7 @@
 
 /* Sticky Style */
 .sticky {
-  background-color: #f9dee78e !important;
+  background-color: #f9dee7 !important;
   transition: all 0.3s ease-out !important;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.171) !important;
 }

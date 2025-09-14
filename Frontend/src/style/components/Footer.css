@@ -40,7 +40,7 @@
 
 .footer-title {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 60;
   margin-bottom: 15px;
   color: #fff;
 }
@@ -75,8 +75,8 @@
 }
 
 .footer-list a:hover {
-  color: #fff;
-  transform: translateX(5px) scale(1.1);
+  color: rgba(30, 26, 26, 0.722);
+  transform: translateX(10px) scale(1.1);
 }
 
 .rtl .footer-list a:hover {

@@ -1,0 +1,164 @@
+.customer-feedback {
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.customer-feedback .slick-list {
+    overflow: visible !important;
+}
+
+.feedback-slide {
+    display: flex !important;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.feedback-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    width: 400px;
+    min-height: 240px;
+    height: 100%;
+}
+
+.feedback-card:hover {
+    background-color: #f9dee7;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-text {
+    text-align: start;
+    font-size: 0.95rem;
+    color: #36454F;
+    margin: 1rem 0 1rem 0;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.banner-text p {
+    font-size: 1.1rem;
+    color: #36454F;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.feedback-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.feedback-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.customer-feedback .slick-dots {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.customer-feedback .slick-dots li:nth-child(n+6) {
+    display: none !important;
+}
+
+.customer-feedback .slick-dots li button:before {
+    font-size: 10px;
+    color: #cf9dae83;
+    opacity: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.customer-feedback .slick-dots li button:hover:before {
+    color: #913a57aa;
+    transform: scale(1.3);
+}
+.customer-feedback .slick-dots li.slick-active button:before {
+    color: #913a57;
+    transform: scale(1.4);
+}
+
+.feedback-card-rtl {
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.feedback-card-rtl .feedback-profile {
+    flex-direction: row-reverse;
+    gap: 0.8rem;
+}
+
+.feedback-card-rtl .feedback-text {
+    text-align: right;
+}
+
+@media (max-width: 1300px) {
+    .feedback-card {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .feedback-text {
+        font-size: 0.9rem;
+    }
+
+    .feedback-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .feedback-name {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .feedback-card {
+        padding: 0.8rem;
+        min-height: 220px;
+    }
+
+    .feedback-text {
+        font-size: 0.85rem;
+    }
+
+    .feedback-profile {
+        gap: 0.5rem;
+    }
+
+    .feedback-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feedback-name {
+        font-size: 0.9rem;
+    }
+
+    .feedback-slide {
+        margin-bottom: 10px;
+    }
+}

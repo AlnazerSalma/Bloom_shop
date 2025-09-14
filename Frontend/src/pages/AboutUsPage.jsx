@@ -12,12 +12,7 @@ const AboutUsPage = () => {
       justifyContent: "center",
     }}
   >
-      <h1>About Us</h1>
-      <p>
-        Welcome to our website! We are passionate about building modern web
-        applications using React. Our mission is to deliver high-quality
-        solutions that make life easier and more enjoyable.
-      </p>
+      <h1>Our Story</h1>
     </div>
   );
 };

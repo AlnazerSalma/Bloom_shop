@@ -1,17 +1,17 @@
 import React, { useState, useRef } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import brand from "../assets/image/bag.png";
+import brand from "../../assets/image/bag.png";
 import { IoIosSearch, IoIosHeartEmpty } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import LanguageToggleSwitch from "../components/language_toggle/switch_toggle/LanguageToggleSwitch";
-import LanguageToggleClick from "../components/language_toggle/click_toggle/LanguageToggleClick";
+import LanguageToggleSwitch from "./language_toggle/switch_toggle/LanguageToggleSwitch";
+import LanguageToggleClick from "./language_toggle/click_toggle/LanguageToggleClick";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useNavBehavior } from "../hook/useNavBehavior";
-import { useLanguageDirection } from "../hook/useLanguageDirection";
-import { useClickOutside } from "../hook/useClickOutside";
-import "../style/components/Navbar.css";
+import { useNavBehavior } from "../../hook/useNavBehavior";
+import { useLanguageDirection } from "../../hook/useLanguageDirection";
+import { useClickOutside } from "../../hook/useClickOutside";
+import "../../style/components/Navbar.css";
 
 function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
