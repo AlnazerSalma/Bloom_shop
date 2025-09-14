@@ -6,13 +6,5 @@
     "contactNumber": "+970599123456",
     "role": "Admin",
     "password": "12345678"
-},
-{
-    "nameAr":"رغد طالب", 
-    "nameEn": "Raghad Taleb", 
-    "email": "raghadtaleb@example.com", 
-    "contactNumber": "+970599654321",
-    "role": "User",
-    "password": "raghad12345678"
 }
 ]

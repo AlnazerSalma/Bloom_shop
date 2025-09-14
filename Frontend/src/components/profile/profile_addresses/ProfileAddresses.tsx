@@ -9,6 +9,7 @@ import Modal from "../../common/Modal_popUp/Modal";
 import { mockUserAddresses } from "../../../assets/data/mock_data/mockAddresses";
 import type { Address } from "../../../assets/data/mock_data/mockAddresses";
 import RevealGroup from "../../common/reveal_animation/RevealGroup";
+import ScrollReveal from "../../common/reveal_animation/ScrollReveal";
 import useIsArabic from "../../../hook/useIsArabic";
 import "./ProfileAddresses.css";
 
@@ -101,14 +102,14 @@ const ProfileAddresses: React.FC<ProfileAddressesProps> = ({ userId }) => {
 
   return (
     <div className="profile-addresses">
-      <RevealGroup type="down" stagger={200}>
-      <RectangularButton
-        text={t("profile.addresses.addNewAddress")}
-        icon={<FaPlus />}
-        className="primary btn-add-address"
-        onClick={handleAddNew}
-      />
-
+      <ScrollReveal type="down">
+        <RectangularButton
+          text={t("profile.addresses.addNewAddress")}
+          icon={<FaPlus />}
+          className="primary btn-add-address"
+          onClick={handleAddNew}
+        />
+      </ScrollReveal>
       {userAddresses.map((addr) => (
         <div key={addr.id} className="address-card">
           <div className="address-info">
@@ -128,18 +129,22 @@ const ProfileAddresses: React.FC<ProfileAddressesProps> = ({ userId }) => {
           </div>
 
           <div className="address-buttons">
+            <ScrollReveal type="down">
             <RectangularButton
               text={t("profile.addresses.edit")}
               icon={<CiEdit />}
               className="btn-edit-address"
               onClick={() => handleEdit(addr)}
             />
+            </ScrollReveal>
+            <ScrollReveal type="down">
             <RectangularButton
               text={t("profile.addresses.delete")}
               icon={<IoTrashOutline />}
               className="btn-delete-address"
               onClick={() => handleDelete(addr)}
             />
+            </ScrollReveal>
           </div>
         </div>
       ))}
@@ -160,7 +165,6 @@ const ProfileAddresses: React.FC<ProfileAddressesProps> = ({ userId }) => {
           />
         </Modal>
       )}
-      </RevealGroup>
     </div>
   );
 };

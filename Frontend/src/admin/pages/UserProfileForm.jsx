@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import "../components/cards/general_form_card/GeneralFormCard.css";
-import "../style/UserProfileForm.css";
-import IconButton from "../components/buttons/IconButton";
 import { RiUserAddLine } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
 import Select from "react-select";
+import "../components/cards/general_form_card/GeneralFormCard.css";
+import IconButton from "../components/buttons/IconButton";
 import AdminHeader from '../components/admin_header/AdminHeader';
+import "../style/UserProfileForm.css";
 
 const UserProfileForm = () => {
   const { t } = useTranslation();
@@ -117,10 +117,11 @@ const UserProfileForm = () => {
               icon={<RiUserAddLine />}
               text={t("admin.userProfile.addUser")}
               color="#fff"
-              bgColor="#204e51"
-              hoverBg="#204E51D1"
+              bgColor="#972148"
+              hoverBg="#BA2054CD"
               onClick={() => alert("Saved!")}
-              borderColor="#2f7479e7"
+              borderColor="#913a57"
+              hoverColor="#fff"
             />
           </button>
         </form>

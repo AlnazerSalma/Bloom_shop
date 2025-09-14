@@ -26,6 +26,7 @@
     width: 400px;
     min-height: 240px;
     height: 100%;
+    margin: 10px;
 }
 
 .feedback-card:hover {

@@ -24,11 +24,8 @@ const Profile = lazy(() => import("../pages/ProfilePage.tsx"));
 const AdminLogin = lazy(() => import("../admin/pages/AdminLogin.jsx"));
 const Dashboard = lazy(() => import("../admin/pages/Dashboard.jsx"));
 const AdminHome = lazy(() => import("../admin/pages/AdminHomeContent.jsx"));
-const AdminAbout = lazy(() => import("../admin/pages/AdminAboutContent.jsx"));
 const AdminProfile = lazy(() => import("../admin/pages/UserProfileForm.jsx"));
-const AdminProjects = lazy(() => import("../admin/pages/AdminProjects.jsx"));
-const Partner = lazy(() => import("../admin/pages/AdminPartner.jsx"));
-const AdminProducts = lazy(() => import("../admin/pages/AdminProducts.jsx"));
+const AdminProducts = lazy(() => import("../admin/pages/AdminProducts.js"));
 const Settings = lazy(() => import("../admin/pages/AdminSettings.jsx"));
 
 const AppRoutes: React.FC = () => {
@@ -66,10 +63,7 @@ const AppRoutes: React.FC = () => {
           >
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="adminhome" element={<AdminHome />} />
-            <Route path="adminabout" element={<AdminAbout />} />
             <Route path="adminprofile" element={<AdminProfile />} />
-            <Route path="projects" element={<AdminProjects />} />
-            <Route path="partner" element={<Partner />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="settings" element={<Settings />} />
           </Route>

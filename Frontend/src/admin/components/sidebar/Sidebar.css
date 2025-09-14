@@ -57,7 +57,7 @@
     font-size: 2rem;
     margin: 0;
     font-weight: 600;
-    color: #204e51;
+    color: #842a48;
 }
 
 .sidebar-title p {
@@ -79,7 +79,9 @@
 }
 
 .sidebar-toggle:hover {
-    background-color: #2f7479be;
+    background-color: #913a57;
+    color: whitesmoke;
+    border: #fdffff;
 }
 
 .sidebar.collapsed .sidebar-toggle {
@@ -90,7 +92,7 @@
 
 .sidebar-divider {
     height: 3px;
-    background-color: #204e51;
+    background-color: #913a57;
     width: 100%;
     margin: 20px 0;
     border: none;
@@ -116,13 +118,13 @@
 }
 
 .sidebar-menu>li:hover {
-    color: #0697a1;
+    color: #913a57;
 }
 
 .sidebar-menu .icon {
     margin-inline-end: 7px;
     font-size: 1.4rem;
-    color: #204e51;
+    color: #000000;
     transition: all 0.3s ease;
 }
 
@@ -142,7 +144,7 @@
 
 .sidebar-menu>li:hover .icon {
     animation: pop 1.2s ease-in-out;
-    color: #0697a1;
+    color: #913a57;
 }
 
 .sidebar.collapsed .sidebar-menu>li {
@@ -186,7 +188,7 @@
 .sidebar-submenu li {
     padding: 8px 0;
     font-size: 1rem;
-    color: #204e51;
+    color: #504a4c;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -194,23 +196,23 @@
 }
 
 .sidebar-submenu li:hover {
-    color: #0697a1;
+    color: #913a57;
 }
 
 .sidebar-submenu .icon {
     margin-inline-end: 5px;
     font-size: 1.2rem;
-    color: #204e51;
+    color: #504a4c;
 }
 
 .sidebar-submenu>li:hover .icon {
     animation: pop 2s ease-in-out;
-    color: #0697a1;
+    color: #913a57;
 }
 
 /* Active States */
 .sidebar-menu>li.active {
-    background-color: rgb(15, 92, 96);
+    background-color: #972148;
     color: #ffffff;
     border-radius: 6px;
 }
@@ -220,7 +222,7 @@
 }
 
 .sidebar-menu>li.active:hover {
-    background-color: rgb(4, 115, 121);
+    background-color: #620725ec;
 }
 
 /* Collapse Hidden Elements */
