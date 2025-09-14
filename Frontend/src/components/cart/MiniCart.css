@@ -1,0 +1,143 @@
+.mini-cart {
+    position: absolute;
+    top: 160%;
+    right: -150%;
+    width: 370px;
+    max-height: 500px;
+    overflow-y: auto;
+    background: rgb(255, 247, 247);
+    border-radius: 10px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: start;
+}
+
+.mini-cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    text-align: start;
+}
+
+.mini-cart-header h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: start;
+}
+
+.mini-cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.mini-cart-item {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 2px solid #e2e2e2;
+    text-align: start;
+}
+
+.mini-cart-item:last-child {
+    border-bottom: none;
+}
+
+.mini-cart-img {
+    width: 90px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.mini-cart-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+}
+
+.mini-cart-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #302f2f;
+    margin: 0;
+    text-align: start;
+    line-height: 1.0;
+}
+
+.mini-cart-price {
+    font-size: 1.2rem;
+    color: #000;
+    text-align: start;
+    font-weight: bold;
+}
+
+.mini-cart-size-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+}
+
+.mini-cart-size {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: start;
+}
+
+.cart-remove-item {
+    font-size: 22px;
+    transition: color 0.2s ease;
+}
+
+.mini-cart-subtotal {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #e2e2e2;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: start;
+}
+
+.mini-cart-subtotal-title {
+font-size: 1.2rem;
+}
+
+.mini-cart-bt {
+    margin-top: 15px;
+    padding: 0 10px 10px;
+    text-align: center;
+}
+
+.btn-rectangular.full-width {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.mini-cart::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mini-cart::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+html[dir="rtl"] .mini-cart {
+    padding-right: 10px;
+    padding-left: 0;
+}

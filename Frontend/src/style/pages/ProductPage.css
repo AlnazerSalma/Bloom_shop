@@ -255,7 +255,101 @@
 }
 
 /* ============================
-   Lightbox
+product-actions
+============================ */
+.product-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.quantity-counter,
+.heart-rect,
+.btn-rectangular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-radius: 6px;
+    font-size: 20px;
+    padding: 0 12px;
+}
+
+.quantity-counter {
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    transition: border-color 0.3s;
+}
+
+.quantity-counter:hover {
+    border-color: #aaa;
+}
+
+.quantity-counter button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.quantity-counter button:hover {
+    background-color: #c06d8953;
+}
+
+.quantity-counter span {
+    margin: 0 8px;
+    font-weight: 600;
+    min-width: 24px;
+    text-align: center;
+}
+
+.heart-rect {
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart-rect:hover {
+    background-color: #fce4e4;
+}
+
+.heart-rect.favorite {
+    border-color: rgb(148, 8, 8);
+    background-color: rgba(148, 8, 8, 0.1);
+}
+
+.heart-rect.favorite:hover {
+    background-color: rgba(228, 215, 215, 0.481);
+    border: 2px solid #ddd;
+}
+
+.heart-icon {
+    font-size: 20px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.heart-rect.favorite .heart-icon {
+    color: rgb(148, 8, 8);
+}
+
+.heart-rect:hover .heart-icon {
+    color: rgb(148, 8, 8);
+}
+
+
+/* ============================
+Lightbox
 ============================ */
 .lightbox {
     position: fixed;
@@ -324,32 +418,6 @@
     gap: 12px;
     margin-top: 20px;
     width: 100%;
-}
-
-.product-actions .add-to-cart {
-    background-color: #ddd;
-    color: #333;
-    flex: 1;
-    font-size: 1.2rem;
-    font-weight: bold;
-    max-width: 300px;
-}
-
-.product-actions .add-to-cart:hover {
-    background-color: #c5c0c0;
-}
-
-.product-actions .buy-now {
-    background-color: #913a57;
-    color: white;
-    flex: 1;
-    font-size: 1.2rem;
-    font-weight: bold;
-    max-width: 300px;
-}
-
-.product-actions .buy-now:hover {
-    background-color: #b1335f;
 }
 
 @media (max-width: 1300px) {

@@ -5,18 +5,22 @@ import useIsArabic from "../../../../hook/useIsArabic";
 import { useLanguageDirection } from "../../../../hook/useLanguageDirection";
 import "./LanguageToggleClick.css";
 
-const AdminLanguageToggle = () => {
+const AdminLanguageToggle: React.FC = () => {
   const { i18n } = useTranslation();
   const isArabic = useIsArabic();
   useLanguageDirection(i18n);
 
-  const handleToggleLanguage = () => {
-    const nextLang = isArabic ? "en" : "ar";
+  const handleToggleLanguage = (): void => {
+    const nextLang: string = isArabic ? "en" : "ar";
     i18n.changeLanguage(nextLang);
   };
 
   return (
-    <div className="admin-lang-toggle" onClick={handleToggleLanguage} title="Change Language">
+    <div
+      className="admin-lang-toggle"
+      onClick={handleToggleLanguage}
+      title="Change Language"
+    >
       <FaGlobe className="lang-icon" />
       <span className="lang-label">{isArabic ? "AR" : "EN"}</span>
     </div>

@@ -50,16 +50,22 @@ export const mockProducts: Product[] = [
     price: 60,
     rate: 4.5,
     images: [
-      "https://kimesranch.com/cdn/shop/files/Mens-Straight-Fit-cowboy-cut-jeans-kimes-ranch.jpg?v=1737047277&width=1000",
+      "https://calvinklein.scene7.com/is/image/CalvinKlein/4RC751G_XQE_main?wid=680&qlt=80%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0&fmt=webp",
+      "https://calvinklein.scene7.com/is/image/CalvinKlein/4RC751G_XQE_alternate1?wid=680&qlt=80%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0&fmt=webp",
+      "https://calvinklein.scene7.com/is/image/CalvinKlein/4RC751G_XQE_alternate3?wid=680&qlt=80%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0&fmt=webp",
+      "https://calvinklein.scene7.com/is/image/CalvinKlein/4RC751G_XQE_alternate4?wid=680&qlt=80%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0&fmt=webp",
     ],
     category: "men",
     size: ["30", "32", "34", "36"],
-    brand: { en: "Levi's", ar: "ليفايز" },
+    brand: { en: "Calvin Klein", ar: "كالفن كلاين" },
     material: { en: "Denim (100% Cotton)", ar: "دينيم (قطن ١٠٠٪)" },
   },
   {
     id: "3",
-    name: { en: "Men's Polo Shirt", ar: "قميص بولو رجالي" },
+    name: {
+      en: "Cable-Knit Cotton Polo-Collar Sweater",
+      ar: "سويتر رجالي برقبة بولو من القطن مضلع",
+    },
     desc: {
       en: "Comfortable and stylish polo shirt for casual wear.",
       ar: "قميص بولو مريح وأنيق للارتداء اليومي.",
@@ -67,7 +73,10 @@ export const mockProducts: Product[] = [
     price: 45,
     rate: 4,
     images: [
-      "https://slimages.macysassets.com/is/image/MCY/products/8/optimized/27933338_fpx.tif",
+      "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1487403_lifestyle?$rl_4x5_zoom$",
+      "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1487403_alternate10?$rl_4x5_pdp$",
+      "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1487403_alternate3?$rl_4x5_zoom$",
+      "https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1487403_alternate4?$rl_4x5_zoom$",
     ],
     category: "men",
     size: ["S", "M", "L", "XL"],
@@ -84,11 +93,14 @@ export const mockProducts: Product[] = [
     price: 120,
     rate: 4,
     images: [
-      "https://boutiqueofleathers.com/cdn/shop/files/BOL-Men_s-Racer-Leather-Jacket-Men_s-Leather-Jackets-21861425.jpg",
+      "https://tommy-europe.scene7.com/is/image/TommyEurope/MW0MW40776_AFE_alternate5?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72",
+      "https://tommy-europe.scene7.com/is/image/TommyEurope/MW0MW40776_AFE_main?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72",
+      "https://tommy-europe.scene7.com/is/image/TommyEurope/MW0MW40776_AFE_alternate1?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72",
+      "https://tommy-europe.scene7.com/is/image/TommyEurope/MW0MW40776_AFE_alternate4?wid=781&fmt=jpeg&qlt=95%2C1&op_sharpen=0&resMode=sharp2&op_usm=1.5%2C.5%2C0%2C0&iccEmbed=0&printRes=72",
     ],
     category: "men",
     size: ["M", "L", "XL"],
-    brand: { en: "Zara", ar: "زارا" },
+    brand: { en: "Tommy Hilfiger", ar: "تومي هيلفيغر" },
     material: { en: "Genuine Leather", ar: "جلد طبيعي" },
   },
   {
@@ -143,17 +155,18 @@ export const mockProducts: Product[] = [
       "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-01_1.jpg",
       "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-02.jpg",
       "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-03_1.jpg",
-      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-06_1.jpg"
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-06_1.jpg",
     ],
     category: "women",
+    size: ["One Size"],
     brand: { en: "Michael Kors", ar: "مايكل كورس" },
     material: { en: "Leather", ar: "جلد" },
   },
   {
     id: "8",
     name: {
-      en: "Prada sunglasses with the iconic metal plaque",
-      ar: "نظارات شمسية نسائية برادا مع اللوحة المعدنية الأيقونية",
+      en: "Women's Prada Sunglasses",
+      ar: "نظارات شمسية نسائية برادا",
     },
     desc: {
       en: "Elegant Prada oversized sunglasses with full UV protection, crafted for luxury and daily elegance.",
@@ -182,7 +195,10 @@ export const mockProducts: Product[] = [
     price: 50,
     rate: 4.6,
     images: [
-      "https://ca.slipintosoft.com/cdn/shop/files/womens-dressy-casual-silk-blouse-long-sleeve-bow-tie-neck-silk-shirts-143156.jpg?v=1724324951",
+      "https://shop.mango.com/assets/rcs/pics/static/T7/fotos/S/77084022_01.jpg?imwidth=2048&imdensity=1&ts=1720526661010",
+      "https://shop.mango.com/assets/rcs/pics/static/T7/fotos/outfit/S/77084022_01-99999999_01.jpg?imwidth=2048&imdensity=1&ts=1720526661010",
+      "https://shop.mango.com/assets/rcs/pics/static/T7/fotos/S/77084022_01_R.jpg?imwidth=2048&imdensity=1&ts=1720526661010",
+      "https://shop.mango.com/assets/rcs/pics/static/T7/fotos/S/77084022_01_D2.jpg?imwidth=2048&imdensity=1&ts=1720526661010",
     ],
     category: "women",
     size: ["S", "M", "L"],
@@ -220,7 +236,9 @@ export const mockProducts: Product[] = [
     price: 20,
     rate: 3.5,
     images: [
-      "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/474596/item/ingoods_32_474596_3x4.jpg?width=494",
+      "https://image.uniqlo.com/UQ/ST3/id/imagesgoods/474599/item/idgoods_09_474599_3x4.jpg?width=369",
+      "https://image.uniqlo.com/UQ/ST3/id/imagesgoods/474599/sub/idgoods_474599_sub7_3x4.jpg?width=369",
+      "https://image.uniqlo.com/UQ/ST3/id/imagesgoods/474599/sub/idgoods_474599_sub9_3x4.jpg?width=369",
     ],
     category: "kids",
     size: ["XS", "S", "M", "L"],
@@ -237,7 +255,10 @@ export const mockProducts: Product[] = [
     price: 18,
     rate: 4,
     images: [
-      "https://www.mumkins.in/cdn/shop/files/boys-shorts-bl08666-navyblue-1.jpg?v=1756364282&width=1080",
+      "https://image.hm.com/assets/hm/2c/76/2c766b58e1a06fdb71f1c1d19db5595e7ea634d8.jpg?imwidth=1260",
+      "https://image.hm.com/assets/hm/42/90/42900f05cd6043cbaf6d095365d774245758eb69.jpg?imwidth=1260",
+      "https://image.hm.com/assets/hm/86/43/86433cf6ab7c96edf2a77422bc4287a17381d94e.jpg?imwidth=1260",
+      "https://image.hm.com/assets/hm/0a/8d/0a8dc21be9a955b84591fb52ae556bd5daa27f3f.jpg?imwidth=1260"
     ],
     category: "kids",
     size: ["XS", "S", "M", "L"],
@@ -251,7 +272,10 @@ export const mockProducts: Product[] = [
     price: 25,
     rate: 3.7,
     images: [
-      "https://img.kwcdn.com/product/fancy/f6c64025-3ffa-44f3-a3de-710f588289ba.jpg",
+      "https://www.carters.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dwc1cd0c2e/productimages/2S322210.jpg?sw=470",
+      "https://www.carters.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dwde1d715d/productimages/2S322210_1.jpg?sw=470",
+      "https://www.carters.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dw76b1a2c7/productimages/2S322210_2.jpg?sw=470",
+      "https://www.carters.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dwe6fbef82/productimages/2S322210_LV03.jpg?sw=470"
     ],
     category: "kids",
     size: ["XS", "S", "M"],
@@ -341,7 +365,7 @@ export const mockProducts: Product[] = [
       "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-0.png?crop=center&height=450&v=1725759146&width=450",
       "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-1.png?crop=center&height=450&v=1725759147&width=450",
       "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-2.png?crop=center&height=450&v=1725759147&width=450",
-      "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-3.png?crop=center&height=450&v=1725759147&width=450"
+      "https://www.havaianas.com/cdn/shop/files/4149584-slim-point-6842-3.png?crop=center&height=450&v=1725759147&width=450",
     ],
     category: "footwear",
     size: ["36", "37", "38", "39", "40"],
@@ -362,13 +386,14 @@ export const mockProducts: Product[] = [
       "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462321/TB0A6BNNEO8-ALT2/Mens-Mt-Maddsen-Hiking-Boot.png",
       "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462320/TB0A6BNNEO8-ALT3/Mens-Mt-Maddsen-Hiking-Boot.png",
       "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462324/TB0A6BNNEO8-ALT7/Mens-Mt-Maddsen-Hiking-Boot.png",
-      "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462321/TB0A6BNNEO8-ALT5/Mens-Mt-Maddsen-Hiking-Boot.png"
+      "https://assets.timberland.com/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1719462321/TB0A6BNNEO8-ALT5/Mens-Mt-Maddsen-Hiking-Boot.png",
     ],
     category: "footwear",
     size: ["40", "41", "42", "43", "44"],
     brand: { en: "Timberland", ar: "تيمبرلاند" },
     material: { en: "Leather & Rubber", ar: "جلد ومطاط" },
   },
+
   {
     id: "20",
     name: { en: "Casual Loafers", ar: "حذاء كاجوال" },
@@ -421,7 +446,7 @@ export const mockProducts: Product[] = [
     material: { en: "Mesh & Rubber", ar: "شبك ومطاط" },
   },
   {
-    id: "22",
+    id: "23",
     name: { en: "Kids Sneakers", ar: "حذاء رياضي للأطفال" },
     desc: {
       en: "Durable sneakers for playtime.",
@@ -430,7 +455,10 @@ export const mockProducts: Product[] = [
     price: 30,
     rate: 4.8,
     images: [
-      "https://assets.myntassets.com/f_auto,q_auto:eco,dpr_1.3,w_158,c_limit,fl_progressive/v1/assets/images/30806367/2025/4/2/69aa7243-bea4-4fc1-a3ff-4f14e74365f61743591431129-MiArcus-Unisex-Kids-Striped-PU-Sneakers-6001743591430663-1.jpg",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395555/06/sv01/fnd/PNA/fmt/png/RS-X-Little-Kids'-Sneakers",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395555/06/fnd/PNA/fmt/png/RS-X-Little-Kids'-Sneakers",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395555/06/bv/fnd/PNA/fmt/png/RS-X-Little-Kids'-Sneakers",
+      "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/395555/06/sv02/fnd/PNA/fmt/png/RS-X-Little-Kids'-Sneakers",
     ],
     category: "footwear",
     size: ["28", "29", "30", "31"],

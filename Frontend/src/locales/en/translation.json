@@ -61,11 +61,32 @@
     "less": "▲ Less",
     "buyNow": "Buy Now",
     "addToCart": "Add to Cart",
+    "productNotFound": "Product not found",
     "relatedProducts": {
       "subtitle": "Recommended for you",
       "title": "Related Products",
       "description": "Discover our products that you may like, carefully selected based on your interests and preferences."
     }
+  },
+  "cartPage":{
+    "itemsInCart": "You have {{count}} items in your cart",
+    "viewCart" : "View Cart",
+    "subtotal": "Subtotal",
+    "empty": "Your cart is empty",
+    "cart": "Cart ",
+    "your": "Your",
+    "yourCart": "Your Cart",
+    "proceedToCheckout": "Proceed to Checkout",
+    "shippingFee": "Shipping Fee",
+    "tax": "Tax (2%)",
+    "total": "Total",
+    "price": "Price",
+    "quantity": "Quantity",
+    "product": "Product",
+    "orderSummary": "Order Summary",
+    "items": "Items",
+    "freeShipping": "Free"
+
   },
   "admin": {
     "title": "Al-hasad",

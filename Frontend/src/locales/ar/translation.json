@@ -62,11 +62,30 @@
     "less": "▲ أقل",
     "buyNow": "اشترِ الآن",
     "addToCart": "أضف إلى السلة",
+    "productNotFound": "المنتج غير موجود",
     "relatedProducts": {
       "subtitle": "موصى به لك",
       "title": "المنتجات المتعلقة",
       "description": "اكتشف منتجاتنا التي قد تعجبك، المختارة بعناية وفقًا لاهتماماتك وتفضيلاتك."
     }
+  },
+  "cartPage":{
+    "itemsInCart": "لديك {{count}}  منتج في سلة التسوق",
+    "viewCart" :"عرض السلة",
+    "subtotal": "المجموع الجزئي",
+    "empty": "سلتك فارغة",
+    "cart": "السلة ",
+    "your": "الخاصة بك",
+    "proceedToCheckout": "إتمام عملية الشراء",
+    "shippingFee": "رسوم الشحن",
+    "tax": "الضريبة (2%)",
+    "total": "المجموع النهائي",
+    "price": "السعر",
+    "quantity": "الكمية",
+    "product": "المنتج",
+    "orderSummary": "ملخص الطلب",
+    "items": "العناصر",
+    "freeShipping": "مجاني"
   },
   "admin": {
     "title": " شركة الحصاد",
