@@ -1,6 +1,7 @@
 import React from "react";
 import RevealGroup from "../reveal_animation/RevealGroup";
 import ScrollReveal from "../reveal_animation/ScrollReveal";
+import RectangularButton from "../buttons/rectangular_button/RectangularButton";
 import { useTranslation } from "react-i18next";
 import type { CartItem } from "../../../types/CartItem";
 import "./OrderSummary.css";
@@ -21,13 +22,17 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
   showProceedButton = false,
   proceedText = "Proceed",
 }) => {
-  const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-  const { t } = useTranslation();
+  const subtotal = cartItems.reduce((acc, item) => {
+    // Apply discount as a percentage
+    const effectivePrice = item.discount
+      ? item.price * (1 - item.discount / 100)
+      : item.price;
+    return acc + effectivePrice * item.quantity;
+  }, 0);
+
   const tax = subtotal * taxRate;
   const total = subtotal + tax + shippingFee;
+  const { t } = useTranslation();
 
   return (
     <ScrollReveal type="down">
@@ -58,9 +63,11 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
 
           {showProceedButton && onProceed && (
             <div style={{ marginTop: "1rem" }}>
-              <button className="btn-rectangular primary" onClick={onProceed}>
-                {proceedText}
-              </button>
+              <RectangularButton
+                text={proceedText}
+                className="primary order-summary-btn"
+                onClick={onProceed}
+              />
             </div>
           )}
         </ScrollReveal>

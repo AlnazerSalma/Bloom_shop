@@ -29,9 +29,7 @@ const CheckoutReview: React.FC = () => {
   return (
     <div className="checkout-review-page">
       <ScrollReveal type="down">
-        <h2 className="checkout-title">
-          {t("checkout.review.title")}
-        </h2>
+        <h2 className="checkout-title">{t("checkout.review.title")}</h2>
       </ScrollReveal>
 
       <div className="checkout-grid">
@@ -41,30 +39,35 @@ const CheckoutReview: React.FC = () => {
 
             {/* Cart Items */}
             <div className="checkout-cart-items">
-              {cartItems.map((item) => (
-                <div
-                  className="checkout-cart-item"
-                  key={`${item.id}-${item.selectedSize ?? "default"}`}
-                >
-                  {item.images[0] && (
-                    <img
-                      src={item.images[0]}
-                      alt={item.name[lang]}
-                      className="item-image"
-                    />
-                  )}
-                  <div className="item-details">
-                    <h4 className="item-title">{item.name[lang]}</h4>
-                    <p className="item-price">
-                      {item.quantity} × ${item.price.toFixed(2)} = $
-                      {(item.quantity * item.price).toFixed(2)}
-                    </p>
-                    {item.selectedSize && (
-                      <p className="item-size">Size: {item.selectedSize}</p>
+              {cartItems.map((item) => {
+                const effectivePrice = item.discount
+                  ? item.price * (1 - item.discount / 100)
+                  : item.price;
+                return (
+                  <div
+                    className="checkout-cart-item"
+                    key={`${item.id}-${item.selectedSize ?? "default"}`}
+                  >
+                    {item.images[0] && (
+                      <img
+                        src={item.images[0]}
+                        alt={item.name[lang]}
+                        className="item-image"
+                      />
                     )}
+                    <div className="item-details">
+                      <h4 className="item-title">{item.name[lang]}</h4>
+                      <p className="item-price">
+                        {item.quantity} × ${effectivePrice.toFixed(2)} = $
+                        {(item.quantity * effectivePrice).toFixed(2)}
+                      </p>
+                      {item.selectedSize && (
+                        <p className="item-size">Size: {item.selectedSize}</p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Shipping Address */}

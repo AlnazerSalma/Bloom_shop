@@ -36,7 +36,6 @@
   flex-wrap: wrap;
 }
 
-/* Expiry Date & CVV beside each other */
 .form-row.inline-inputs {
   display: flex;
   flex-direction: row;
@@ -67,12 +66,9 @@
   white-space: pre;
 }
 
-/* Hide only when input has real value */
 .input-card.with-placeholder:not(:placeholder-shown)::before {
   content: "";
 }
-
-
 
 .input-card {
   flex: 1;
@@ -98,11 +94,17 @@
 
 
 .submit-btn {
-  margin-top: 1rem;
-  display: inline-block;
-  align-self: flex-start;
-  width: 20%;
+  margin-top: 20px;
+  display: block;
+  width: 70%;
+  height: 65px;
+  transition: background 0.3s, transform 0.2s;
 }
+
+.submit-btn:hover {
+  transform: scale(1.05);
+}
+
 
 /* Medium screens (tablet) */
 @media (max-width: 1024px) {

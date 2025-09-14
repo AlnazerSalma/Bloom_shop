@@ -67,10 +67,8 @@ function ProductPage() {
       quantity,
     };
 
-    // Make a copy of current cart
+    // Add to cart logic
     const updatedCartItems = [...cartItems];
-
-    // Check if item already exists in cart (same id and size)
     const existingIndex = updatedCartItems.findIndex(
       (item) =>
         item.id === cartItem.id &&
@@ -79,18 +77,18 @@ function ProductPage() {
     );
 
     if (existingIndex !== -1) {
-      // Item exists → increase quantity
       updatedCartItems[existingIndex].quantity += quantity;
     } else {
-      // Item does not exist → add new
       updatedCartItems.push(cartItem);
     }
 
-    // Save updated cart to localStorage and notify NavBar
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
     window.dispatchEvent(new Event("localStorageUpdated"));
-
     setCartOpen(true);
+
+    // ✅ Reset selected size and quantity
+    setSelectedSize(null);
+    setQuantity(1);
 
     console.log(
       "Added to cart:",
