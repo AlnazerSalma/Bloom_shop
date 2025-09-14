@@ -8,7 +8,7 @@ import Home from "../pages/HomePage.tsx";
 
 // Public Pages
 const Cart = lazy(() => import("../pages/CartPage.jsx"));
-const Wishlist = lazy(() => import("../pages/WishlistPage.jsx"));
+const Wishlist = lazy(() => import("../pages/WishlistPage.tsx"));
 const Shop = lazy(() => import("../pages/ShopePage.jsx"));
 const ContactUs = lazy(() => import("../pages/ContactUsPage.jsx"));
 const Product = lazy(() => import("../pages/ProductsPage.tsx"));

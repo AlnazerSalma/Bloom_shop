@@ -1,10 +1,4 @@
-export interface Feedback {
-  id: number;
-  name: { en: string; ar: string };
-  text: { en: string; ar: string };
-  img: string;
-  rating: number;
-}
+import type { Feedback } from "../../../types/feedbackType";
 
 export const feedbackData: Feedback[] = [
   {

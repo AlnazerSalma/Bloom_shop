@@ -26,8 +26,8 @@ function Footer() {
   const navLabels = [
     t("discoverHome"),
     t("exploreShop"),
-    t("favoriteWishlist"),
-    t("yourCart"),
+    t("wishlist.wishlist"),
+    t("cart"),
     t("getInTouch"),
   ];
 

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ImageList } from "../../../assets/data/home/heroData";
-import type { Slide } from "../../../assets/data/home/heroData";
+import type { HeroSlide } from "../../../types/heroSlide";
 import { useTranslation } from "react-i18next";
 import useIsArabic from "../../../hook/useIsArabic";
 import ShopButton from "../../common/buttons/shop_button/ShopButton";
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
 
       <div className="hero-container">
         <Slider {...HeroSettings}>
-          {ImageList.map((data: Slide, index: number) => (
+          {ImageList.map((data: HeroSlide, index: number) => (
             <div key={data.id} className="hero-slide">
               <div className="hero-grid">
                 <div className="hero-text">

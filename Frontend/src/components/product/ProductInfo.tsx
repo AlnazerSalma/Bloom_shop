@@ -1,5 +1,5 @@
 import React from "react";
-import type { Product } from "../../assets/data/mock_data/mockProducts";
+import type { Product } from "../../types/productType";
 import "./product.css";
 
 interface Props {

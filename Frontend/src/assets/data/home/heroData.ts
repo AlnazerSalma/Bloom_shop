@@ -1,21 +1,9 @@
 import men from "../../image/home/hero/men.png";
 import women from "../../image/home/hero/women.png";
 import sale from "../../image/home/hero/sale.png";
+import type { HeroSlide } from "../../../types/heroSlide";
 
-export interface Slide {
-  id: number;
-  img: string;
-  title: {
-    en: string;
-    ar: string;
-  };
-  description: {
-    en: string;
-    ar: string;
-  };
-}
-
-export const ImageList: Slide[] = [
+export const ImageList: HeroSlide[] = [
   
   {
     id: 1,

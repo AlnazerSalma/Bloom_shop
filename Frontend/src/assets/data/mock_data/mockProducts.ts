@@ -20,31 +20,7 @@ import BabyGirls1 from "../../image/products/BabyGirls1.png";
 import BabyGirls2 from "../../image/products/BabyGirls2.png";
 import BabyGirls3 from "../../image/products/BabyGirls3.png";
 import BabyGirls4 from "../../image/products/BabyGirls4.png";
-export interface Product {
-  id: string;
-  name: {
-    en: string;
-    ar: string;
-  };
-  desc: {
-    en: string;
-    ar: string;
-  };
-  price: number;
-  discount?: number;
-  rate: number;
-  images: string[];
-  category: "kids" | "men" | "women" | "footwear";
-  size?: string[];
-  brand?: {
-    en: string;
-    ar: string;
-  };
-  material?: {
-    en: string;
-    ar: string;
-  };
-}
+import type { Product } from "../../../types/productType";
 
 export const mockProducts: Product[] = [
   // ---- Men ----
@@ -164,7 +140,10 @@ export const mockProducts: Product[] = [
     price: 80,
     rate: 5,
     images: [
-      "https://img.kwcdn.com/product/fancy/008e97bb-d2be-4ff3-9598-06d9966d0afe.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-01_1.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-02.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-03_1.jpg",
+      "https://cdn.brandfield.com/media/catalog/product/cache/2148b6ececc229623c3ab7d3f3406f16/1/9/196237506672-06_1.jpg"
     ],
     category: "women",
     brand: { en: "Michael Kors", ar: "مايكل كورس" },

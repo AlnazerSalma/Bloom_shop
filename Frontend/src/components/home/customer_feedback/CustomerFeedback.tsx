@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import StarRating from "../../common/star_rating/StarRating";
 import { feedbackData } from "../../../assets/data/home/feedbackData";
-import type { Feedback } from "../../../assets/data/home/feedbackData";
+import type { Feedback } from "../../../types/feedbackType";
 import useIsArabic from "../../../hook/useIsArabic";
 import ScrollReveal from "../../common/reveal_animation/ScrollReveal";
 import RevealGroup from "../../common/reveal_animation/RevealGroup";

@@ -1,57 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { FaRegHeart } from "react-icons/fa6";
-import { FaHeart } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaRegHeart, FaHeart } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import useIsArabic from "../../../../hook/useIsArabic";
+import { useImageCarousel } from "../../../../hook/product_card/useImageCarousel";
+import { useLocalStorageList } from "../../../../hook/local_storage/useLocalStorageList";
+import type { Product } from "../../../../types/productType";
 import StarRating from "../../star_rating/StarRating";
 import ShopButton from "../../buttons/shop_button/ShopButton";
 import "./ProductCard.css";
 
-export interface Product {
-  id: string;
-  name: { en: string; ar: string };
-  desc: { en: string; ar: string };
-  price: number;
-  discount?: number;
-  rate: number;
-  images: string[];
-  category: "kids" | "men" | "women" | "footwear";
-}
-
 interface ProductCardProps {
   product: Product;
+  onFavorite?: (product: Product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onFavorite }) => {
   const { t } = useTranslation();
   const isArabic = useIsArabic();
   const lang = isArabic ? "ar" : "en";
-
-  const [isFavorite, setIsFavorite] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [imageIndex, setImageIndex] = useState(0);
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
+  const imageIndex = useImageCarousel(product.images, isHovered);
+  const { exists: isFavorite, toggleItem: toggleFavorite } =
+    useLocalStorageList<Product>(
+      "wishlist",
+      product
+    );
+
 
   const hasDiscount = !!product.discount;
   const discountedPrice = hasDiscount
     ? product.price * (1 - product.discount! / 100)
     : product.price;
 
-  // Handle image carousel on hover
-  useEffect(() => {
-    if (!isHovered || product.images.length <= 1) {
-      setImageIndex(0);
-      return;
-    }
-
-    const interval = setInterval(() => {
-      setImageIndex((prev) => (prev + 1) % product.images.length);
-    }, 1200);
-
-    return () => clearInterval(interval);
-  }, [isHovered, product.images]);
-
+  const handleToggleFavorite = () => {
+    toggleFavorite();
+    if (onFavorite) onFavorite(product);
+  };
+  
   return (
     <div
       className="product-card"
@@ -66,10 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className="product-card-image"
           loading="lazy"
         />
-        <div
-          className="heart-circle"
-          onClick={() => setIsFavorite(!isFavorite)}
-        >
+        <div className="heart-circle" onClick={handleToggleFavorite}>
           {isFavorite ? (
             <FaHeart className="heart-icon favorite" />
           ) : (

@@ -31,11 +31,11 @@ const CategoryProducts: React.FC = () => {
       )}
 
       {/* Products Grid */}
-      <div className="products-grid">
+      <div className="category-products-page-grid">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((p) => <ProductCard key={p.id} product={p} />)
         ) : (
-          <p>{t("noProducts")}</p>
+          <h1 >{t("noProducts")}</h1>
         )}
       </div>
     </div>

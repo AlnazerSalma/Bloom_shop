@@ -2,14 +2,7 @@ import Men from "../../image/home/category/men.png";
 import Women from "../../image/home/category/women.png";
 import Kids from "../../image/home/category/Kids.png";
 import Footwear from "../../image/home/category/footwear.png";
-
-export interface Category {
-  id: number;
-  img: string;
-  title: { en: string; ar: string };
-  description: { en: string; ar: string };
-  rating: number;
-}
+import type { Category } from "../../../types/CategoryType";
 
 export const categories: Category[] = [
   {

@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import brand from "../../assets/image/bag.png";
 import { IoIosSearch, IoIosHeartEmpty } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageToggleSwitch from "./language_toggle/switch_toggle/LanguageToggleSwitch";
 import LanguageToggleClick from "./language_toggle/click_toggle/LanguageToggleClick";
@@ -11,12 +11,14 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavBehavior } from "../../hook/useNavBehavior";
 import { useLanguageDirection } from "../../hook/useLanguageDirection";
 import { useClickOutside } from "../../hook/useClickOutside";
+import IconWithBadges from "./IconWithBadges";
 import "../../style/components/Navbar.css";
 
 function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
   useLanguageDirection(i18n);
   const navColor = useNavBehavior(mobileMenuOpen, setMobileMenuOpen);
   const mobileNavRef = useRef();
@@ -63,15 +65,16 @@ function NavBar() {
                 <IoIosSearch size={25} />
               </button>
 
-              {/* Wishlist / Love Icon */}
-              <button>
-                <IoIosHeartEmpty size={25} />
-              </button>
-
-              {/* Cart Icon */}
-              <button>
-                <IoBagHandleOutline size={25} />
-              </button>
+              <IconWithBadges
+                icon={<IoIosHeartEmpty size={25} />}
+                route="/wishlist"
+                storageKey="wishlist"
+              />
+              <IconWithBadges
+                icon={<IoBagHandleOutline size={25} />}
+                route="/cart"
+                storageKey="cart"
+              />
 
               <LanguageToggleClick />
               {/* Login Button */}
