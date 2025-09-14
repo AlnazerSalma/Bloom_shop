@@ -154,7 +154,6 @@
     }
 }
 
-/* Small devices (mobile) */
 @media (max-width: 760px) {
     .shop-page {
         padding: 20px 15px;
@@ -199,7 +198,6 @@
 }
 
 
-/* Extra small devices */
 @media (max-width: 640px) {
     .shop-title {
         font-size: 1.8rem;

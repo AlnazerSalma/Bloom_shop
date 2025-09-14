@@ -6,6 +6,7 @@ interface RectangularButtonProps {
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
+  icon?: React.ReactNode; // optional icon
 }
 
 const RectangularButton: React.FC<RectangularButtonProps> = ({
@@ -13,6 +14,7 @@ const RectangularButton: React.FC<RectangularButtonProps> = ({
   className,
   style,
   onClick,
+  icon,
 }) => {
   return (
     <button
@@ -20,7 +22,8 @@ const RectangularButton: React.FC<RectangularButtonProps> = ({
       style={style}
       onClick={onClick}
     >
-      {text}
+      {icon && <span className="btn-icon">{icon}</span>}
+      <span>{text}</span>
     </button>
   );
 };

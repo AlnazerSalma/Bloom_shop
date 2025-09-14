@@ -138,6 +138,60 @@
     "filter_price": "Shop by Price",
     "filter_discount": "Shop by Discount"
   },
+  "profile": {
+    "greeting": "Hello 👋",
+    "personal": "Personal Information",
+    "cart": "My Cart",
+    "wishlists": "My Wishlists",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "editProfile": "Edit Profile",
+    "save": "Save",
+    "profileInfo":{
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressPlaceholder": "Address"
+    },
+    "addresses": {
+      "addresses": "Manage Addresses",
+      "addNewAddress": "Add New Address",
+      "edit": "Edit",
+      "delete": "Delete",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressPlaceholder": "Enter your address",
+      "newAddress": "New Address",
+      "editAddress": "Edit your address"
+    },
+    "cards": {
+      "cards": "Saved Cards",
+      "addNewCard": "Add New Card",
+      "delete": "Delete",
+      "newCard": "New Card"
+    },
+    "orders": {
+      "orders": "My Orders",
+      "noOrders": "No orders found for this user.",
+      "viewOrder": "View Order",
+      "writeReview": "Write a Review",
+      "cancelOrder": "Cancel Order",
+      "noNotes": "No notes",
+      "size": "Size",
+      "quantity": "Qty",
+      "payment": "Payment",
+      "status": "Status",
+      "transactionId": "Transaction ID",
+      "address": "Address",
+      "tracking": "Tracking",
+      "carrier": "Carrier",
+      "eta": "ETA",
+      "addressNotFound": "Address not found"
+    }
+  },
   "admin": {
     "title": "Al-hasad",
     "subtitle": "Admin Panel",

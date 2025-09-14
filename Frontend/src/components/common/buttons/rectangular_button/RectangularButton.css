@@ -1,4 +1,8 @@
 .btn-rectangular {
+  display: inline-flex;           
+  align-items: center;            
+  justify-content: center;       
+  gap: 8px;                       
   padding: 12px 16px;
   font-size: 16px;
   border: none;
@@ -6,6 +10,14 @@
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
+
+.btn-rectangular .btn-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;                
+  line-height: 0;                 
+}
+
 
 .btn-rectangular.default {
   background-color: #bebdbd;
@@ -56,11 +68,10 @@
 /* Small screens (mobile) */
 @media (max-width: 768px) {
   .btn-rectangular {
-    padding: 2px 12px;
-    font-size: 0.8rem;
+    padding: 8px 12px;
+    font-size: 0.9rem;
     max-width: 100%;
     width: 100%;
     text-align: center;
   }
-
 }

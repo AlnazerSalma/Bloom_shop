@@ -134,7 +134,7 @@ const CheckoutReview: React.FC = () => {
                 className="default"
                 onClick={() => {
                   setModalOpen(false);
-                  console.log("Navigate to order page");
+                  navigate("/profile", { state: { tab: "orders" } });
                 }}
               />
               <RectangularButton

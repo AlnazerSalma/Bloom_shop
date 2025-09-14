@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import brand from "../../assets/image/bag.png";
-import { IoIosSearch, IoIosHeartEmpty } from "react-icons/io";
+import { IoIosHeartEmpty } from "react-icons/io";
+import { HiOutlineUser } from "react-icons/hi2";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -23,6 +25,7 @@ const NavBar: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
   useLanguageDirection(i18n);
   const navColor = useNavBehavior(mobileMenuOpen, setMobileMenuOpen);
   const mobileNavRef = useRef<HTMLDivElement>(null);
@@ -55,7 +58,7 @@ const NavBar: React.FC = () => {
 
     loadCart();
     window.addEventListener("localStorageUpdated", loadCart);
-    
+
     return () => window.removeEventListener("localStorageUpdated", loadCart);
   }, []);
   return (
@@ -95,8 +98,8 @@ const NavBar: React.FC = () => {
           <div className="logo-toggle-wrapper d-flex align-items-center gap-2 d-none d-md-flex">
             <div className="navbar-icons">
               {/* Search Icon */}
-              <button>
-                <IoIosSearch size={25} />
+              <button onClick={() => navigate("/profile")}>
+                <HiOutlineUser size={25} />
               </button>
 
               <IconWithBadges
