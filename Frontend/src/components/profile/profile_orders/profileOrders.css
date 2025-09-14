@@ -1,0 +1,150 @@
+.profile-orders-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-wrapper {
+    margin-bottom: 20px;
+}
+
+.order-date {
+    font-size: 1.3rem;
+    color: #505050;
+    padding-inline-start: 20px;
+}
+
+/* Card */
+.order-card {
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.39);
+}
+
+.order-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: black;
+    font-weight: bold;
+}
+
+.order-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.order-preview img {
+    width: 90px;
+    height: 90px;
+    object-fit: fill;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.order-info {
+    flex: 1;
+}
+
+.product-name {
+    font-size: 1rem;
+}
+
+.order-info p {
+    margin: 0px;
+    font-size: 0.9rem;
+    color: #494949;
+}
+
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.action-btn {
+    padding: 9px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.save-btn {
+    background-color: #ccc5c566;
+    color: #000000b0;
+}
+
+.save-btn:hover {
+    background-color: #887b7b80;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+    background-color: #e39696aa;
+    color: #6f0404cb;
+}
+
+.delete-btn:hover {
+    background-color: #c16d6d99;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.review-btn {
+    background-color: #9bc7e9aa;
+    color: #063c67d0;
+}
+
+.review-btn:hover {
+    background-color: #6fa9d699;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.status-notes-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.status-badge {
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.status-badge.pending {
+    background-color: #cc8727ea;
+}
+
+.status-badge.shipped {
+    background-color: #0b7392e0;
+}
+
+.status-badge.delivered {
+    background-color: #089e2bd6;
+}
+
+.status-badge.cancelled {
+    background-color: #960904dd;
+}
+
+.status-badge.returned {
+    background-color: #999;
+}
+
+.order-notes {
+    padding-top: 10px;
+    color: #555;
+}

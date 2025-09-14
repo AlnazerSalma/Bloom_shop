@@ -139,8 +139,8 @@
     "filter_discount": "Shop by Discount"
   },
   "profile": {
+    "greeting": "Hello 👋",
     "personal": "Personal Information",
-    "orders": "My Orders",
     "cart": "My Cart",
     "wishlists": "My Wishlists",
     "notifications": "Notifications",
@@ -172,6 +172,24 @@
       "addNewCard": "Add New Card",
       "delete": "Delete",
       "newCard": "New Card"
+    },
+    "orders": {
+      "orders": "My Orders",
+      "noOrders": "No orders found for this user.",
+      "viewOrder": "View Order",
+      "writeReview": "Write a Review",
+      "cancelOrder": "Cancel Order",
+      "noNotes": "No notes",
+      "size": "Size",
+      "quantity": "Qty",
+      "payment": "Payment",
+      "status": "Status",
+      "transactionId": "Transaction ID",
+      "address": "Address",
+      "tracking": "Tracking",
+      "carrier": "Carrier",
+      "eta": "ETA",
+      "addressNotFound": "Address not found"
     }
   },
   "admin": {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import {
   FaUser,
   FaBox,
@@ -16,6 +17,7 @@ import ProfileWishlist from "../components/profile/profile_wishlist/ProfileWishl
 import ProfileInfo from "../components/profile/profile_Info/ProfileInfo";
 import ProfileAddresses from "../components/profile/profile_addresses/ProfileAddresses";
 import ProfilePayment from "../components/profile/profile_payment/ProfilePayment";
+import ProfileOrders from "../components/profile/profile_orders/profileOrders";
 import { mockUsers } from "../assets/data/mock_data/mockUser";
 import type { User } from "../assets/data/mock_data/mockUser";
 import "../style/pages/ProfilePage.css";
@@ -28,14 +30,17 @@ interface MenuItem {
 
 const ProfilePage: React.FC = () => {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState<string>("personal");
+  const location = useLocation();
+  const initialTab = (location.state as { tab?: string })?.tab || "personal";
+  const [activeTab, setActiveTab] = useState<string>(initialTab);
+
 
   // Use the first user
   const user: User = mockUsers[0];
 
   const menuItems: MenuItem[] = [
     { key: "personal", label: t("profile.personal"), icon: FaUser },
-    { key: "orders", label: t("profile.orders"), icon: FaBox },
+    { key: "orders", label: t("profile.orders.orders"), icon: FaBox },
     { key: "wishlists", label: t("profile.wishlists"), icon: FaHeart },
     {
       key: "addresses",
@@ -52,7 +57,7 @@ const ProfilePage: React.FC = () => {
       case "personal":
         return <ProfileInfo userId={user.id} />;
       case "orders":
-        return <p>📦 Track your orders here.</p>;
+        return <ProfileOrders userId={user.id} />
       case "cart":
         return <p>🛒 View and manage items in your cart here.</p>;
       case "wishlists":
@@ -78,7 +83,7 @@ const ProfilePage: React.FC = () => {
         <div className="sidebar-user-row">
           <img src={user.image} alt={user.name} className="user-avatar" />
           <div className="user-text">
-            <p className="user-greeting">Hello 👋</p>
+            <p className="user-greeting">{t("profile.greeting")}</p>
             <h3 className="user-name">{user.name}</h3>
           </div>
         </div>
