@@ -138,6 +138,37 @@
     "filter_price": "Shop by Price",
     "filter_discount": "Shop by Discount"
   },
+  "profile": {
+    "personal": "Personal Information",
+    "orders": "My Orders",
+    "cart": "My Cart",
+    "wishlists": "My Wishlists",
+    "cards": "Saved Cards",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "editProfile": "Edit Profile",
+    "save": "Save",
+    "profileInfo":{
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressPlaceholder": "Address"
+    },
+    "addresses": {
+      "addresses": "Manage Addresses",
+      "addNewAddress": "Add New Address",
+      "edit": "Edit",
+      "delete": "Delete",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "addressPlaceholder": "Enter your address",
+      "newAddress": "New Address",
+      "editAddress": "Edit your address"
+    }
+  },
   "admin": {
     "title": "Al-hasad",
     "subtitle": "Admin Panel",

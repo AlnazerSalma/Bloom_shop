@@ -1,0 +1,30 @@
+.wishlist-profile-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 992px) {
+    .wishlist-profile-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wishlist-profile-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+.wishlist-profile {
+    padding: 20px 40px;
+}
+
+.wishlist-profile p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 50px;
+}

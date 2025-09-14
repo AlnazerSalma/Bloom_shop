@@ -18,6 +18,7 @@ const CategoryProducts = lazy(() => import("../pages/CategoriesPage.tsx"));
 const Checkout = lazy(() => import("../pages/CheckoutInfo.tsx"));
 const PaymentPage = lazy(() => import("../pages/CheckoutPayment.tsx"));
 const Review = lazy(() => import("../pages/CheckoutReview.tsx"));
+const Profile = lazy(() => import("../pages/ProfilePage.tsx"));
 
 // Admin Pages
 const AdminLogin = lazy(() => import("../admin/pages/AdminLogin.jsx"));
@@ -46,6 +47,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout/payment" element={<PaymentPage />} />
         <Route path="/checkout/review" element={<Review />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/category/:category" element={<CategoryProducts />} />
 
         <Route path="/admin">

@@ -6,7 +6,7 @@ import ScrollReveal from "../../common/reveal_animation/ScrollReveal";
 
 import "./CheckoutForm.css";
 
-interface CheckoutFormProps {
+interface CheckoutAdressFormProps {
   form: {
     nameEn: string;
     nameAr: string;
@@ -24,7 +24,7 @@ interface CheckoutFormProps {
   onSubmit: () => void;
 }
 
-const CheckoutForm: React.FC<CheckoutFormProps> = ({
+const CheckoutAddressForm: React.FC<CheckoutAdressFormProps> = ({
   form,
   onChange,
   onSubmit,
@@ -211,4 +211,4 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   );
 };
 
-export default CheckoutForm;
+export default CheckoutAddressForm;

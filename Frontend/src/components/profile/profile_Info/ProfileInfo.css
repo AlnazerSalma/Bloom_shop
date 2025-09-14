@@ -1,0 +1,107 @@
+.profile-container {
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.profile-image {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edit-avatar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* LTR default */
+    background-color: #913a57;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+html[dir="rtl"] .edit-avatar {
+    right: auto;
+    left: 0;
+}
+
+.edit-avatar:hover {
+    background-color: #913a57c3;
+}
+
+.edit-avatar input {
+    display: none;
+}
+
+.edit-avatar svg {
+    width: 16px;
+    height: 16px;
+    color: #f3f0f0;
+}
+
+
+.profile-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-item input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.btn-rectangular.btn-save {
+    background-color: #16a79f;
+    color: #fff;
+}
+
+.btn-rectangular.btn-save:hover {
+    background-image: linear-gradient(to right, #7db7b4, #014c48);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-rectangular.btn-edit {
+    background-color: #913a57;
+    color: #ffffff;
+}
+
+.btn-rectangular.btn-edit:hover {
+    background-image: linear-gradient(to right, #580822, #c94f7c);
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

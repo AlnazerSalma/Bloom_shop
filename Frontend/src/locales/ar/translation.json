@@ -137,6 +137,38 @@
     "filter_price": "تسوق حسب السعر",
     "filter_discount": "تسوق حسب الخصم"
     },
+  "profile": {
+    "personal": "المعلومات الشخصية",
+    "orders": "طلباتي",
+    "cart": "سلة التسوق",
+    "wishlists": "قائمة الرغبات",
+    "cards": "البطاقات المحفوظة",
+    "notifications": "الإشعارات",
+    "settings": "الإعدادات",
+    "editProfile": "تعديل الملف الشخصي",
+    "save": "حفظ",
+    "email": "البريد الإلكتروني",
+    "profileInfo":{
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "address": "العنوان",
+      "addressPlaceholder": "العنوان"
+    },
+    "addresses": {
+      "addresses": "إدارة العناوين",
+      "addNewAddress": "إضافة عنوان جديد",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "address": "العنوان",
+      "addressPlaceholder": "أدخل عنوانك",
+      "newAddress": "عنوان جديد",
+      "editAddress": "تعديل عنوانك"
+    }
+  },
   "admin": {
     "title": " شركة الحصاد",
     "subtitle": "لوحة التحكم",
