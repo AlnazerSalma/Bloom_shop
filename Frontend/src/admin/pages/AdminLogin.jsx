@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import LoginForm from "../components/form/loginForm/LoginForm";
+import LoginForm from "../components/loginForm/LoginForm";
 import "../style/AdminLogin.css";
 const AdminLogin = () => {
     const token = localStorage.getItem("token");

@@ -46,14 +46,9 @@ const Sidebar = ({ isCollapsed, toggleSidebar }) => {
       adminOnly: true,
     },
     {
-      label: t("admin.homePage.homePage"),
+      label: t("admin.homePage"),
       icon: <IoHomeOutline className="icon" />,
       path: "/admin/adminhome",
-    },
-    {
-      label: t("admin.aboutAlHasad.aboutAlHasad"),
-      icon: <IoMdInformationCircleOutline className="icon" />,
-      path: "/admin/adminabout",
     },
   ].filter(
     (item) => !(item.adminOnly && userRole !== "Admin")
@@ -61,7 +56,7 @@ const Sidebar = ({ isCollapsed, toggleSidebar }) => {
 
   const menuItems = [
     {
-      label: t("admin.dashboard.title"),
+      label: t("admin.dashboard"),
       icon: <LuLayoutDashboard className="icon" />,
       path: "/admin/dashboard",
     },
@@ -72,22 +67,12 @@ const Sidebar = ({ isCollapsed, toggleSidebar }) => {
       submenu: contentSubmenu,
     },
     {
-      label: t("admin.projects.projects"),
-      icon: <PiBuildingApartmentLight className="icon" />,
-      path: "/admin/projects",
-    },
-    {
-      label: t("admin.partners.partners"),
-      icon: <TbUsers className="icon" />,
-      path: "/admin/partner",
-    },
-    {
-      label: t("admin.products.products"),
+      label: t("admin.products"),
       icon: <BsBoxSeam className="icon" />,
       path: "/admin/products",
     },
     {
-      label: t("admin.settings.settings"),
+      label: t("admin.settings"),
       icon: <IoSettingsOutline className="icon" />,
       path: "/admin/settings",
     },

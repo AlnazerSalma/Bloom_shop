@@ -167,6 +167,7 @@ Upload Section
 .custom-upload:hover .upload-text {
   background-color: rgb(109, 109, 109);
 }
+
 .preview-wrapper {
   width: 100%;
   height: 100%;
@@ -176,6 +177,7 @@ Upload Section
   justify-content: center;
   cursor: pointer;
 }
+
 .preview-image {
   height: 100%;
   border-radius: 12px;
@@ -225,88 +227,6 @@ Upload Section
 }
 
 
-/* ================================
-Points Section
-=================================== */
-.points-section {
-  margin-top: 40px;
-}
-
-.add-point-btn {
-  background-color: #204e51;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  margin-bottom: 10px;
-  width: 15%;
-  height: 50px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.add-point-btn:hover {
-background-color: #2f7479e7;
-
-}
-.point-card {
-  padding: 20px;
-  margin: 20px 0;
-  background-color: #f5f5f5;
-  border-radius: 12px;
-  border: 1px solid #cccccc60;
-}
-
-.image-previews {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-}
-
-.upload-mode-container {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
-.upload-mode-label {
-  font-weight: 600;
-  color: #444;
-  font-size: 1.1rem;
-  white-space: nowrap;
-  padding-inline-start: 15px;
-}
-
-.upload-mode-toggle {
-  display: flex;
-  gap: 12px;
-}
-
-.upload-mode-toggle button {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: transparent;
-  cursor: pointer;
-  font-weight: bold;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  transition: all 0.3s ease;
-}
-
-.upload-mode-toggle button.active {
-  border: 3px solid #204e51;
-  background-color: #02697269;
-  color: #fefcfc;
-}
-
 @media (max-width: 1300px) {
   .general-form-card {
     width: 90%;
@@ -317,14 +237,11 @@ background-color: #2f7479e7;
     grid-template-columns: 1fr;
   }
 
-  .add-point-btn {
-    width: 40%;
-  }
-  
   .preview-image {
-    width: 100%; 
+    width: 100%;
   }
 }
+
 @media (max-width: 1024px) {
   .general-form-card {
     width: 95%;
@@ -335,12 +252,10 @@ background-color: #2f7479e7;
     grid-template-columns: 1fr;
   }
 
-  .add-point-btn {
-    width: 40%;
-  }
 }
 
 @media (max-width: 768px) {
+
   .section-title,
   .form-title {
     font-size: 1.5rem;
@@ -356,11 +271,6 @@ background-color: #2f7479e7;
     padding: 8px 16px;
   }
 
-  .add-point-btn {
-    width: 60%;
-    font-size: 14px;
-    padding: 10px;
-  }
 
   .upload-mode-container {
     flex-direction: column;
@@ -387,10 +297,6 @@ background-color: #2f7479e7;
   .upload-text {
     font-size: 13px;
     padding: 6px 12px;
-  }
-
-  .add-point-btn {
-    width: 100%;
   }
 
   .section-header {

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import UploadSection from "./UploadSection";
 import FormFieldsSection from "./FormFieldsSection";
-import PointsSection from "./PointsSection";
 import "./generalFormCard.css";
 
 const GeneralFormCard = ({
@@ -13,17 +11,7 @@ const GeneralFormCard = ({
   uploadTitle,
   uploadLabel,
   acceptTypes,
-  enablePointsSection = false,
-  pointsSectionTitle,
-  pointsSectionIcon,
-  allowImageModeChoice = false,
-  sectionKey = "",
-  points = [],
-  updatePoint,
-  deletePoint,
-  addPoint,
 }) => {
-  const { t } = useTranslation();
   const [previewUrl, setPreviewUrl] = useState(null);
   const [fileType, setFileType] = useState(null);
 
@@ -52,19 +40,6 @@ const GeneralFormCard = ({
       )}
 
       <FormFieldsSection fields={fields} />
-
-      {enablePointsSection && (
-        <PointsSection
-          points={points}
-          updatePoint={updatePoint}
-          deletePoint={deletePoint}
-          addPoint={addPoint}
-          pointsSectionTitle={pointsSectionTitle}
-          pointsSectionIcon={pointsSectionIcon}
-          allowImageModeChoice={allowImageModeChoice}
-          sectionKey={sectionKey}
-        />
-      )}
       {showUploadSection && (
         <UploadSection
           previewUrl={previewUrl}

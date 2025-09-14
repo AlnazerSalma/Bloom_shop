@@ -21,7 +21,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #204e51;
+  background-color: #913a57;
   color: white;
   font-weight: bold;
   font-size: 20px;
@@ -42,7 +42,7 @@
 .user-name {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #204e51;
+  color: #913a57;
 }
 
 .user-email {
@@ -53,13 +53,13 @@
 
 .notification-icon {
   font-size: 18px;
-  color: #204e51;
+  color: #000000;
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .notification-icon:hover {
-  color: #0697a1;
+  color: #913a57;
 }
 
 .topbar-search-wrapper {
@@ -93,7 +93,7 @@ html[dir="rtl"] .topbar-search {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  color: #204e51;
+  color: #913a57;
   pointer-events: none;
 }
 
