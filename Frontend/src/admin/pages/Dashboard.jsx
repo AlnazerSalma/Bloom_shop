@@ -4,11 +4,18 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import LiveClock from "../components/LiveClock";
 
 function Dashboard() {
-  const { t, i18n } = useTranslation();
+
 
   
   return (
-    <div className="dashboard-container">
+    <div   style={{
+        padding: "20px",
+        textAlign: "center",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}>
       <div className="dashboard-header" >
         <div className="dashboard-date-box">
           <FaRegCalendarAlt className="calendar-icon" />
