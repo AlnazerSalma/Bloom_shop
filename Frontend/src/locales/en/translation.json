@@ -26,10 +26,11 @@
   "favoriteWishlist": "Your Favorites",
   "yourCart": "Your Cart",
   "getInTouch": "Get in Touch",
+  "noProducts":"No products found",
+  "shopNow": "Shop Now",
   "buyNow": "Buy Now",
   "companyDescription": "Bloom brings you the latest trends and timeless styles. Shop effortlessly, look amazing, and let your clothes reflect your personality.",
   "homePage": {
-    "shopNow": "Shop Now",
     "headerSmall": "Browse Our Top Categories",
     "headerBig": "Best Categories",
     "description": "Explore our wide range of categories designed to fit everyone’s lifestyle.",

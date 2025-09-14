@@ -1,6 +1,6 @@
 import React from "react";
 import BannerImg from "../../../assets/image/home/banner/shopping.avif";
-import { bannerData } from "../../../assets/data/bannerData";
+import { bannerData } from "../../../assets/data/home/bannerData";
 import useIsArabic from "../../../hook/useIsArabic";
 import ScrollReveal from "../../common/reveal_animation/ScrollReveal";
 import RevealGroup from "../../common/reveal_animation/RevealGroup";

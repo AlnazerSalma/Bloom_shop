@@ -1,9 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ImageList } from "../../../assets/data/heroData";
-import type { Slide } from "../../../assets/data/heroData";
+import { ImageList } from "../../../assets/data/home/heroData";
+import type { Slide } from "../../../assets/data/home/heroData";
 import { useTranslation } from "react-i18next";
 import useIsArabic from "../../../hook/useIsArabic";
 import ShopButton from "../../common/buttons/shop_button/ShopButton";
@@ -14,6 +15,7 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
   const isArabic = useIsArabic();
   const lang = isArabic ? "ar" : "en";
+  const navigate = useNavigate();
 
   const HeroSettings = {
     dots: false,
@@ -45,9 +47,9 @@ const Hero: React.FC = () => {
                       <h1 className="hero-title">{data.title[lang]}</h1>
                       <p className="hero-desc">{data.description[lang]}</p>
                       <ShopButton
-                        label={t("homePage.shopNow")}
+                        label={t("shopNow")}
                         margin="20px 0 0 30px"
-                        onClick={() => console.log("Clicked")}
+                        onClick={() => navigate(`/shop`)}
                       />
                     </RevealGroup>
                   ) : (
@@ -55,22 +57,22 @@ const Hero: React.FC = () => {
                       <h1 className="hero-title">{data.title[lang]}</h1>
                       <p className="hero-desc">{data.description[lang]}</p>
                       <ShopButton
-                        label={t("homePage.shopNow")}
+                        label={t("shopNow")}
                         margin="20px 0 0 30px"
-                        onClick={() => console.log("Clicked")}
+                        onClick={() => navigate(`/shop`)}
                       />
                     </>
                   )}
                 </div>
 
                 {index === 0 ? (
-                    <div className="hero-img-wrapper">
-                      <img
-                        src={data.img}
-                        alt={isArabic ? data.title.ar : data.title.en}
-                        className="hero-img"
-                      />
-                    </div>
+                  <div className="hero-img-wrapper">
+                    <img
+                      src={data.img}
+                      alt={isArabic ? data.title.ar : data.title.en}
+                      className="hero-img"
+                    />
+                  </div>
                 ) : (
                   <div className="hero-img-wrapper">
                     <img
