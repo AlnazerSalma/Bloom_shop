@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import useIsArabic from "../../../../hook/useIsArabic";
 import StarRating from "../../star_rating/StarRating";
 import ShopButton from "../../buttons/shop_button/ShopButton";
@@ -30,6 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
+  const navigate = useNavigate();
 
   const hasDiscount = !!product.discount;
   const discountedPrice = hasDiscount
@@ -102,7 +104,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             width="100px"
             padding="6px 6px"
             fontSize="0.9rem"
-            onClick={() => console.log("Buy", product.name[lang])}
+            onClick={() => {
+              navigate(`/product/${product.id}`, { replace: false });
+              window.scrollTo(0, 0);
+            }}
           />
         </div>
       </div>

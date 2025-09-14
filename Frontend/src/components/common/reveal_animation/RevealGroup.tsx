@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 interface RevealGroupProps {
   type?: "up" | "down";
-  stagger?: number; // delay between children
+  stagger?: number;
   children: React.ReactNode;
 }
 
