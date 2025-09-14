@@ -226,7 +226,54 @@
       "user": "مستخدم",
       "admin": "مشرف",
       "passwordPlaceholder": "يرجى ادخال كلمة المرور"
-    }, 
+    },
+    "productForm": {
+      "header": {
+        "title": "إضافة منتج جديد",
+        "subtitle": "يرجى ملء النموذج أدناه لإضافة منتج جديد."
+      },
+      "sections": {
+        "basicInfo": {
+          "cardTitle": "المعلومات الأساسية",
+          "sectionTitle": "تفاصيل المنتج",
+          "fields": {
+            "nameEn": { "label": "اسم المنتج (EN)", "placeholder": "أدخل اسم المنتج (EN)" },
+            "nameAr": { "label": "اسم المنتج (AR)", "placeholder": "أدخل اسم المنتج (AR)" },
+            "descriptionEn": { "label": "الوصف (EN)", "placeholder": "أدخل الوصف (EN)" },
+            "descriptionAr": { "label": "الوصف (AR)", "placeholder": "أدخل الوصف (AR)" }
+          }
+        },
+        "pricing": {
+          "cardTitle": "التسعير",
+          "sectionTitle": "السعر والخصم",
+          "fields": {
+            "price": { "label": "السعر", "placeholder": "أدخل السعر" },
+            "discount": { "label": "الخصم", "placeholder": "أدخل الخصم (اختياري)" }
+          }
+        },
+        "category": {
+          "cardTitle": "التصنيف",
+          "sectionTitle": "الفئة والفئة الفرعية",
+          "fields": {
+            "category": { "label": "الفئة", "placeholder": "اختر الفئة" },
+            "subcategory": { "label": "الفئة الفرعية", "placeholder": "اختر الفئة الفرعية" },
+            "brand": { "label": "الماركة", "placeholder": "أدخل اسم الماركة" },
+            "material": { "label": "المادة", "placeholder": "أدخل تفاصيل المادة" }
+          },
+          "options": {
+            "categories": ["أطفال", "رجال", "نساء", "أحذية"],
+            "subcategories": ["ملابس", "إكسسوارات", "أحذية", "صنادل"]
+          }
+        },
+        "media": {
+          "cardTitle": "وسائط المنتج",
+          "sectionTitle": "رفع الصور",
+          "uploadTitle": "صور المنتج",
+          "uploadLabel": "اضغط لتحميل الصور"
+        },
+        "saveButton": "حفظ المنتج"
+      }
+    },
     "contentManagement": "ادارة محتوى الصفحات",
     "products": "المنتجات",
     "settings": "الإعدادات",

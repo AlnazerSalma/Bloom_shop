@@ -226,7 +226,54 @@
       "user": "User",
       "admin": "Admin",
       "passwordPlaceholder": "Please enter the password"
-    }, 
+    },
+    "productForm": {
+      "header": {
+        "title": "Add New Product",
+        "subtitle": "Please fill out the form below to add a new product."
+      },
+      "sections": {
+        "basicInfo": {
+          "cardTitle": "Basic Info",
+          "sectionTitle": "Product Details",
+          "fields": {
+            "nameEn": { "label": "Product Name (EN)", "placeholder": "Enter product name (EN)" },
+            "nameAr": { "label": "Product Name (AR)", "placeholder": "Enter product name (AR)" },
+            "descriptionEn": { "label": "Description (EN)", "placeholder": "Enter description (EN)" },
+            "descriptionAr": { "label": "Description (AR)", "placeholder": "Enter description (AR)" }
+          }
+        },
+        "pricing": {
+          "cardTitle": "Pricing",
+          "sectionTitle": "Price & Discount",
+          "fields": {
+            "price": { "label": "Price", "placeholder": "Enter price" },
+            "discount": { "label": "Discount", "placeholder": "Enter discount (optional)" }
+          }
+        },
+        "category": {
+          "cardTitle": "Classification",
+          "sectionTitle": "Category & Subcategory",
+          "fields": {
+            "category": { "label": "Category", "placeholder": "Select a category" },
+            "subcategory": { "label": "Subcategory", "placeholder": "Select a subcategory" },
+            "brand": { "label": "Brand", "placeholder": "Enter brand name" },
+            "material": { "label": "Material", "placeholder": "Enter material details" }
+          },
+          "options": {
+            "categories": ["kids", "men", "women", "footwear"],
+            "subcategories": ["Clothing", "Accessories", "Shoes", "Sandals"]
+          }
+        },
+        "media": {
+          "cardTitle": "Product Media",
+          "sectionTitle": "Upload Images",
+          "uploadTitle": "Product Images",
+          "uploadLabel": "Click to upload images"
+        },
+        "saveButton": "Save Product"
+      }
+    },
     "contentManagement": "Manage Content",
     "products": "Products",
     "settings": "Settings",

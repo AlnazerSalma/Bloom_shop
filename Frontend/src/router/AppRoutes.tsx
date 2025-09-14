@@ -25,7 +25,7 @@ const AdminLogin = lazy(() => import("../admin/pages/AdminLogin.jsx"));
 const Dashboard = lazy(() => import("../admin/pages/Dashboard.jsx"));
 const AdminHome = lazy(() => import("../admin/pages/AdminHomeContent.jsx"));
 const AdminProfile = lazy(() => import("../admin/pages/UserProfileForm.jsx"));
-const AdminProducts = lazy(() => import("../admin/pages/AdminProducts.jsx"));
+const AdminProducts = lazy(() => import("../admin/pages/AdminProducts.js"));
 const Settings = lazy(() => import("../admin/pages/AdminSettings.jsx"));
 
 const AppRoutes: React.FC = () => {

@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import UploadSection from "./UploadSection";
 import FormFieldsSection from "./FormFieldsSection";
 import "./generalFormCard.css";
 
-const GeneralFormCard = ({
+interface Field {
+  label: string;
+  placeholder?: string;
+  fullWidth?: boolean;
+  height?: string | number;
+  required?: boolean;
+  options?: string[];
+  type?: "text" | "select";
+}
+
+interface GeneralFormCardProps {
+  cardTitle?: string;
+  sectionTitle?: string;
+  sectionIcon?: React.ReactElement<{ className?: string }>;
+  fields?: Field[];
+  uploadTitle?: string;
+  uploadLabel?: string;
+  acceptTypes?: string[];
+}
+
+const GeneralFormCard: React.FC<GeneralFormCardProps> = ({
   cardTitle,
   sectionTitle,
   sectionIcon,
@@ -12,17 +32,6 @@ const GeneralFormCard = ({
   uploadLabel,
   acceptTypes,
 }) => {
-  const [previewUrl, setPreviewUrl] = useState(null);
-  const [fileType, setFileType] = useState(null);
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setPreviewUrl(URL.createObjectURL(file));
-      setFileType(file.type.startsWith("image") ? "image" : "video");
-    }
-  };
-
   const showUploadSection = uploadTitle || uploadLabel || acceptTypes?.length;
 
   return (
@@ -40,15 +49,12 @@ const GeneralFormCard = ({
       )}
 
       <FormFieldsSection fields={fields} />
+
       {showUploadSection && (
         <UploadSection
-          previewUrl={previewUrl}
-          fileType={fileType}
           uploadTitle={uploadTitle}
           uploadLabel={uploadLabel}
           acceptTypes={acceptTypes}
-          onFileChange={handleFileChange}
-          onRemoveFile={() => setPreviewUrl(null)}
         />
       )}
     </div>

@@ -121,6 +121,7 @@ const UserProfileForm = () => {
               hoverBg="#BA2054CD"
               onClick={() => alert("Saved!")}
               borderColor="#913a57"
+              hoverColor="#fff"
             />
           </button>
         </form>

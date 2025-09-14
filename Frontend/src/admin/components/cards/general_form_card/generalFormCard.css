@@ -115,6 +115,51 @@ Form Fields
 }
 
 /* ================================
+Form Select
+=================================== */
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #dec9d042;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.form-group select:focus {
+  border-color: #b6c3c3;
+  outline: none;
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'><path fill='%23023438' d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  padding: 8px 30px 8px 8px; /* space for arrow */
+}
+
+/* LTR (English) */
+html[dir="ltr"] .form-group select {
+  background-position: right 10px center;
+}
+
+/* RTL (Arabic) */
+html[dir="rtl"] .form-group select {
+  background-position: left 10px center;
+}
+
+
+
+/* ================================
 Upload Section
 =================================== */
 .upload-box {
@@ -151,7 +196,7 @@ Upload Section
 }
 
 .upload-text {
-  background-color: #204e51;
+  background-color: #913a57;
   color: #ffffff;
   padding: 10px 20px;
   border-radius: 30px;
@@ -165,7 +210,7 @@ Upload Section
 }
 
 .custom-upload:hover .upload-text {
-  background-color: rgb(109, 109, 109);
+  background-color: rgb(135, 135, 135);
 }
 
 .preview-wrapper {
@@ -192,35 +237,30 @@ Upload Section
 
 .uploaded-images-preview {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 12px;
 }
 
-.preview-four-image {
+.many-preview-image {
   width: 100px;
   height: 100px;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 8px;
   border: 1px solid #ccc;
-  flex-shrink: 0;
-  margin: 15px 8px 0px 0px;
 }
-
-
 .delete-image-btn {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  background: red;
+  top: -4px;
+  right: -3px;
+  background: rgb(148, 8, 8);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
-  font-size: 15px;
-  font-weight: bolder;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
