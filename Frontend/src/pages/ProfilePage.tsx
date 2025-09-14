@@ -10,9 +10,14 @@ import {
   FaCog,
 } from "react-icons/fa";
 import type { IconType } from "react-icons";
+import RevealGroup from "../components/common/reveal_animation/RevealGroup";
+import ScrollReveal from "../components/common/reveal_animation/ScrollReveal";
 import ProfileWishlist from "../components/profile/profile_wishlist/ProfileWishlist";
-import ProfileInfo from "../components/profile/profile_Info/ProfileInfo"; 
-import ProfileAddresses from "../components/profile/profile_addresses/ProfileAddresses"; 
+import ProfileInfo from "../components/profile/profile_Info/ProfileInfo";
+import ProfileAddresses from "../components/profile/profile_addresses/ProfileAddresses";
+import ProfilePayment from "../components/profile/profile_payment/ProfilePayment";
+import { mockUsers } from "../assets/data/mock_data/mockUser";
+import type { User } from "../assets/data/mock_data/mockUser";
 import "../style/pages/ProfilePage.css";
 
 interface MenuItem {
@@ -25,29 +30,37 @@ const ProfilePage: React.FC = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<string>("personal");
 
+  // Use the first user
+  const user: User = mockUsers[0];
+
   const menuItems: MenuItem[] = [
     { key: "personal", label: t("profile.personal"), icon: FaUser },
     { key: "orders", label: t("profile.orders"), icon: FaBox },
     { key: "wishlists", label: t("profile.wishlists"), icon: FaHeart },
-    { key: "addresses", label: t("profile.addresses.addresses"), icon: FaMapMarkerAlt },
-    { key: "cards", label: t("profile.cards"), icon: FaCreditCard },
+    {
+      key: "addresses",
+      label: t("profile.addresses.addresses"),
+      icon: FaMapMarkerAlt,
+    },
+    { key: "cards", label: t("profile.cards.cards"), icon: FaCreditCard },
     { key: "notifications", label: t("profile.notifications"), icon: FaBell },
     { key: "settings", label: t("profile.settings"), icon: FaCog },
   ];
+
   const renderContent = () => {
     switch (activeTab) {
       case "personal":
-        return <ProfileInfo />
+        return <ProfileInfo userId={user.id} />;
       case "orders":
         return <p>📦 Track your orders here.</p>;
       case "cart":
         return <p>🛒 View and manage items in your cart here.</p>;
       case "wishlists":
-        return <ProfileWishlist />;
+        return <ProfileWishlist  />;
       case "addresses":
-        return <ProfileAddresses userId="user1" />
+        return <ProfileAddresses userId={user.id} />;
       case "cards":
-        return <p>💳 Manage your saved cards here.</p>;
+        return <ProfilePayment userId={user.id} />;
       case "notifications":
         return <p>🔔 Control your notifications here.</p>;
       case "settings":
@@ -61,33 +74,43 @@ const ProfilePage: React.FC = () => {
     <div className="profile-page">
       {/* Sidebar */}
       <div className="sidebar">
-        <h2 className="sidebar-title">Profile</h2>
+        {/* User Info */}
+        <div className="sidebar-user-row">
+          <img src={user.image} alt={user.name} className="user-avatar" />
+          <div className="user-text">
+            <p className="user-greeting">Hello 👋</p>
+            <h3 className="user-name">{user.name}</h3>
+          </div>
+        </div>
+
         <ul className="menu-list">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <li
-                key={item.key}
-                className={`menu-item ${
-                  activeTab === item.key ? "active" : ""
-                }`}
-                onClick={() => setActiveTab(item.key)}
-              >
-                <span className="icon">
-                  <Icon />
-                </span>
-                <span>{item.label}</span>
-              </li>
-            );
-          })}
+          <RevealGroup type="down" stagger={200}>
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <li
+                  key={item.key}
+                  className={`menu-item ${activeTab === item.key ? "active" : ""}`}
+                  onClick={() => setActiveTab(item.key)}
+                >
+                  <span className="icon">
+                    <Icon />
+                  </span>
+                  <span>{item.label}</span>
+                </li>
+              );
+            })}
+          </RevealGroup>
         </ul>
       </div>
 
       {/* Content Area */}
       <div className="content">
-        <h1 className="header">
-          {menuItems.find((m) => m.key === activeTab)?.label}
-        </h1>
+        <ScrollReveal type="down">
+          <h1 className="header">
+            {menuItems.find((m) => m.key === activeTab)?.label}
+          </h1>
+        </ScrollReveal>
         <div className="content-body">{renderContent()}</div>
       </div>
     </div>

@@ -27,14 +27,13 @@ export interface UserAddresses {
   addresses: Address[];
 }
 
-// Example mock data
 export const mockUserAddresses: UserAddresses[] = [
   {
     userId: "user1",
     addresses: [
       {
         id: "addr1",
-        name: { en: "Salma Alnazer", ar: "سلمى الناصر" },
+        name: { en: "Salma Alnazer", ar: "سلمى الناظر" },
         email: "salma@example.com",
         mobileNumber: "+970598765432",
         country: { en: "Palestine", ar: "فلسطين" },
@@ -45,7 +44,7 @@ export const mockUserAddresses: UserAddresses[] = [
       },
       {
         id: "addr2",
-        name: { en: "Salma Alnazer", ar: "سلمى الناصر" },
+        name: { en: "alaa Alnazer", ar: " الاء الناظر" },
         email: "salma.work@example.com",
         mobileNumber: "+970598765433",
         country: { en: "Palestine", ar: "فلسطين" },

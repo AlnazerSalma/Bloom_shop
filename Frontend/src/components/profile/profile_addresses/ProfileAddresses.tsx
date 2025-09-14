@@ -143,7 +143,7 @@ const ProfileAddresses: React.FC<ProfileAddressesProps> = ({ userId }) => {
           </div>
         </div>
       ))}
-
+      </RevealGroup>
       {showForm && (
         <Modal
           title={
@@ -160,7 +160,6 @@ const ProfileAddresses: React.FC<ProfileAddressesProps> = ({ userId }) => {
           />
         </Modal>
       )}
-      </RevealGroup>
     </div>
   );
 };

@@ -143,7 +143,6 @@
     "orders": "My Orders",
     "cart": "My Cart",
     "wishlists": "My Wishlists",
-    "cards": "Saved Cards",
     "notifications": "Notifications",
     "settings": "Settings",
     "editProfile": "Edit Profile",
@@ -167,6 +166,12 @@
       "addressPlaceholder": "Enter your address",
       "newAddress": "New Address",
       "editAddress": "Edit your address"
+    },
+    "cards": {
+      "cards": "Saved Cards",
+      "addNewCard": "Add New Card",
+      "delete": "Delete",
+      "newCard": "New Card"
     }
   },
   "admin": {

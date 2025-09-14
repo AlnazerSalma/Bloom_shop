@@ -5,7 +5,7 @@ import CheckoutSteps from "../components/common/checkout_steps/CheckoutSteps";
 import useIsArabic from "../hook/useIsArabic";
 import CheckoutCard from "../components/common/card/checkout_card/CheckoutCard";
 import RectangularButton from "../components/common/buttons/rectangular_button/RectangularButton";
-import CheckoutForm from "../components/forms/checkout_form/CheckoutForm";
+import CheckoutForm from "../components/forms/checkout_form/CheckoutAddressForm";
 import RevealGroup from "../components/common/reveal_animation/RevealGroup";
 import ScrollReveal from "../components/common/reveal_animation/ScrollReveal";
 import { useLocalStorageList } from "../hook/local_storage/useLocalStorageList";

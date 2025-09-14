@@ -142,7 +142,6 @@
     "orders": "طلباتي",
     "cart": "سلة التسوق",
     "wishlists": "قائمة الرغبات",
-    "cards": "البطاقات المحفوظة",
     "notifications": "الإشعارات",
     "settings": "الإعدادات",
     "editProfile": "تعديل الملف الشخصي",
@@ -167,6 +166,12 @@
       "addressPlaceholder": "أدخل عنوانك",
       "newAddress": "عنوان جديد",
       "editAddress": "تعديل عنوانك"
+    },
+    "cards": {
+      "cards": "البطاقات المحفوظة",
+      "addNewCard": "إضافة بطاقة جديدة",
+      "delete": "حذف",
+      "newCard": "بطاقة جديدة"
     }
   },
   "admin": {
